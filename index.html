@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="css/app.css">
+	<title>JavaCity | Visualization of JAVA projects</title>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/85/three.js"></script>
+	<script src="app/libraries/jquery-3.6.0.js"></script> -->
+	<script src="bundle.js " defer type="text/javascript"></script>
+
+</head>
+
+<body>
+	<div class="topnav">
+		<a class="navbar-brand" href="#"><strong>JAVA</strong>City</a>
+
+		<a href="#" data-toggle="modal" data-target="#help-modal"><i class="fa fa-question-circle"></i>Help</a>
+
+		<div class="select-bar ">
+			Load
+			<select class="form-control input-sm" name="project-name" id="demo-project-select">
+				<option value="" disabled selected>a demo project</option>
+				<option value="" disabled>--- PHP frameworks ---</option>
+				<option value="laravel">laravel/framework</option>
+				<option value="slim">slimphp/Slim</option>
+				<option value="cakephp">cakephp/cakephp</option>
+				<option value="symfony">symfony/symfony (takes a long time to load)</option>
+				<option value="yii2">yiisoft/yii2-framework</option>
+				<option value="" disabled>--- Other ---</option>
+				<option value="faker">fzaninotto/Faker</option>
+				<option value="phabricator">phacility/phabricator</option>
+				<option value="math-php">markrogoyski/math-php</option>
+				<option value="design-patterns">domnikl/DesignPatternsPHP</option>
+				<option value="PHPExcel">PHPOffice/PHPExcel</option>
+			</select>
+			or upload your own
+			<input type="file" class="form-control input-sm">
+		</div>
+	</div>
+
+	<div class="topnav2">
+
+		<div class="select-bar ">
+			<strong>Project</strong>:
+			<span id="project-name">-</span>,
+			<span id="project-objects">0</span> buildings
+		</div>
+
+		<div class="select-bar ">
+			<strong>Show</strong>&nbsp;
+			<label class="radio-inline"><input type="radio" name="filter-type" value="all" checked>all</label>
+			<label class="radio-inline"><input type="radio" name="filter-type" value="abstract">abstract classes</label>
+			<label class="radio-inline"><input type="radio" name="filter-type" value="final">final classes</label>
+			<label class="radio-inline"><input type="radio" name="filter-type" value="interface">interfaces</label>
+			<label class="radio-inline"><input type="radio" name="filter-type" value="trait">traits</label>
+		</div>
+		<div class="select-bar ">
+			<strong>Highlight</strong> classes that
+			extend <select id="class-extends" class="form-control short-select"></select>
+			or implement <select id="class-implements" class="form-control short-select"></select>
+		</div>
+
+	</div>
+
+	<div class="content">
+		<div id="settings">>>
+			<div id="settings-form">
+
+				<form id="settings-form">
+					<strong>Map building's width:</strong><br>
+					<div class="radio"> <label> <input type="radio" name="width-type" value="proportionally"
+								checked>proportionally</label></div>
+					<div class="radio"> <label> <input type="radio" name="width-type" value="evenly">evenly</label>
+					</div>
+
+					<strong>Map building's height:</strong><br>
+					<div class="radio"> <label> <input type="radio" name="height-type" value="proportionally"
+								checked>proportionally</label></div>
+					<div class="radio"> <label> <input type="radio" name="height-type" value="evenly">evenly</label>
+					</div>
+
+					<strong>Width's attribute:</strong><br>
+					<select class="form-control input-sm" id="width-attribute">
+						<option value="no_attrs">No. attributes</option>
+						<option value="no_methods">No. methods</option>
+						<option value="lines">Lines of code</option>
+					</select>
+
+					<strong>Height attribute:</strong><br>
+					<select class="form-control input-sm" id="height-attribute">
+						<option value="no_attrs">No. attributes</option>
+						<option value="no_methods" selected>No. methods</option>
+						<option value="lines">Lines of code</option>
+					</select>
+
+					<input type="submit" id="update-city" class="btn btn-primary btn-sm form-control"
+						value="Update city">
+				</form>
+			</div>
+			<div id="settings-handle">
+				<i class="fa fa-angle-double-right"></i>
+			</div>
+		</div>
+
+		<div id="tracker"></div>
+		<canvas id="canvas">	
+	
+		</canvas>
+		<!-- <div id="ctx" class="canvas_for_three">
+		</div> -->
+
+	</div>
+
+	<div class="footer">
+		<strong>Legend</strong> <em>(Building's color)</em>:
+		<span class="legend-color" style="background-color: #2f9dbd;"></span> Class
+		<span class="legend-color" style="background-color: #2fbdab; opacity: 0.5"></span>Abstract class
+		<span class="legend-color" style="background-color: #3c2fbd;"></span>Interface
+		<span class="legend-color" style="background-color: #2f9dbd;"></span>Final class
+		<span class="legend-color" style="background-color: #2f9dbd;"></span>Trait
+	</div>
+
+</body>
+
+</html>
