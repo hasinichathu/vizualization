@@ -3,6 +3,7 @@ import { BuildingData, ExtendedMesh, ExtendedMeshBasicMaterial } from "./interfa
 import { SceneManager } from "./scene_manager";
 import * as THREE from 'three';
 import * as _ from 'underscore';
+import { Line } from "../libraries/three";
 
 // var GrowingPacker: any;
 
@@ -113,17 +114,19 @@ export class Building extends Block {
 
     mesh.position.set(this.getX() - 1 * this.parent.addWidth + 1, 0 + depth / 2 + depth * 0.05, this.getY() - 1 * this.parent.addWidth + 1);
     mesh.scale.set(this.w - 2, this.d, this.h - 2);
+    
+    var edges = new THREE.EdgesGeometry(geometry);
+    var line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0xffffff }));
+    line.renderOrder = 1; // make sure wireframes are rendered 2nd
+    
+    scene.add(mesh);
+    SceneManager.objects.push(mesh);
+
+    mesh.add(line);
 
     mesh.block = this;
 
-    // var edges = new THREE.EdgesHelper(mesh, 0x000000);
-    // var edges = new THREE.EdgesGeometry(mesh);
-    // mesh.edges = edges;
 
-    SceneManager.objects.push(mesh);
-
-    scene.add(mesh);
-    // scene.add(edges);
   }
 
   public getTrackerText() {
@@ -152,9 +155,7 @@ export class District extends Block {
   }
 
   public render(scene: THREE.Scene, depth: number) {
-    // console.log("inside render District");
-    // this.viewCityStructure();
-    // console.log(this.name + this.addWidth);
+
     var color = this.getColor().getHex();
     var geometry = new THREE.BoxGeometry(1, 1, 1);
     var material = <ExtendedMeshBasicMaterial>new THREE.MeshBasicMaterial({ color: color });
@@ -169,14 +170,12 @@ export class District extends Block {
     mesh.position.set(this.getX() - 1 * this.addWidth, 0 + depth / 2 + depth * 0.05, this.getY() - 1 * this.addWidth);
     mesh.scale.set(this.w - 2, this.d / 2, this.h - 2);
 
-    // var edges = new THREE.EdgesHelper(mesh, 0x000000);
     var edges = new THREE.EdgesGeometry(geometry);
     var line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0xffffff }));
-
-    mesh.edges = edges;
-    // console.log(line.getWorldPosition);
+    line.renderOrder = 1; // make sure wireframes are rendered 2nd
+    
     scene.add(mesh);
-    scene.add(line);
+    mesh.add(line);
 
     SceneManager.objects.push(mesh);
 

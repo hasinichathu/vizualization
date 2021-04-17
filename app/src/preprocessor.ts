@@ -67,7 +67,7 @@ export class Preprocessor {
     var buildingCount = this.city.buildings.length;
     var districtsCount = _.size(this.city.districts);
     var base = this.city.districts['base'];
-    this.city.districts['base'].setColor(0x0e4467);
+    this.city.districts['base'].setColor(0xf25a07);
 
     // var numbers = [0, 1, 2, 3];
     // var maxDepth =_.max(numbers);

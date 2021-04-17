@@ -50,7 +50,7 @@ export class SceneManager {
         SceneManager.renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(SceneManager.renderer.domElement);
         SceneManager.renderer.setClearColor(0xcccccc, 1);
-
+        //light grey
         // SceneManager.camera.position.z = 12;
         SceneManager.camera.position.set(70, 70,130);
         SceneManager.scene.add(SceneManager.camera);
