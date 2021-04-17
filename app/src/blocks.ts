@@ -1,6 +1,3 @@
-
-
-
 import { colorLuminance } from "./helpers";
 import { BuildingData, ExtendedMesh, ExtendedMeshBasicMaterial } from "./interfaces";
 import { SceneManager } from "./scene_manager";
@@ -21,6 +18,7 @@ export abstract class Block {
   // d and depth are two different things. d means height. for base its 1. 
   constructor(protected name: string, protected parent: Block) {
     this.depth = parent === null ? 0 : parent.depth + 1;
+    console.log(this.depth +" "+this.name);
   }
 
   abstract render(scene: THREE.Scene, depth: number): void;
@@ -155,7 +153,8 @@ export class District extends Block {
 
   public render(scene: THREE.Scene, depth: number) {
     // console.log("inside render District");
-
+    // this.viewCityStructure();
+    // console.log(this.name + this.addWidth);
     var color = this.getColor().getHex();
     var geometry = new THREE.BoxGeometry(1, 1, 1);
     var material = <ExtendedMeshBasicMaterial>new THREE.MeshBasicMaterial({ color: color });
@@ -184,25 +183,25 @@ export class District extends Block {
     mesh.block = this;
 
     _.each(this.children, (e) => e.render(scene, depth + 1));
-    _.each(this.buildings, (e) => e.render(scene, depth + 1))
+    _.each(this.buildings, (e) => e.render(scene, depth + 1));
   }
 
-  viewCityStructure(){
+  viewCityStructure() {
     if (this.children.length === 0) {
       for (let j = 0; j < this.buildings.length; j++) {
-        // console.log(this.buildings[j]);
+        console.log(this.buildings[j]);
       }
-    }else if (this.children.length != 0) {
-            // console.log("no of distrcits "+l);
+    } else if (this.children.length != 0) {
+      // console.log("no of distrcits "+l);
 
-            for (let j = 0; j < this.children.length; j++) {
-              // console.log(this.children[j]);
-              this.children[j].viewCityStructure();
-            }
+      for (let j = 0; j < this.children.length; j++) {
+        // console.log(this.children[j]);
+        this.children[j].viewCityStructure();
+      }
     }
   }
 
-  viewBuildingNames(){
+  viewBuildingNames() {
     for (let j = 0; j < this.buildings.length; j++) {
       console.log(this.buildings[j]);
     }
@@ -210,7 +209,7 @@ export class District extends Block {
 
   public getWidth(): number {
     //in first iteration check for base district
-    let packer = new GrowingPacker(this);
+    let packer = new GrowingPacker();
 
     // let packer = new GrowingPacker(this);
     // console.log(this.buildings.length + "building count");
@@ -220,11 +219,9 @@ export class District extends Block {
 
       //length of building array
       let l = this.buildings.length;
-      console.log("no of buildings "+l);
-      for (let j = 0; j < this.buildings.length; j++) {
-        console.log(this.buildings[j]);
-      }
-      
+      // console.log("no of buildings "+l);
+
+
       //rearrange the building based on its width
       let sorted = _.sortBy(this.buildings, (e) => e.w).reverse();
 
@@ -233,7 +230,9 @@ export class District extends Block {
 
       packer.fit(sorted);
       // console.log("building sorting ended ");
-
+      // for (let j = 0; j < this.buildings.length; j++) {
+      //   console.log(this.buildings[j]);
+      // }
       //assign values to fit variables in block class
       this.w = packer.root.w + 2;
       this.h = packer.root.h + 2;
@@ -253,18 +252,22 @@ export class District extends Block {
       // if has child districts
     } else if (this.children.length != 0) {
       //children means districts
-      let l = this.children.length;
+      // let l = this.children.length;
       // console.log("no of distrcits "+l);
 
       // first calculate w/h on children
-      for (let i = 0; i < l; i++) {
-        // during creation of district width is not defined.
-        //but in building creation width is defined.
-        this.childrenWidth();
-      }
+      // for (let i = 0; i < l; i++) {
+      // during creation of district width is not defined.
+      //but in building creation width is defined.
+      //by adding loop distrivts and building will be double printed
+      this.childrenWidth();
+      // }
 
-      let sorted = _.sortBy((<Block[]>this.children).concat(this.buildings), (e) => e.w).reverse();
-      // console.log("children sorting started ");
+      let sorted = _.sortBy(((<Block[]>this.children).concat(<Block[]>this.buildings)), (e) => e.w).reverse();
+      // console.log("children sorting started " + this.name);
+      // for (let j = 0; j < sorted.length; j++) {
+      //   console.log(sorted[j]);
+      // }
 
       packer.fit(sorted);
       // console.log("children sorting ended ");
@@ -275,6 +278,7 @@ export class District extends Block {
       this.h = packer.root.h + 2;
       this.fit = packer.root;
       // console.log(this.fit.x + " this.fit");
+      // console.log("district dim "+this.w+", "+this.h+", "+this.fit.x+", "+this.fit.y);
 
       // insert x,y values into building array
       for (let i = 0; i < sorted.length; i++) {
@@ -285,19 +289,28 @@ export class District extends Block {
             this.buildings[j].fit = block.fit;
           }
         }
+        for (let j = 0; j < this.children.length; j++) {
+          if (block instanceof District && this.children[j].name === block.name) {
+            this.children[j].fit = block.fit;
+                  console.log(this.children[j].name +" district "+this.children[j].fit.x+", "+this.children[j].fit.y);
+
+          }
+        }
       }
     }
     return this.w;
   }
 
-  // public GrowingPacker(){
-    
-  // }
   public childrenWidth() {
     let l = this.children.length;
     let width = 0;
+    // console.log("chidrenwidth method "+ this.name);
 
     for (let i = 0; i < l; i++) {
+      // console.log("chidrenwidth method "+ this.name + " " + i);
+
+      // console.log("chidrenwidth method calling "+ this.children[i].name);
+
       width += this.children[i].getWidth();
     }
 
@@ -342,11 +355,6 @@ export class District extends Block {
 
 export class GrowingPacker {
   root: { x: number, y: number, w: number, h: number, used?: boolean, down?: any, right?: any };
-  newBlock: Block;
-  constructor(block: Block) {
-    this.newBlock = block;
-    // this.root = { x: 0, y: 0, w:this.newBlock.w, h: this.newBlock.h, used: null };
-  }
 
   public fit(blocks: Block[]) {
     var n, node, block, len = blocks.length;
@@ -357,14 +365,9 @@ export class GrowingPacker {
       block = blocks[n];
       if (node = this.findNode(this.root, block.w, block.h)) {
         block.fit = this.splitNode(node, block.w, block.h);
-        if (block instanceof Building) {
-          // console.log("xy cordinates (" + block.fit.x + "," + block.fit.y + ")"+ block.data.name);
-        }
-
-      } else
+      } else {
         block.fit = this.growNode(block.w, block.h);
-        // this.newBlock.w =this.root.w;
-        // this.newBlock.h=this.root.h;
+      }
     }
   }
 
@@ -380,9 +383,7 @@ export class GrowingPacker {
   public splitNode(node: any, w: number, h: number): any {
     node.used = true;
     node.down = { x: node.x, y: node.y + h, w: node.w, h: node.h - h };
-    // console.log(node.down.x + " x " + node.down.y + " y " + node.down.w + " w " + node.down.h + " h ");
     node.right = { x: node.x + w, y: node.y, w: node.w - w, h: h };
-    // console.log(node.right.x + " x " + node.right.y + " y " + node.right.w + " w " + node.right.h + " h ");
 
     return node;
   }
@@ -440,10 +441,4 @@ export class GrowingPacker {
       return null;
   }
 
-}
-
-export class Node {
-  used: boolean;
-  down: { x: number, y: number, w: number, h: number };
-  right: { x: number, y: number, w: number, h: number };
 }

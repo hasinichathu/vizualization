@@ -17,6 +17,6 @@ app.get('/data/faker', (req, res) => {
 })
 
 app.listen(port, () => {
-    //   debug(`Start server at port : ${port}`);
+    // debug(`Start server at port : ${port}`);
     console.log(`Example app listening at http://localhost:${port}`)
 })

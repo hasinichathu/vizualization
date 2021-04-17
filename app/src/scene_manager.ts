@@ -51,20 +51,12 @@ export class SceneManager {
         document.body.appendChild(SceneManager.renderer.domElement);
         SceneManager.renderer.setClearColor(0xcccccc, 1);
 
-        SceneManager.camera.position.z = 2;
-        // SceneManager.camera.position.set(70, 70, 150);
+        // SceneManager.camera.position.z = 12;
+        SceneManager.camera.position.set(70, 70,130);
         SceneManager.scene.add(SceneManager.camera);
 
         // add light
         SceneManager.scene.add(new THREE.AmbientLight(0xcccccc));
-
-
-        //creating cube
-        // SceneManager.geometry = new THREE.BoxGeometry();
-        // SceneManager.material = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true });
-        // SceneManager.cube = new THREE.Mesh(SceneManager.geometry, SceneManager.material);
-        // SceneManager.scene.add(SceneManager.cube);
-
 
         // create an event listener that resizes the renderer with the browser window.
         window.addEventListener('resize', () => {

@@ -69,20 +69,17 @@ export class Preprocessor {
     var base = this.city.districts['base'];
     this.city.districts['base'].setColor(0x0e4467);
 
-    /////////////
-    // for testing
-    ////////////
-
+    // var numbers = [0, 1, 2, 3];
+    // var maxDepth =_.max(numbers);
     // find out max depth of a district
-    var maxDepth = <number>_.max(this.city.districts, (e) => e.depth);
-    // var maxDepth = _.max(this.city.districts, (e) => e.depth).depth;
+    var maxDepth = <District>_.max(this.city.districts, (e) => {return e.depth;});
 
     // set margin for each district by finding his nesting level
-    _.each(this.city.districts, (e) => e.addWidth = maxDepth - e.depth);
+    _.each(this.city.districts, (e) => {e.addWidth = maxDepth.depth - e.depth});
 
     // calculate minimal dimensions for blocks
     base.getWidth();
-    base.viewCityStructure();
+    // base.viewCityStructure();
 
     base.render(SceneManager.scene, 0);
 
