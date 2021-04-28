@@ -15,3 +15,15 @@ export function colorLuminance(hex: number, lum?: number) {
 
   return rgb;
 }
+
+export function randInt(min: number, max: number) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+export function randFloat(min: number, max: number) {
+  return Math.random() * (max - min) + min;
+}
+
+export function lerp(a: number, b: number, alpha: number) { 
+	return a + (b-a) * alpha; 
+};

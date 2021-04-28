@@ -3,7 +3,6 @@ import { BuildingData, ExtendedMesh, ExtendedMeshBasicMaterial } from "./interfa
 import { SceneManager } from "./scene_manager";
 import * as THREE from 'three';
 import * as _ from 'underscore';
-import { Line } from "../libraries/three";
 
 // var GrowingPacker: any;
 
@@ -126,6 +125,14 @@ export class Building extends Block {
 
     mesh.block = this;
 
+
+    const conegeo = new THREE.ConeGeometry(1, 2, 3);
+		const conematerial = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+		const cone = new THREE.Mesh(conegeo, conematerial);
+    cone.position.set(this.getX() - 1 * this.parent.addWidth + 1, 0 + depth / 2 + depth * 0.05, this.getY() - 1 * this.parent.addWidth + 1);
+    cone.scale.set(this.w - 2, this.d, this.h - 2);
+
+    scene.add(cone);
 
   }
 
