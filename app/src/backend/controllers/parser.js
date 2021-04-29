@@ -8,6 +8,10 @@ public class HelloWorldExample{
 `;
 
 const cst = parse(javaText);
+console.log("sdsd");
+
+
+
 // explore the CST
 const {
   BaseJavaCstVisitor,
@@ -22,12 +26,14 @@ class LambdaArrowsPositionCollector extends BaseJavaCstVisitorWithDefaults {
     this.validateVisitor();
   }
 
-  lambdaExpression(ctx: any) {
+  lambdaExpression(ctx) {
     // Collects all the starting offsets of lambda arrows in lambdas with short (no parenthesis)
     // single argument lists: e.g:
     // - n -> n*n (will be collected)
     // - (n) -> n*n (not collected)
     if (ctx.lambdaParameters[0].children.Identifier) {
+      console.log("sdsd");
+
       this.customResult.push(ctx.Arrow[0].startOffset);
     }
   }
@@ -36,6 +42,8 @@ class LambdaArrowsPositionCollector extends BaseJavaCstVisitorWithDefaults {
 const lambdaArrowsCollector = new LambdaArrowsPositionCollector();
 // The CST result from the previous code snippet
 lambdaArrowsCollector.visit(cst);
-lambdaArrowsCollector.customResult.forEach((arrowOffset: any) => {
+lambdaArrowsCollector.customResult.forEach((arrowOffset) => {
+  console.log("sdsd");
+
   console.log(arrowOffset);
 });
