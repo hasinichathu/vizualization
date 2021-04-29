@@ -3,6 +3,7 @@ import { Building, District, Block } from './blocks';
 import { SceneManager } from './scene_manager';
 import * as _ from 'underscore';
 import * as $ from 'jQuery';
+import { TreeMesh } from './Tree';
 
 export function processJSONInput(input: HTMLInputElement) {
   var reader = new FileReader();
@@ -82,7 +83,9 @@ export class Preprocessor {
     // base.viewCityStructure();
 
     base.render(SceneManager.scene, 0);
-
+    var treeMesh = new TreeMesh();
+    treeMesh.createTree(SceneManager.scene);
+    
     // fill selects
     let _extends = _.countBy(this.city.buildings, (e) => e.data.extends);
     delete _extends['null'];

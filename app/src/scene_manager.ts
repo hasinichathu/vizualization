@@ -5,6 +5,8 @@ import { ExtendedMesh } from './interfaces';
 import { Building, District } from './blocks';
 import * as $ from 'jQuery';
 
+
+
 export class SceneManager {
 
     static scene: THREE.Scene = new THREE.Scene();

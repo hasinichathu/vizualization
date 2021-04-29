@@ -1,8 +1,9 @@
 [
     {
-        "file": "src\\Faker\\Calculator\\Iban.php",
+        "file": "src\\Faker\\Calculator\\Iban.java",
         "namespace": "Faker\\Calculator",
         "name": "Iban",
+        "quality" : "low",
         "extends": null,
         "implements": null,
         "no_lines": 66,
@@ -43,9 +44,10 @@
         ]
     },
     {
-        "file": "src\\Faker\\Calculator\\Luhn.php",
+        "file": "src\\Faker\\Calculator\\Luhn.java",
         "namespace": "Faker\\Calculator",
         "name": "Luhn",
+        "quality" : "low",
         "extends": null,
         "implements": null,
         "no_lines": 45,
@@ -58,9 +60,10 @@
         "anonymous": false
     },
     {
-        "file": "src\\Faker\\DefaultGenerator.php",
+        "file": "src\\Faker\\DefaultGenerator.java",
         "namespace": "Faker",
         "name": "DefaultGenerator",
+        "quality" : "low",
         "extends": null,
         "implements": null,
         "no_lines": 25,
@@ -73,9 +76,10 @@
         "anonymous": false
     },
     {
-        "file": "src\\Faker\\Documentor.php",
+        "file": "src\\Faker\\Documentor.java",
         "namespace": "Faker",
         "name": "Documentor",
+        "quality" : "low",
         "extends": null,
         "implements": null,
         "no_lines": 61,
@@ -88,9 +92,10 @@
         "anonymous": false
     },
     {
-        "file": "src\\Faker\\Factory.php",
+        "file": "src\\Faker\\Factory.java",
         "namespace": "Faker",
         "name": "Factory",
+        "quality" : "low",
         "extends": null,
         "implements": null,
         "no_lines": 56,
@@ -103,9 +108,10 @@
         "anonymous": false
     },
     {
-        "file": "src\\Faker\\Generator.php",
+        "file": "src\\Faker\\Generator.java",
         "namespace": "Faker",
         "name": "Generator",
+        "quality" : "low",
         "extends": null,
         "implements": null,
         "no_lines": 79,
@@ -118,9 +124,10 @@
         "anonymous": false
     },
     {
-        "file": "src\\Faker\\Guesser\\Name.php",
+        "file": "src\\Faker\\Guesser\\Name.java",
         "namespace": "Faker\\Guesser",
         "name": "Name",
+        "quality" : "low",
         "extends": null,
         "implements": null,
         "no_lines": 149,
@@ -133,9 +140,10 @@
         "anonymous": false
     },
     {
-        "file": "src\\Faker\\ORM\\CakePHP\\ColumnTypeGuesser.php",
+        "file": "src\\Faker\\ORM\\CakePHP\\ColumnTypeGuesser.java",
         "namespace": "Faker\\ORM\\CakePHP",
         "name": "ColumnTypeGuesser",
+        "quality" : "low",
         "extends": null,
         "implements": null,
         "no_lines": 62,
@@ -148,9 +156,10 @@
         "anonymous": false
     },
     {
-        "file": "src\\Faker\\ORM\\CakePHP\\EntityPopulator.php",
+        "file": "src\\Faker\\ORM\\CakePHP\\EntityPopulator.java",
         "namespace": "Faker\\ORM\\CakePHP",
         "name": "EntityPopulator",
+        "quality" : "medium",
         "extends": null,
         "implements": null,
         "no_lines": 159,
@@ -163,9 +172,10 @@
         "anonymous": false
     },
     {
-        "file": "src\\Faker\\ORM\\CakePHP\\Populator.php",
+        "file": "src\\Faker\\ORM\\CakePHP\\Populator.java",
         "namespace": "Faker\\ORM\\CakePHP",
         "name": "Populator",
+        "quality" : "low",
         "extends": null,
         "implements": null,
         "no_lines": 104,
@@ -178,9 +188,10 @@
         "anonymous": false
     },
     {
-        "file": "src\\Faker\\ORM\\Doctrine\\ColumnTypeGuesser.php",
+        "file": "src\\Faker\\ORM\\Doctrine\\ColumnTypeGuesser.java",
         "namespace": "Faker\\ORM\\Doctrine",
         "name": "ColumnTypeGuesser",
+        "quality" : "medium",
         "extends": null,
         "implements": null,
         "no_lines": 68,
@@ -193,9 +204,10 @@
         "anonymous": false
     },
     {
-        "file": "src\\Faker\\ORM\\Doctrine\\EntityPopulator.php",
+        "file": "src\\Faker\\ORM\\Doctrine\\EntityPopulator.java",
         "namespace": "Faker\\ORM\\Doctrine",
         "name": "EntityPopulator",
+        "quality" : "low",
         "extends": null,
         "implements": null,
         "no_lines": 240,
@@ -208,9 +220,10 @@
         "anonymous": false
     },
     {
-        "file": "src\\Faker\\ORM\\Doctrine\\Populator.php",
+        "file": "src\\Faker\\ORM\\Doctrine\\Populator.java",
         "namespace": "Faker\\ORM\\Doctrine",
         "name": "Populator",
+        "quality" : "high",
         "extends": null,
         "implements": null,
         "no_lines": 71,
