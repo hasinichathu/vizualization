@@ -19,6 +19,8 @@ export class TreeMesh {
 		const bushGeometry = new THREE.ConeGeometry(radiusBush, heightBush, 4);
 		const bushMaterial = new THREE.MeshBasicMaterial({ color: 0x006700 });
 		const cone = new THREE.Mesh(bushGeometry, bushMaterial);
+		cone.castShadow = true;
+
 		scene.add(cone);
 		var edges = new THREE.EdgesGeometry(bushGeometry);
 		var line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0xffff00 }));
