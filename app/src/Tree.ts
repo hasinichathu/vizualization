@@ -6,8 +6,8 @@ export class TreeMesh {
 		// ConeGeometry(radius : Float, height : Float, radialSegments : Integer, 
 		//heightSegments : Integer, openEnded : Boolean, thetaStart : Float, thetaLength : Float)
 		var height = 10;
-		var heightStem = height * 0.8;
-		var heightBush = height * 0.8;
+		var heightStem = height * 0.5;
+		var heightBush = height * 0.5;
 		var radiusStem = 0.4;
 		var radiusBush = 3;
 
@@ -16,27 +16,53 @@ export class TreeMesh {
 		var colorBush_0 = new THREE.Color(0x3B7D4E);
 		var colorBush_1 = new THREE.Color(0x225749);
 
-		const bushGeometry = new THREE.ConeGeometry(radiusBush, heightBush, 4);
+		const bushGeometry = new THREE.ConeGeometry(radiusBush, heightBush, 32);
 		const bushMaterial = new THREE.MeshBasicMaterial({ color: 0x006700 });
 		const cone = new THREE.Mesh(bushGeometry, bushMaterial);
 		cone.castShadow = true;
+
+		const axesHelper = new THREE.AxesHelper(10);
+		scene.add(axesHelper);
 
 		scene.add(cone);
 		var edges = new THREE.EdgesGeometry(bushGeometry);
 		var line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0xffff00 }));
 		line.renderOrder = 1;
-		scene.add(line);
-		cone.position.set(0, 10+height * 0.4 ,0);
-		line.position.set(0, 10+height * 0.4 ,0);
+		cone.add(line);
+		cone.position.set(0, heightBush, 0);
+		// cone.rotateOnAxis(new THREE.Vector3(0,0,0),45);
+
+
+		// line.position.set(0, 5+heightStem, 0);
 
 		// CylinderGeometry(radiusTop : Float, radiusBottom : Float, height : Float, radialSegments : Integer, 
 		// heightSegments : Integer, openEnded : Boolean, thetaStart : Float, thetaLength : Float)
 
-		const cylGeometry = new THREE.CylinderGeometry(radiusStem-0.01, radiusStem, heightStem, 32);
+		const cylGeometry = new THREE.CylinderGeometry(radiusStem - 0.01, radiusStem, heightStem, 32);
 		const cylMaterial = new THREE.MeshBasicMaterial({ color: 0x341a00 });
 		const cylinder = new THREE.Mesh(cylGeometry, cylMaterial);
 		scene.add(cylinder);
-		cylinder.position.set(0, 10 ,0);
+		cylinder.position.set(0, 0, 0);
+		// cylinder.lookAt(cone.normal);
+		scene.updateMatrixWorld(true);
+	
+
+		const geometry = new THREE.SphereGeometry(0.22, 5, 32);
+		const material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+		const sphere = new THREE.Mesh(geometry, material);
+		scene.add(sphere);
+
+		var inclination = radiusBush / heightBush;
+		var y_pos = height * 0.1;
+		var x_pos = inclination * y_pos;
+
+		sphere.position.set(x_pos, ((heightStem/2+heightBush)-y_pos), 0);
+
+		const sphere2 = new THREE.Mesh(geometry, material);
+		scene.add(sphere2);
+
+
+		sphere2.position.set(0, ((heightStem/2+heightBush)-y_pos), x_pos);
 
 	}
 
