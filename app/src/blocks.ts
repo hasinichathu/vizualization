@@ -1,5 +1,5 @@
 import { colorLuminance } from "./helpers";
-import { BuildingData, ExtendedMesh, ExtendedMeshBasicMaterial } from "./interfaces";
+import { BuildingData, ExtendedMesh, ExtendedMeshBasicMaterial, Method } from "./interfaces";
 import { SceneManager } from "./scene_manager";
 import * as THREE from 'three';
 import * as _ from 'underscore';
@@ -49,6 +49,8 @@ export abstract class Block {
 }
 
 export class Building extends Block {
+  protected methods: MethodTree[] = [];
+
   constructor(public parent: District,
 
     //data about building like attributes, extends , no.of lines of codes etc.
@@ -139,6 +141,10 @@ export class Building extends Block {
     }
 
     return text + `<br>Package: ${this.parent.getQualifiedName()}<br><br>Methods: ${this.data.no_methods}<br>Attributes: ${this.data.no_attrs}<br>LOC: ${this.data.no_lines}<br><br>File: ${this.data.file}`;
+  }
+
+  public addMethod(method: MethodTree) {
+    this.methods.push(method);
   }
 }
 
@@ -351,10 +357,10 @@ export class District extends Block {
 }
 
 export class MethodTree extends Block {
-  constructor(public parent: District,
+  constructor(public parent: Building,
 
     //data about building like attributes, extends , no.of lines of codes etc.
-    public data: BuildingData,
+    public data: Method,
     public heightLevels: number[],
     public widthLevels: number[],
     public heightAttr: string,
@@ -394,13 +400,13 @@ export class MethodTree extends Block {
   public render(scene: THREE.Scene, depth: number) {
     var options: THREE.MeshBasicMaterialParameters = { color: 0x2f9dbd };
 
-    if (this.data.abstract) {
-      options.color = 0x2fbdab;
-      options.opacity = 0.5
-      options.transparent = true;
-    } else if (this.data.type === "interface") {
-      options.color = 0x3c2fbd;
-    }
+    // if (this.data.abstract) {
+    //   options.color = 0x2fbdab;
+    //   options.opacity = 0.5
+    //   options.transparent = true;
+    // } else if (this.data.type === "interface") {
+    //   options.color = 0x3c2fbd;
+    // }
 
     var geometry = new THREE.BoxGeometry(1, 1, 1);
     var material = <ExtendedMeshBasicMaterial>new THREE.MeshBasicMaterial(options);
@@ -429,19 +435,19 @@ export class MethodTree extends Block {
 
   }
 
-  public getTrackerText() {
-    var text = `<em>&lt;&lt; ${this.data.type} &gt;&gt;</em><br><strong>${this.name}</strong><br>`;
+  // public getTrackerText() {
+  //   var text = `<em>&lt;&lt; ${this.data.type} &gt;&gt;</em><br><strong>${this.name}</strong><br>`;
 
-    if (this.data.extends !== null) {
-      text += ` extends <em>${this.data.extends}</em><br>`;
-    }
+  //   if (this.data.extends !== null) {
+  //     text += ` extends <em>${this.data.extends}</em><br>`;
+  //   }
 
-    if (this.data.implements !== null) {
-      text += ` implements <em>${this.data.implements}</em><br>`;
-    }
+  //   if (this.data.implements !== null) {
+  //     text += ` implements <em>${this.data.implements}</em><br>`;
+  //   }
 
-    return text + `<br>Package: ${this.parent.getQualifiedName()}<br><br>Methods: ${this.data.no_methods}<br>Attributes: ${this.data.no_attrs}<br>LOC: ${this.data.no_lines}<br><br>File: ${this.data.file}`;
-  }
+  //   return text + `<br>Package: ${this.parent.getQualifiedName()}<br>Attributes: ${this.data.no_attrs}<br>LOC: ${this.data.no_lines}<br><br>File: ${this.data.file}`;
+  // }
 }
 
 export class GrowingPacker {

@@ -1,5 +1,5 @@
-import { City, InputObject } from './interfaces';
-import { Building, District, Block } from './blocks';
+import { City, InputObject, Method } from './interfaces';
+import { Building, District, Block, MethodTree } from './blocks';
 import { SceneManager } from './scene_manager';
 import * as _ from 'underscore';
 import * as $ from 'jQuery';
@@ -41,6 +41,7 @@ export class Preprocessor {
 
   constructor(private json: Array<InputObject>) {
     this.jsonLength = json.length;
+    console.log(this.jsonLength + "this.jsonLength");
   }
 
   public processJSON(fileName?: string) {
@@ -189,7 +190,8 @@ export class Preprocessor {
 
     currentDistrict.addBuilding(building);
     this.city.buildings.push(building);
-    // console.log(this.city.buildings);
+    console.log( obj);
+    this.addMethods(building, obj.methods);
   }
 
   private buildDistricts(namespace: string) {
@@ -223,6 +225,14 @@ export class Preprocessor {
     parent.addChildDistrict(district);
 
     return district;
+  }
+
+  private addMethods(parent:Building, method:Method[]){
+    console.log(method);
+    for(let i=0;i< method.length;i++){
+      var methodTree = new MethodTree(parent,method[i],this.heightLevels, this.widthLevels, this.heightAttr, this.widthAttr);
+      parent.addMethod(methodTree);
+    }
   }
 
   

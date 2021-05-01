@@ -2,6 +2,8 @@ const faker = require("./input_data/faker.json");
 const cakephp = require("./input_data/cakephp.json");
 const PHPExcel = require("./input_data/PHPExcel.json");
 const slim = require("./input_data/slim.json");
+const java = require("./input_data/java.json");
+
 // const dotenv = require("dotenv");
 
 // Configure dotenv for read environment variables.
@@ -24,4 +26,8 @@ exports.getPHPExcel = (req, res) => {
 };
 exports.getslim = (req, res) => {
   res.json(slim); 
+};
+
+exports.getJava = (req, res) => {
+  res.json(java); 
 };

@@ -10,5 +10,6 @@ router.get('/cakephp', dataController.getcakephp);
 router.get('/PHPExcel', dataController.getPHPExcel);
  
 router.get('/slim', dataController.getslim);
+router.get('/java', dataController.getJava);
 
 module.exports = router;
