@@ -30,10 +30,6 @@ export class TreeMesh {
 		line.renderOrder = 1;
 		cone.add(line);
 		cone.position.set(0, heightBush, 0);
-		// cone.rotateOnAxis(new THREE.Vector3(0,0,0),45);
-
-
-		// line.position.set(0, 5+heightStem, 0);
 
 		// CylinderGeometry(radiusTop : Float, radiusBottom : Float, height : Float, radialSegments : Integer, 
 		// heightSegments : Integer, openEnded : Boolean, thetaStart : Float, thetaLength : Float)

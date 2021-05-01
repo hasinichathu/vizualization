@@ -57,7 +57,35 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "extends": null,
+                "implements": null,
+                "no_lines": 66,
+                "no_attrs": 0
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Faker\\DefaultGenerator.java",
@@ -73,7 +101,35 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "extends": null,
+                "implements": null,
+                "no_lines": 66,
+                "no_attrs": 0
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Faker\\Documentor.java",
@@ -89,7 +145,35 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "extends": null,
+                "implements": null,
+                "no_lines": 66,
+                "no_attrs": 0
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Faker\\Factory.java",
@@ -105,7 +189,35 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "extends": null,
+                "implements": null,
+                "no_lines": 66,
+                "no_attrs": 0
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Faker\\Generator.java",
@@ -121,7 +233,35 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "extends": null,
+                "implements": null,
+                "no_lines": 66,
+                "no_attrs": 0
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Faker\\Guesser\\Name.java",
@@ -137,7 +277,35 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "extends": null,
+                "implements": null,
+                "no_lines": 66,
+                "no_attrs": 0
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Faker\\ORM\\CakePHP\\ColumnTypeGuesser.java",
@@ -153,87 +321,34 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "src\\Faker\\ORM\\CakePHP\\EntityPopulator.java",
-        "namespace": "Faker\\ORM\\CakePHP",
-        "name": "EntityPopulator",
-        "quality" : "medium",
-        "extends": null,
-        "implements": null,
-        "no_lines": 159,
-        "no_attrs": 4,
-        "no_methods": 10,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "src\\Faker\\ORM\\CakePHP\\Populator.java",
-        "namespace": "Faker\\ORM\\CakePHP",
-        "name": "Populator",
-        "quality" : "low",
-        "extends": null,
-        "implements": null,
-        "no_lines": 104,
-        "no_attrs": 4,
-        "no_methods": 7,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "src\\Faker\\ORM\\Doctrine\\ColumnTypeGuesser.java",
-        "namespace": "Faker\\ORM\\Doctrine",
-        "name": "ColumnTypeGuesser",
-        "quality" : "medium",
-        "extends": null,
-        "implements": null,
-        "no_lines": 68,
-        "no_attrs": 1,
-        "no_methods": 2,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "src\\Faker\\ORM\\Doctrine\\EntityPopulator.java",
-        "namespace": "Faker\\ORM\\Doctrine",
-        "name": "EntityPopulator",
-        "quality" : "low",
-        "extends": null,
-        "implements": null,
-        "no_lines": 240,
-        "no_attrs": 3,
-        "no_methods": 13,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "src\\Faker\\ORM\\Doctrine\\Populator.java",
-        "namespace": "Faker\\ORM\\Doctrine",
-        "name": "Populator",
-        "quality" : "high",
-        "extends": null,
-        "implements": null,
-        "no_lines": 71,
-        "no_attrs": 5,
-        "no_methods": 3,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "extends": null,
+                "implements": null,
+                "no_lines": 66,
+                "no_attrs": 0
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     }
-  
 ]

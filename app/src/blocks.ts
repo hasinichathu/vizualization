@@ -350,6 +350,100 @@ export class District extends Block {
   }
 }
 
+export class MethodTree extends Block {
+  constructor(public parent: District,
+
+    //data about building like attributes, extends , no.of lines of codes etc.
+    public data: BuildingData,
+    public heightLevels: number[],
+    public widthLevels: number[],
+    public heightAttr: string,
+    public widthAttr: string) {
+    super(data.name, parent);
+
+    this.calculateBlockWidth(widthAttr, widthLevels);
+    this.calculateBlockHeight(heightAttr, heightLevels);
+  }
+
+  private calculateBlockWidth(widthAttr: string, widthLevels: number[]) {
+    for (var i = 0; i < 5; i++) {
+      if (this.data[widthAttr] <= widthLevels[i]) {
+
+        this.w = (i * 2 + 2) + 2;   // +2 as base width; +2 for margin
+        // console.log("width of buildingW "+this.data.name + " = "+this.w );
+
+        this.h = (i * 2 + 2) + 2;   // +2 as base width; +2 for margin
+        // console.log("height of buildingW "+this.data.name + " = "+this.h );
+
+        break;
+      }
+    }
+  }
+
+  private calculateBlockHeight(heightAttr: string, heightLevels: number[]) {
+    for (let i = 0; i < 5; i++) {
+      if (this.data[heightAttr] <= heightLevels[i]) {
+        this.d = (i + 1) * 4;
+        // console.log("height of buildingH " + this.data.name + " = " + this.h);
+
+        break;
+      }
+    }
+  }
+
+  public render(scene: THREE.Scene, depth: number) {
+    var options: THREE.MeshBasicMaterialParameters = { color: 0x2f9dbd };
+
+    if (this.data.abstract) {
+      options.color = 0x2fbdab;
+      options.opacity = 0.5
+      options.transparent = true;
+    } else if (this.data.type === "interface") {
+      options.color = 0x3c2fbd;
+    }
+
+    var geometry = new THREE.BoxGeometry(1, 1, 1);
+    var material = <ExtendedMeshBasicMaterial>new THREE.MeshBasicMaterial(options);
+
+    material.defaultColor = <number>options.color;
+    material.originalColor = <number>options.color;
+
+    geometry.applyMatrix4(new THREE.Matrix4().makeTranslation(0.5, 0.5, 0.5));
+
+    var mesh: ExtendedMesh = <ExtendedMesh><unknown>new THREE.Mesh(geometry, material);
+    mesh.name = this.name ? this.name : '';
+
+    mesh.position.set(this.getX() - 1 * this.parent.addWidth + 1, 0 + depth / 2 + depth * 0.05, this.getY() - 1 * this.parent.addWidth + 1);
+    mesh.scale.set(this.w - 2, this.d, this.h - 2);
+    
+    var edges = new THREE.EdgesGeometry(geometry);
+    var line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0xffffff }));
+    line.renderOrder = 1; // make sure wireframes are rendered 2nd
+    
+    scene.add(mesh);
+    SceneManager.objects.push(mesh);
+
+    mesh.add(line);
+
+    mesh.block = this;
+
+  }
+
+  public getTrackerText() {
+    var text = `<em>&lt;&lt; ${this.data.type} &gt;&gt;</em><br><strong>${this.name}</strong><br>`;
+
+    if (this.data.extends !== null) {
+      text += ` extends <em>${this.data.extends}</em><br>`;
+    }
+
+    if (this.data.implements !== null) {
+      text += ` implements <em>${this.data.implements}</em><br>`;
+    }
+
+    return text + `<br>Package: ${this.parent.getQualifiedName()}<br><br>Methods: ${this.data.no_methods}<br>Attributes: ${this.data.no_attrs}<br>LOC: ${this.data.no_lines}<br><br>File: ${this.data.file}`;
+  }
+}
+
 export class GrowingPacker {
   root: { x: number, y: number, w: number, h: number, used?: boolean, down?: any, right?: any };
 
