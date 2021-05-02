@@ -18,7 +18,7 @@ export abstract class Block {
   // d and depth are two different things. d means height. for base its 1. 
   constructor(protected name: string, protected parent: Block) {
     this.depth = parent === null ? 0 : parent.depth + 1;
-    console.log(this.depth +" "+this.name);
+    // console.log(this.depth + " " + this.name);
   }
 
   abstract render(scene: THREE.Scene, depth: number): void;
@@ -49,7 +49,7 @@ export abstract class Block {
 }
 
 export class Building extends Block {
-  protected methods: MethodTree[] = [];
+  public methods: MethodTree[] = [];
 
   constructor(public parent: District,
 
@@ -61,8 +61,8 @@ export class Building extends Block {
     public widthAttr: string) {
     super(data.name, parent);
 
-    this.calculateBlockWidth(widthAttr, widthLevels);
-    this.calculateBlockHeight(heightAttr, heightLevels);
+    // this.calculateBlockWidth(widthAttr, widthLevels);
+    // this.calculateBlockHeight(heightAttr, heightLevels);
   }
 
   private calculateBlockWidth(widthAttr: string, widthLevels: number[]) {
@@ -115,17 +115,19 @@ export class Building extends Block {
 
     mesh.position.set(this.getX() - 1 * this.parent.addWidth + 1, 0 + depth / 2 + depth * 0.05, this.getY() - 1 * this.parent.addWidth + 1);
     mesh.scale.set(this.w - 2, this.d, this.h - 2);
-    
+
     var edges = new THREE.EdgesGeometry(geometry);
     var line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0xffffff }));
     line.renderOrder = 1; // make sure wireframes are rendered 2nd
-    
+
     scene.add(mesh);
     SceneManager.objects.push(mesh);
 
     mesh.add(line);
 
     mesh.block = this;
+    _.each(this.methods, (e) => e.render(scene, depth + 1));
+
 
   }
 
@@ -143,14 +145,57 @@ export class Building extends Block {
     return text + `<br>Package: ${this.parent.getQualifiedName()}<br><br>Methods: ${this.data.no_methods}<br>Attributes: ${this.data.no_attrs}<br>LOC: ${this.data.no_lines}<br><br>File: ${this.data.file}`;
   }
 
+  public getWidth(): number {
+    //in first iteration check for base district
+    let packer = new GrowingPacker();
+
+    // console.log(this.buildings.length + "building count");
+
+    // if the district is of a top level
+
+    //length of building array
+    let l = this.methods.length;
+    // console.log("no of buildings "+l);
+
+    //rearrange the building based on its width
+    let sorted = _.sortBy(this.methods, (e) => e.w).reverse();
+
+    //send all the building data to fit method
+    // console.log("building sorting started ");
+
+    packer.fit(sorted);
+    // console.log("building sorting ended ");
+ 
+    //assign values to fit variables in block class
+    this.w = packer.root.w + 2;
+    this.h = packer.root.h + 2;
+    this.fit = packer.root;
+    // console.log("building dim "+this.w+", "+this.h+", "+this.fit.x+", "+this.fit.y);
+
+    for (let i = 0; i < sorted.length; i++) {
+      let block = sorted[i];
+
+      //check the building array of respective District and add x,y coordinates
+      for (let j = 0; j < l; j++) {
+        if (this.methods[j].data.name === block.data.name) {
+          this.methods[j].fit = block.fit;
+        }
+      }
+    }
+    return this.w;
+  }
+
   public addMethod(method: MethodTree) {
     this.methods.push(method);
+    // console.log(method.data.name+" method added to "+this.data.name);
+
   }
 }
 
 export class District extends Block {
   protected children: District[] = [];
   protected buildings: Building[] = [];
+  protected methods: MethodTree[] = [];
 
   constructor(name: string, height: number, parent: Block) {
     super(name, parent);
@@ -177,7 +222,7 @@ export class District extends Block {
     var edges = new THREE.EdgesGeometry(geometry);
     var line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0xffffff }));
     line.renderOrder = 1; // make sure wireframes are rendered 2nd
-    
+
     scene.add(mesh);
     mesh.add(line);
 
@@ -224,7 +269,15 @@ export class District extends Block {
       let l = this.buildings.length;
       // console.log("no of buildings "+l);
 
+      for (let i = 0; i < l; i++) {
+        this.buildings[i].getWidth();
+        // this.getBuildingWidth(this.buildings[i]);
+      }
 
+      for (let i = 0; i < l; i++) {
+        console.log (this.buildings[i].methods[i].w+"building data");
+        // this.getBuildingWidth(this.buildings[i]);
+      }
       //rearrange the building based on its width
       let sorted = _.sortBy(this.buildings, (e) => e.w).reverse();
 
@@ -255,7 +308,7 @@ export class District extends Block {
       // if has child districts
     } else if (this.children.length != 0) {
       //children means districts
-      // let l = this.children.length;
+      let l = this.buildings.length;
       // console.log("no of distrcits "+l);
 
       // first calculate w/h on children
@@ -265,7 +318,15 @@ export class District extends Block {
       //by adding loop distrivts and building will be double printed
       this.childrenWidth();
       // }
+      for (let i = 0; i < l; i++) {
+        this.buildings[i].getWidth();
+        // this.getBuildingWidth(this.buildings[i]);
+      }
 
+      // for (let i = 0; i < l; i++) {
+      //   console.log (this.buildings[i].methods[i].w+"building data");
+      //   // this.getBuildingWidth(this.buildings[i]);
+      // }
       let sorted = _.sortBy(((<Block[]>this.children).concat(<Block[]>this.buildings)), (e) => e.w).reverse();
       // console.log("children sorting started " + this.name);
       // for (let j = 0; j < sorted.length; j++) {
@@ -295,7 +356,7 @@ export class District extends Block {
         for (let j = 0; j < this.children.length; j++) {
           if (block instanceof District && this.children[j].name === block.name) {
             this.children[j].fit = block.fit;
-                  console.log(this.children[j].name +" district "+this.children[j].fit.x+", "+this.children[j].fit.y);
+            // console.log(this.children[j].name + " district " + this.children[j].fit.x + ", " + this.children[j].fit.y);
 
           }
         }
@@ -320,9 +381,56 @@ export class District extends Block {
     return width;
   }
 
+  // public getBuildingWidth(building: Building) {
+  //   //in first iteration check for base district
+  //   let packer = new GrowingPacker();
+
+  //   // console.log(this.buildings.length + "building count");
+
+  //   // if the district is of a top level
+
+  //   //length of building array
+  //   let l = building.methods.length;
+  //   // console.log("no of buildings "+l);
+
+  //   //rearrange the building based on its width
+  //   let sorted = _.sortBy(building.methods, (e) => e.w).reverse();
+
+  //   //send all the building data to fit method
+  //   // console.log("building sorting started ");
+
+  //   packer.fit(sorted);
+  //   // console.log("building sorting ended ");
+ 
+  //   //assign values to fit variables in block class
+  //   building.w = packer.root.w + 2;
+  //   building.h = packer.root.h + 2;
+  //   building.fit = packer.root;
+  //   console.log("building dim "+building.w+", "+building.h+", "+building.fit.x+", "+building.fit.y);
+
+  //   for (let i = 0; i < sorted.length; i++) {
+  //     let block = sorted[i];
+
+  //     //check the building array of respective District and add x,y coordinates
+  //     for (let j = 0; j < l; j++) {
+  //       if (building.methods[j].data.name === block.data.file) {
+  //         building.methods[j].fit = block.fit;
+  //       }
+  //     }
+  //   }
+  //   // if has child districts
+
+  //   return this.w;
+  // }
+
+
   public addBuilding(building: Building) {
     this.buildings.push(building);
   }
+
+  // public addMethod(method: MethodTree) {
+  //   this.methods.push(method);
+  // }
 
   public addChildDistrict(district: District) {
     this.children.push(district);
@@ -390,7 +498,7 @@ export class MethodTree extends Block {
     for (let i = 0; i < 5; i++) {
       if (this.data[heightAttr] <= heightLevels[i]) {
         this.d = (i + 1) * 4;
-        // console.log("height of buildingH " + this.data.name + " = " + this.h);
+        console.log("height of treeH " + this.data.name + " = " + this.h);
 
         break;
       }
@@ -418,14 +526,15 @@ export class MethodTree extends Block {
 
     var mesh: ExtendedMesh = <ExtendedMesh><unknown>new THREE.Mesh(geometry, material);
     mesh.name = this.name ? this.name : '';
+    console.log("this.getX()" +this.getX());
 
     mesh.position.set(this.getX() - 1 * this.parent.addWidth + 1, 0 + depth / 2 + depth * 0.05, this.getY() - 1 * this.parent.addWidth + 1);
     mesh.scale.set(this.w - 2, this.d, this.h - 2);
-    
+
     var edges = new THREE.EdgesGeometry(geometry);
     var line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0xffffff }));
     line.renderOrder = 1; // make sure wireframes are rendered 2nd
-    
+
     scene.add(mesh);
     SceneManager.objects.push(mesh);
 

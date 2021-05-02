@@ -41,7 +41,6 @@ export class Preprocessor {
 
   constructor(private json: Array<InputObject>) {
     this.jsonLength = json.length;
-    console.log(this.jsonLength + "this.jsonLength");
   }
 
   public processJSON(fileName?: string) {
@@ -71,8 +70,6 @@ export class Preprocessor {
     var base = this.city.districts['base'];
     this.city.districts['base'].setColor(0xf25a07);
 
-    // var numbers = [0, 1, 2, 3];
-    // var maxDepth =_.max(numbers);
     // find out max depth of a district
     var maxDepth = <District>_.max(this.city.districts, (e) => {return e.depth;});
 
@@ -186,11 +183,10 @@ export class Preprocessor {
     const currentDistrict = this.buildDistricts(obj.namespace);
 
     const building = new Building(currentDistrict, obj, this.heightLevels, this.widthLevels, this.heightAttr, this.widthAttr);  
-    // console.log(building.data.name + " building");
+    console.log(building.data.name + " building");
 
     currentDistrict.addBuilding(building);
     this.city.buildings.push(building);
-    console.log( obj);
     this.addMethods(building, obj.methods);
   }
 
@@ -228,7 +224,7 @@ export class Preprocessor {
   }
 
   private addMethods(parent:Building, method:Method[]){
-    console.log(method);
+    // console.log(method);
     for(let i=0;i< method.length;i++){
       var methodTree = new MethodTree(parent,method[i],this.heightLevels, this.widthLevels, this.heightAttr, this.widthAttr);
       parent.addMethod(methodTree);
