@@ -51,7 +51,7 @@
         "extends": null,
         "implements": null,
         "no_lines": 45,
-        "no_attrs": 0,
+        "no_attrs": 6,
         "no_methods": 3,
         "abstract": false,
         "final": false,
@@ -252,7 +252,7 @@
             {
                 "name": "method-two",
                 "no_lines": 66,
-                "no_attrs": 7,
+                "no_attrs": 17,
                 "no_variables": 0
             }
         ],
@@ -282,7 +282,7 @@
             {
                 "name": "method-one",
                 "no_lines": 66,
-                "no_attrs": 3,
+                "no_attrs": 10,
                 "no_variables": 1,
                 "variables" : [
                     {

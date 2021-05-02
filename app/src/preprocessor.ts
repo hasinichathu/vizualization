@@ -71,10 +71,13 @@ export class Preprocessor {
     this.city.districts['base'].setColor(0xf25a07);
 
     // find out max depth of a district
-    var maxDepth = <District>_.max(this.city.districts, (e) => {return e.depth;});
+    var maxDepth = <District>_.max(this.city.districts, (e) => { return e.depth; });
 
     // set margin for each district by finding his nesting level
-    _.each(this.city.districts, (e) => {e.addWidth = maxDepth.depth - e.depth});
+    _.each(this.city.districts, (e) => { e.addWidth = maxDepth.depth - e.depth });
+
+    var maxDepthBuilding = <Building>_.max(this.city.buildings, (e) => { return e.depth; });
+    _.each(this.city.buildings, (e) => { e.addWidth = maxDepthBuilding.depth - e.depth });
 
     // calculate minimal dimensions for blocks
     base.getWidth();
@@ -83,7 +86,7 @@ export class Preprocessor {
     base.render(SceneManager.scene, 0);
     var treeMesh = new TreeMesh();
     treeMesh.createTree(SceneManager.scene);
-    
+
     // fill selects
     let _extends = _.countBy(this.city.buildings, (e) => e.data.extends);
     delete _extends['null'];
@@ -109,28 +112,40 @@ export class Preprocessor {
 
   private detectLevels() {
     // console.log("inside detect levels");
-    let sorted: InputObject[] = _.sortBy(this.json, this.heightAttr);
-    let sorted_length = sorted.length;
+    // let sorted: InputObject[] = _.sortBy(this.json, this.heightAttr);
+    // let sorted_length = sorted.length;
     let json_length = this.json.length;
+    let methods: Method[]=[];
+
+    var k = 0;
+    for (let i = 0; i < this.json.length; i++) {
+      for (let j = 0; j < this.json[i].methods.length; j++) {
+        methods[k] = this.json[i].methods[j];
+        k++;
+      }
+    }
+
+    let sorted_methods: Method[] = _.sortBy(methods, this.heightAttr);
+    let sorted_length = sorted_methods.length;
 
     if (this.heightType == "evenly") {
       this.heightLevels = [
-        <number>sorted[Math.floor(json_length / 5)][this.heightAttr],
-        <number>sorted[Math.floor(json_length / 5 * 2)][this.heightAttr],
-        <number>sorted[Math.floor(json_length / 5 * 3)][this.heightAttr],
-        <number>sorted[Math.floor(json_length / 5 * 4)][this.heightAttr],
-        <number>sorted[sorted_length - 1][this.heightAttr],
+        <number>sorted_methods[Math.floor(json_length / 5)][this.heightAttr],
+        <number>sorted_methods[Math.floor(json_length / 5 * 2)][this.heightAttr],
+        <number>sorted_methods[Math.floor(json_length / 5 * 3)][this.heightAttr],
+        <number>sorted_methods[Math.floor(json_length / 5 * 4)][this.heightAttr],
+        <number>sorted_methods[sorted_length - 1][this.heightAttr],
       ];
     } else {
       this.heightLevels = [
-        Math.floor(<number>sorted[sorted_length - 1][this.heightAttr] / 5),
-        Math.floor(<number>sorted[sorted_length - 1][this.heightAttr] / 4),
-        Math.floor(<number>sorted[sorted_length - 1][this.heightAttr] / 3),
-        Math.floor(<number>sorted[sorted_length - 1][this.heightAttr] / 2),
-        Math.floor(<number>sorted[sorted_length - 1][this.heightAttr] / 1),
+        Math.floor(<number>sorted_methods[sorted_length - 1][this.heightAttr] / 5),
+        Math.floor(<number>sorted_methods[sorted_length - 1][this.heightAttr] / 4),
+        Math.floor(<number>sorted_methods[sorted_length - 1][this.heightAttr] / 3),
+        Math.floor(<number>sorted_methods[sorted_length - 1][this.heightAttr] / 2),
+        Math.floor(<number>sorted_methods[sorted_length - 1][this.heightAttr] / 1),
       ];
-    }
 
+    }
     for (let i = 1; i < sorted_length; i++) {
       if (this.heightLevels[i] == this.heightLevels[i - 1]) {
         this.heightLevels[i]++;
@@ -140,28 +155,31 @@ export class Preprocessor {
         break;
       }
     }
+    // console.log(this.heightLevels);
 
-    sorted = _.sortBy(this.json, this.widthAttr);
+    sorted_methods = _.sortBy(methods, this.widthAttr);
+
+    // sorted = _.sortBy(this.json, this.widthAttr);
 
     if (this.widthType == "evenly") {
       this.widthLevels = [
-        <number>sorted[Math.floor(json_length / 5)][this.widthAttr],
-        <number>sorted[Math.floor(json_length / 5 * 2)][this.widthAttr],
-        <number>sorted[Math.floor(json_length / 5 * 3)][this.widthAttr],
-        <number>sorted[Math.floor(json_length / 5 * 4)][this.widthAttr],
-        <number>sorted[sorted_length - 1].no_attrs,
+        <number>sorted_methods[Math.floor(json_length / 5)][this.widthAttr],
+        <number>sorted_methods[Math.floor(json_length / 5 * 2)][this.widthAttr],
+        <number>sorted_methods[Math.floor(json_length / 5 * 3)][this.widthAttr],
+        <number>sorted_methods[Math.floor(json_length / 5 * 4)][this.widthAttr],
+        <number>sorted_methods[sorted_length - 1].no_attrs,
       ];
     } else {
       this.widthLevels = [
-        Math.floor(<number>sorted[sorted_length - 1][this.widthAttr] / 5),
-        Math.floor(<number>sorted[sorted_length - 1][this.widthAttr] / 4),
-        Math.floor(<number>sorted[sorted_length - 1][this.widthAttr] / 3),
-        Math.floor(<number>sorted[sorted_length - 1][this.widthAttr] / 2),
-        Math.floor(<number>sorted[sorted_length - 1][this.widthAttr] / 1),
+        Math.floor(<number>sorted_methods[sorted_length - 1][this.widthAttr] / 5),
+        Math.floor(<number>sorted_methods[sorted_length - 1][this.widthAttr] / 4),
+        Math.floor(<number>sorted_methods[sorted_length - 1][this.widthAttr] / 3),
+        Math.floor(<number>sorted_methods[sorted_length - 1][this.widthAttr] / 2),
+        Math.floor(<number>sorted_methods[sorted_length - 1][this.widthAttr] / 1),
       ];
     }
 
-    for (var i = 1; i < sorted.length; i++) {
+    for (var i = 1; i < sorted_methods.length; i++) {
       if (this.widthLevels[i] == this.widthLevels[i - 1]) {
         this.widthLevels[i]++;
       } else if (this.widthLevels[i] < this.widthLevels[i - 1]) {
@@ -182,8 +200,8 @@ export class Preprocessor {
   private createBlock(obj: InputObject) {
     const currentDistrict = this.buildDistricts(obj.namespace);
 
-    const building = new Building(currentDistrict, obj, this.heightLevels, this.widthLevels, this.heightAttr, this.widthAttr);  
-    console.log(building.data.name + " building");
+    const building = new Building(currentDistrict, 1, obj, this.heightLevels, this.widthLevels, this.heightAttr, this.widthAttr);
+    // console.log(building.data.name + " building");
 
     currentDistrict.addBuilding(building);
     this.city.buildings.push(building);
@@ -223,14 +241,14 @@ export class Preprocessor {
     return district;
   }
 
-  private addMethods(parent:Building, method:Method[]){
+  private addMethods(parent: Building, method: Method[]) {
     // console.log(method);
-    for(let i=0;i< method.length;i++){
-      var methodTree = new MethodTree(parent,method[i],this.heightLevels, this.widthLevels, this.heightAttr, this.widthAttr);
+    for (let i = 0; i < method.length; i++) {
+      var methodTree = new MethodTree(parent, method[i], this.heightLevels, this.widthLevels, this.heightAttr, this.widthAttr);
       parent.addMethod(methodTree);
     }
   }
 
-  
+
 }
 

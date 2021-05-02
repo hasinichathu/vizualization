@@ -52,7 +52,7 @@ export class Building extends Block {
   public methods: MethodTree[] = [];
 
   constructor(public parent: District,
-
+    height: number,
     //data about building like attributes, extends , no.of lines of codes etc.
     public data: BuildingData,
     public heightLevels: number[],
@@ -60,6 +60,7 @@ export class Building extends Block {
     public heightAttr: string,
     public widthAttr: string) {
     super(data.name, parent);
+    this.d = height;
 
     // this.calculateBlockWidth(widthAttr, widthLevels);
     // this.calculateBlockHeight(heightAttr, heightLevels);
@@ -114,7 +115,7 @@ export class Building extends Block {
     mesh.name = this.name ? this.name : '';
 
     mesh.position.set(this.getX() - 1 * this.parent.addWidth + 1, 0 + depth / 2 + depth * 0.05, this.getY() - 1 * this.parent.addWidth + 1);
-    mesh.scale.set(this.w - 2, this.d, this.h - 2);
+    mesh.scale.set(this.w - 2, this.d/2, this.h - 2);
 
     var edges = new THREE.EdgesGeometry(geometry);
     var line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0xffffff }));
@@ -126,7 +127,7 @@ export class Building extends Block {
     mesh.add(line);
 
     mesh.block = this;
-    _.each(this.methods, (e) => e.render(scene, depth + 1));
+    // _.each(this.methods, (e) => e.render(scene, depth + 1));
 
 
   }
@@ -195,7 +196,7 @@ export class Building extends Block {
 export class District extends Block {
   protected children: District[] = [];
   protected buildings: Building[] = [];
-  protected methods: MethodTree[] = [];
+  // protected methods: MethodTree[] = [];
 
   constructor(name: string, height: number, parent: Block) {
     super(name, parent);
@@ -231,7 +232,11 @@ export class District extends Block {
     mesh.block = this;
 
     _.each(this.children, (e) => e.render(scene, depth + 1));
-    _.each(this.buildings, (e) => e.render(scene, depth + 1));
+    _.each(this.buildings, (e) => {
+      e.render(scene, depth + 1);
+      _.each(e.methods, (f) => f.render(scene, depth + 1));
+
+    });
   }
 
   viewCityStructure() {
@@ -498,7 +503,7 @@ export class MethodTree extends Block {
     for (let i = 0; i < 5; i++) {
       if (this.data[heightAttr] <= heightLevels[i]) {
         this.d = (i + 1) * 4;
-        console.log("height of treeH " + this.data.name + " = " + this.h);
+        // console.log("height of treeH " + this.data.name + " = " + this.h);
 
         break;
       }
@@ -506,7 +511,7 @@ export class MethodTree extends Block {
   }
 
   public render(scene: THREE.Scene, depth: number) {
-    var options: THREE.MeshBasicMaterialParameters = { color: 0x2f9dbd };
+    var options: THREE.MeshBasicMaterialParameters = { color: 0xa9656d };
 
     // if (this.data.abstract) {
     //   options.color = 0x2fbdab;
@@ -526,10 +531,10 @@ export class MethodTree extends Block {
 
     var mesh: ExtendedMesh = <ExtendedMesh><unknown>new THREE.Mesh(geometry, material);
     mesh.name = this.name ? this.name : '';
-    console.log("this.getX()" +this.getX());
 
     mesh.position.set(this.getX() - 1 * this.parent.addWidth + 1, 0 + depth / 2 + depth * 0.05, this.getY() - 1 * this.parent.addWidth + 1);
     mesh.scale.set(this.w - 2, this.d, this.h - 2);
+    // console.log("this.parent.addWidth=" + this.parent.addWidth +" d= "+this.d + " h="+this.h);
 
     var edges = new THREE.EdgesGeometry(geometry);
     var line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0xffffff }));
