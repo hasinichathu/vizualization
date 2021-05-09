@@ -48,7 +48,7 @@
 		<div class="select-bar ">
 			<strong>Project</strong>:
 			<span id="project-name">-</span>,
-			<span id="project-objects">0</span> buildings
+			<span id="project-objects">0</span> Classes
 		</div>
 
 		<div class="select-bar ">
@@ -57,7 +57,7 @@
 			<label class="radio-inline"><input type="radio" name="filter-type" value="abstract">abstract classes</label>
 			<label class="radio-inline"><input type="radio" name="filter-type" value="final">final classes</label>
 			<label class="radio-inline"><input type="radio" name="filter-type" value="interface">interfaces</label>
-			<label class="radio-inline"><input type="radio" name="filter-type" value="trait">traits</label>
+			<!-- <label class="radio-inline"><input type="radio" name="filter-type" value="trait">traits</label> -->
 		</div>
 		<div class="select-bar ">
 			<strong>Highlight</strong> classes that
@@ -75,26 +75,26 @@
 					<strong>Map building's width:</strong><br>
 					<div class="radio"> <label> <input type="radio" name="width-type" value="proportionally"
 								checked>proportionally</label></div>
-					<div class="radio"> <label> <input type="radio" name="width-type" value="evenly">evenly</label>
+					<!-- <div class="radio"> <label> <input type="radio" name="width-type" value="evenly">evenly</label> -->
 					</div>
 
 					<strong>Map building's height:</strong><br>
 					<div class="radio"> <label> <input type="radio" name="height-type" value="proportionally"
 								checked>proportionally</label></div>
-					<div class="radio"> <label> <input type="radio" name="height-type" value="evenly">evenly</label>
+					<!-- <div class="radio"> <label> <input type="radio" name="height-type" value="evenly">evenly</label> -->
 					</div>
 
 					<strong>Width's attribute:</strong><br>
 					<select class="form-control input-sm" id="width-attribute">
 						<option value="no_attrs">No. attributes</option>
 						<option value="no_methods">No. methods</option>
-						<option value="lines">Lines of code</option>
+						<!-- <option value="lines">Lines of code</option> -->
 					</select>
 
 					<strong>Height attribute:</strong><br>
 					<select class="form-control input-sm" id="height-attribute">
-						<option value="no_attrs">No. attributes</option>
-						<option value="no_methods" selected>No. methods</option>
+						<option value="no_attrs" selected>No. attributes</option>
+						<option value="no_methods" >No. methods</option>
 						<option value="lines">Lines of code</option>
 					</select>
 

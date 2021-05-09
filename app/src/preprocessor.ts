@@ -1,5 +1,5 @@
-import { City, InputObject, Method } from './interfaces';
-import { Building, District, Block, MethodTree } from './blocks';
+import { City, InputObject, Method, Variable } from './interfaces';
+import { Building, District, Block, MethodTree,GVariable,LVariable } from './blocks';
 import { SceneManager } from './scene_manager';
 import * as _ from 'underscore';
 import * as $ from 'jQuery';
@@ -84,8 +84,8 @@ export class Preprocessor {
     // base.viewCityStructure();
 
     base.render(SceneManager.scene, 0);
-    var treeMesh = new TreeMesh();
-    treeMesh.createTree(SceneManager.scene);
+    // var treeMesh = new TreeMesh();
+    // treeMesh.createTree(SceneManager.scene);
 
     // fill selects
     let _extends = _.countBy(this.city.buildings, (e) => e.data.extends);
@@ -206,6 +206,8 @@ export class Preprocessor {
     currentDistrict.addBuilding(building);
     this.city.buildings.push(building);
     this.addMethods(building, obj.methods);
+    this.addGlobleVar(building, obj.globle_variables);
+
   }
 
   private buildDistricts(namespace: string) {
@@ -246,9 +248,24 @@ export class Preprocessor {
     for (let i = 0; i < method.length; i++) {
       var methodTree = new MethodTree(parent, method[i], this.heightLevels, this.widthLevels, this.heightAttr, this.widthAttr);
       parent.addMethod(methodTree);
+      this.addLocalVar(methodTree, method[i].variables);
+      console.log(method[i].variables.length);
     }
   }
 
-
+  private addGlobleVar(parent: Building, variables: Variable[]) {
+    // console.log(method);
+    for (let i = 0; i < variables.length; i++) {
+      var gVariable = new GVariable(parent,1, variables[i]);
+      parent.addGVariable(gVariable);
+    }
+  }
+  private addLocalVar(parent:MethodTree, variables: Variable[]){
+    for (let i = 0; i < variables.length; i++) {
+      var lVariable = new LVariable(parent,1, variables[i]);
+      parent.addLVariable(lVariable);
+    }
+  }
+  
 }
 

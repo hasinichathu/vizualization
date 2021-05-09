@@ -16,23 +16,23 @@ export interface BuildingData {
   trait: boolean;
   type: string;
   // You are defining an index signature which enforces the return type for all properties to match the index signature return type.
-  [key: string]: string|number|boolean|Method[]|variable[];
+  [key: string]: string|number|boolean|Method[]|Variable[];
   // methodData : MethodData;
   methods: Method[];
-  globle_variables :variable[];
+  globle_variables :Variable[];
 
 }
 
 export interface Method {
-  [key: string]: string|number|boolean|variable[];
+  [key: string]: string|number|boolean|Variable[];
   name: string;
   no_attrs: number;
   no_lines: number;
-  local_variables :variable[];
+  variables :Variable[];
 }
 
-export interface variable {
-  [key: string]: string|number|boolean;
+export interface Variable {
+  [key: string]: string|number|boolean|Variable[];
   name: string;
   type : string;
 }
