@@ -3,6 +3,7 @@ const cakephp = require("./input_data/cakephp.json");
 const PHPExcel = require("./input_data/PHPExcel.json");
 const slim = require("./input_data/slim.json");
 const java = require("./input_data/java.json");
+const mathphp = require("./input_data/math-php.json");
 
 // const dotenv = require("dotenv");
 
@@ -15,7 +16,7 @@ exports.getFaker = (req, res) => {
   //   console.error("userName is not defined");
   //   res.status(406).send("Not acceptable");
   // } else {
-    res.json(faker); 
+    res.json(faker); s
   // }
 };
 exports.getcakephp = (req, res) => {
@@ -30,4 +31,7 @@ exports.getslim = (req, res) => {
 
 exports.getJava = (req, res) => {
   res.json(java); 
+};
+exports.getmathphp = (req, res) => {
+  res.json(mathphp); 
 };

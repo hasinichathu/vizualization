@@ -102,7 +102,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Faker\\ORM\\CakePHP\\ColumnTypeGuesser.php",
@@ -117,7 +152,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Faker\\ORM\\CakePHP\\EntityPopulator.php",
@@ -132,7 +202,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Faker\\ORM\\CakePHP\\Populator.php",
@@ -147,7 +252,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Faker\\ORM\\Doctrine\\ColumnTypeGuesser.php",
@@ -162,7 +302,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Faker\\ORM\\Doctrine\\EntityPopulator.php",
@@ -177,7 +352,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Faker\\ORM\\Doctrine\\Populator.php",
@@ -192,7 +402,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     }
   
 ]

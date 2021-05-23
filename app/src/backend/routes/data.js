@@ -11,5 +11,6 @@ router.get('/PHPExcel', dataController.getPHPExcel);
  
 router.get('/slim', dataController.getslim);
 router.get('/java', dataController.getJava);
+router.get('/math-php', dataController.getmathphp);
 
 module.exports = router;

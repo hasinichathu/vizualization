@@ -3,8 +3,9 @@ import { BuildingData, ExtendedMesh, ExtendedMeshBasicMaterial, Method, Variable
 import { SceneManager } from "./scene_manager";
 import * as THREE from 'three';
 import * as _ from 'underscore';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { Scene } from "three";
 
-// var GrowingPacker: any;
 
 export abstract class Block {
   protected color: THREE.Color;
@@ -61,35 +62,6 @@ export class Building extends Block {
     public widthAttr: string) {
     super(data.name, parent);
     this.d = height;
-
-    // this.calculateBlockWidth(widthAttr, widthLevels);
-    // this.calculateBlockHeight(heightAttr, heightLevels);
-  }
-
-  private calculateBlockWidth(widthAttr: string, widthLevels: number[]) {
-    for (var i = 0; i < 5; i++) {
-      if (this.data[widthAttr] <= widthLevels[i]) {
-
-        this.w = (i * 2 + 2) + 2;   // +2 as base width; +2 for margin
-        // console.log("width of buildingW "+this.data.name + " = "+this.w );
-
-        this.h = (i * 2 + 2) + 2;   // +2 as base width; +2 for margin
-        // console.log("height of buildingW "+this.data.name + " = "+this.h );
-
-        break;
-      }
-    }
-  }
-
-  private calculateBlockHeight(heightAttr: string, heightLevels: number[]) {
-    for (let i = 0; i < 5; i++) {
-      if (this.data[heightAttr] <= heightLevels[i]) {
-        this.d = (i + 1) * 4;
-        // console.log("height of buildingH " + this.data.name + " = " + this.h);
-
-        break;
-      }
-    }
   }
 
   public render(scene: THREE.Scene, depth: number) {
@@ -107,14 +79,16 @@ export class Building extends Block {
 
     // var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
     var materialWood = new THREE.MeshBasicMaterial({ map: wood });
-    var materialGrass = new THREE.MeshBasicMaterial({ map: grass });
+    var materialGrass = <ExtendedMeshBasicMaterial>new THREE.MeshBasicMaterial({ color: 0x3D550C });
+
+    materialGrass.defaultColor = materialGrass.originalColor = 0x3D550C;
 
 
     var geometry = new THREE.BoxGeometry(1, 1, 1);
     var material = <ExtendedMeshBasicMaterial>new THREE.MeshBasicMaterial(options);
 
-    material.defaultColor = <number>options.color;
-    material.originalColor = <number>options.color;
+    // material.defaultColor = <number>options.color;
+    // material.originalColor = <number>options.color;
 
     geometry.applyMatrix4(new THREE.Matrix4().makeTranslation(0.5, 0.5, 0.5));
 
@@ -248,15 +222,18 @@ export class District extends Block {
     var grass = new THREE.TextureLoader().load('textures/grass.jpg');
 
     // var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    var materialWood = new THREE.MeshBasicMaterial({ map: wood });
-    var materialGrass = new THREE.MeshBasicMaterial({ map: grass });
+    // var materialWood = new THREE.MeshBasicMaterial({ map: wood });
+    var materialGrass = <ExtendedMeshBasicMaterial>new THREE.MeshBasicMaterial({ color: 0x007500 });
 
-    const islandMaterials = [
-      materialWood,
-      materialGrass,
-      materialWood
+    baseMaterial.defaultColor = baseMaterial.originalColor = 0x2F69E7;
+    materialGrass.defaultColor = materialGrass.originalColor = 0x007500;
 
-    ];
+    // const islandMaterials = [
+    //   materialWood,
+    //   materialGrass,
+    //   materialWood
+
+    // ];
     geometry.applyMatrix4(new THREE.Matrix4().makeTranslation(0.5, 0.5, 0.5));
     if (this.name === 'base') {
       var mesh: ExtendedMesh = <ExtendedMesh><unknown>new THREE.Mesh(geometry, baseMaterial);
@@ -536,19 +513,12 @@ export class MethodTree extends Block {
 
     bushMesh.name = this.name ? this.name : '';
 
-    var edges = new THREE.EdgesGeometry(bushGeometry);
-    var line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0xffff00 }));
-    line.renderOrder = 1;
-    // bushMesh.add(line);
+    let x = this.getX() - 1 * this.parent.addWidth + 1 + (this.w - 2) / 2;
+    let z = this.getY() - 1 * this.parent.addWidth + 1 + (this.w - 2) / 2;
+    let y = 0 + depth / 2 + depth * 0.05 + heightBush;
+    bushMesh.position.set(x, y, z);
 
-    bushMesh.position.set(this.getX() - 1 * this.parent.addWidth + 1 + (this.w - 2) / 2, 0 + depth / 2 + depth * 0.05 + heightBush, this.getY() - 1 * this.parent.addWidth + 1 + (this.w - 2) / 2);
-    // cone.scale.set(this.w - 2, this.d+heightBush, this.h - 2);
-    // cone.position.set(0, heightBush, 0);
-
-    // CylinderGeometry(radiusTop : Float, radiusBottom : Float, height : Float, radialSegments : Integer, 
-    // heightSegments : Integer, openEnded : Boolean, thetaStart : Float, thetaLength : Float)
-
-    const stemGeometry = new THREE.CylinderGeometry(radiusStem - 0.01, radiusStem, heightStem, 32);
+    const stemGeometry = new THREE.CylinderGeometry(radiusStem, radiusStem, heightStem, 32);
     const stemMaterial = new THREE.MeshBasicMaterial({ color: 0x341a00 });
     const stemMesh = new THREE.Mesh(stemGeometry, stemMaterial);
     bushMesh.add(stemMesh);
@@ -557,10 +527,24 @@ export class MethodTree extends Block {
     stemMesh.position.set(0.5, -heightBush / 2, 0.5);
     // bushMesh.block = this;
     ////////////
+
+    var segments = 4;
+    var deltaAngle = 2.0 * Math.PI / segments;
+    var angle_0 = [];
+    for (var i = 0; i < segments; i++) {
+      angle_0[i] = i * deltaAngle;
+    }
+    var inclination = heightBush / (this.w -2) / 2;
+    var y_pos = heightBush * 0.1;
+    var x_pos = y_pos/inclination;
+    var x_pos = x_pos;
+
     for (let i = 0; i < this.lVariables.length; i++) {
-      _.each(this.lVariables, (e) => e.render(bushMesh, (this.getX() - 1 * this.parent.addWidth + 1 + (this.w - 2) / 2), (0 + depth / 2 + depth * 0.05 + heightBush), (this.getY() - 1 * this.parent.addWidth + 1 + (this.w - 2) / 2), heightBush, this.w));
+      let n: number = angle_0[i % 4];
+      _.each(this.lVariables, (e) => e.render(bushMesh, x_pos * Math.sin(n)+0.5, y_pos, x_pos * Math.cos(n)+0.5, heightBush, this.w));
     }
     ///////////////////////
+
 
     // const group = new THREE.Group()
     // const level1 = new THREE.Mesh(
@@ -601,7 +585,42 @@ export class MethodTree extends Block {
 
     return text + `<br>Package: ${this.parent.getQualifiedName()}<br>Attributes: ${this.data.no_attrs}<br>LOC: ${this.data.no_lines}<br><br>File: ${this.data.file}`;
   }
+
+  loadGLTF(x: number, y: number, z: number, scene: Scene) {
+    var loader = new GLTFLoader();
+
+    loader.load(
+      'app/src/models/fireplace/model2.gltf',
+
+      function (gltf) {
+        var mesh = gltf.scene;
+        mesh.position.set(x, y, z);
+        scene.add(mesh);
+
+        gltf.animations; // Array<THREE.AnimationClip>
+        gltf.scene; // THREE.Group
+        gltf.scenes; // Array<THREE.Group>
+        gltf.cameras; // Array<THREE.Camera>
+        gltf.asset; // Object
+
+      },
+      // called while loading is progressing
+      function (xhr) {
+
+        console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+
+      },
+      // called when loading has errors
+      function (error) {
+
+        console.log('An error happened');
+
+      }
+    );
+  }
+
 }
+
 
 export class GVariable extends Block {
 
@@ -611,8 +630,8 @@ export class GVariable extends Block {
   ) {
     super(data.name, parent);
     this.d = height;
-    this.w = 5;
-    this.h = 5;
+    this.w = 1;
+    this.h = 1;
   }
 
   public render(scene: THREE.Scene, depth: number) {
@@ -621,8 +640,8 @@ export class GVariable extends Block {
     var geometry = new THREE.BoxGeometry(1, 1, 1);
     var material = <ExtendedMeshBasicMaterial>new THREE.MeshBasicMaterial(options);
 
-    material.defaultColor = <number>options.color;
-    material.originalColor = <number>options.color;
+    // material.defaultColor = <number>options.color;
+    // material.originalColor = <number>options.color;
 
     geometry.applyMatrix4(new THREE.Matrix4().makeTranslation(0.5, 0.5, 0.5));
 
@@ -661,45 +680,6 @@ export class GVariable extends Block {
     return text + `<br>Package: ${this.parent.getQualifiedName()}<br><br>Methods: ${this.data.no_methods}<br>Attributes: ${this.data.no_attrs}<br>LOC: ${this.data.no_lines}<br><br>File: ${this.data.file}`;
   }
 
-  // public getWidth(): number {
-  //   //in first iteration check for base district
-  //   let packer = new GrowingPacker();
-
-  //   // console.log(this.buildings.length + "building count");
-
-  //   // if the district is of a top level
-
-  //   //length of building array
-  //   let l = this.methods.length;
-  //   // console.log("no of buildings "+l);
-
-  //   //rearrange the building based on its width
-  //   let sorted = _.sortBy(this.methods, (e) => e.w).reverse();
-
-  //   //send all the building data to fit method
-  //   // console.log("building sorting started ");
-
-  //   packer.fit(sorted);
-  //   // console.log("building sorting ended ");
-
-  //   //assign values to fit variables in block class
-  //   this.w = packer.root.w + 2;
-  //   this.h = packer.root.h + 2;
-  //   this.fit = packer.root;
-  //   // console.log("building dim "+this.w+", "+this.h+", "+this.fit.x+", "+this.fit.y);
-
-  //   for (let i = 0; i < sorted.length; i++) {
-  //     let block = sorted[i];
-
-  //     //check the building array of respective District and add x,y coordinates
-  //     for (let j = 0; j < l; j++) {
-  //       if (this.methods[j].data.name === block.data.name) {
-  //         this.methods[j].fit = block.fit;
-  //       }
-  //     }
-  //   }
-  //   return this.w;
-  // }
 
   // public getQualifiedName(): string {
   //   if (this.parent === null) {
@@ -725,21 +705,13 @@ export class LVariable {
 
   public render(scene: THREE.Mesh, x_pos: number, y_pos: number, z_pos: number, heightBush: number, w: number) {
     var options: THREE.MeshBasicMaterialParameters = { color: 0x87697e };
-    console.log("inside lvarable render");
-    const geometry = new THREE.SphereGeometry(w*0.02, 5, 32);
+    const geometry = new THREE.SphereGeometry(w * 0.05, 5, 10);
     const material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
     const sphere = new THREE.Mesh(geometry, material);
     scene.add(sphere);
 
-    var inclination = heightBush /(w - 2) / 2  ;
-    var y_pos = heightBush * 0.1;
-    var x_pos = inclination * y_pos;
-
-    sphere.position.set(x_pos, ((heightBush / 2 - y_pos)), 0);
-
-    // sphere.position.set(0, ((heightBush / 2 - y_pos)), x_pos);
-
-
+    // sphere.position.set(x_pos, ((heightBush / 2 - y_pos)), z_pos);
+    sphere.position.set(x_pos,  y_pos+0.5, z_pos);
 
   }
 
@@ -756,46 +728,6 @@ export class LVariable {
 
     // return text + `<br><br>Methods: ${this.data.no_methods}<br>Attributes: ${this.data.no_attrs}<br>LOC: ${this.data.no_lines}<br><br>File: ${this.data.file}`;
   }
-
-  // public getWidth(): number {
-  //   //in first iteration check for base district
-  //   let packer = new GrowingPacker();
-
-  //   // console.log(this.buildings.length + "building count");
-
-  //   // if the district is of a top level
-
-  //   //length of building array
-  //   let l = this.methods.length;
-  //   // console.log("no of buildings "+l);
-
-  //   //rearrange the building based on its width
-  //   let sorted = _.sortBy(this.methods, (e) => e.w).reverse();
-
-  //   //send all the building data to fit method
-  //   // console.log("building sorting started ");
-
-  //   packer.fit(sorted);
-  //   // console.log("building sorting ended ");
-
-  //   //assign values to fit variables in block class
-  //   this.w = packer.root.w + 2;
-  //   this.h = packer.root.h + 2;
-  //   this.fit = packer.root;
-  //   // console.log("building dim "+this.w+", "+this.h+", "+this.fit.x+", "+this.fit.y);
-
-  //   for (let i = 0; i < sorted.length; i++) {
-  //     let block = sorted[i];
-
-  //     //check the building array of respective District and add x,y coordinates
-  //     for (let j = 0; j < l; j++) {
-  //       if (this.methods[j].data.name === block.data.name) {
-  //         this.methods[j].fit = block.fit;
-  //       }
-  //     }
-  //   }
-  //   return this.w;
-  // }
 
   // public getQualifiedName(): string {
   //   if (this.parent === null) {

@@ -30,6 +30,32 @@
 
             },
             {
+                "name": "method-three",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable1",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable2",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable3",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable4",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
                 "name": "method-two",
                 "no_lines": 66,
                 "no_attrs": 3,
@@ -75,7 +101,20 @@
                     {
                         "name": "local_variable",
                         "type" : "int"
+                    },
+                    {
+                        "name": "local_variable2",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable3",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable4",
+                        "type" : "int"
                     }
+
 
                 ]
 
@@ -126,7 +165,20 @@
                     {
                         "name": "local_variable",
                         "type" : "int"
+                    },
+                    {
+                        "name": "local_variable2",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable3",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable4",
+                        "type" : "int"
                     }
+
 
                 ]
 
@@ -242,7 +294,20 @@
                     {
                         "name": "local_variable",
                         "type" : "int"
+                    },
+                    {
+                        "name": "local_variable2",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable3",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable4",
+                        "type" : "int"
                     }
+
 
                 ]
             }
@@ -293,7 +358,20 @@
                     {
                         "name": "local_variable",
                         "type" : "int"
+                    },
+                    {
+                        "name": "local_variable2",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable3",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable4",
+                        "type" : "int"
                     }
+
 
                 ]
             }

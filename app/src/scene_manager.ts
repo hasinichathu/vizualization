@@ -45,7 +45,7 @@ export class SceneManager {
     }
     static init() {
         // SceneManager.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
-           SceneManager.renderer = new THREE.WebGLRenderer({ antialias: true, canvas: <HTMLCanvasElement>document.getElementById('canvas') });
+        SceneManager.renderer = new THREE.WebGLRenderer({ antialias: true, canvas: <HTMLCanvasElement>document.getElementById('canvas') });
 
         SceneManager.renderer.domElement.addEventListener('mousemove', SceneManager.onDocumentMouseMove, false);
         document.body.appendChild(SceneManager.renderer.domElement);
@@ -54,7 +54,7 @@ export class SceneManager {
         SceneManager.renderer.setClearColor(0xcccccc, 1);
         //light grey
         // SceneManager.camera.position.z = 12;
-        SceneManager.camera.position.set(70, 70,130);
+        SceneManager.camera.position.set(70, 70, 130);
         SceneManager.scene.add(SceneManager.camera);
 
         // add light
@@ -72,7 +72,10 @@ export class SceneManager {
 
         // Add OrbitControls so that we can pan around with the mouse.
         SceneManager.controls = new OrbitControls(SceneManager.camera, SceneManager.renderer.domElement);
-        
+        this.controls.enablePan = true;
+
+
+
     }
 
     // Renders the scene and updates the render as needed.
@@ -94,7 +97,7 @@ export class SceneManager {
         SceneManager.animate();
     }
     static determineVisibility(mesh: ExtendedMesh, building: Building, val: string) {
-        mesh.visible  = true;
+        mesh.visible = true;
 
         // switch (val) {
         //     case 'all':

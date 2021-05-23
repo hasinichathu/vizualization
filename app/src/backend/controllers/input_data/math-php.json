@@ -12,7 +12,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Functions\\Arithmetic.php",
@@ -27,7 +62,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Functions\\Map\\Multi.php",
@@ -42,7 +112,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Functions\\Map\\Single.php",
@@ -57,7 +162,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Functions\\Polynomial.php",
@@ -72,7 +212,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Functions\\Special.php",
@@ -87,7 +262,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Functions\\Support.php",
@@ -102,7 +312,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\LinearAlgebra\\ColumnVector.php",
@@ -117,7 +362,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\LinearAlgebra\\DiagonalMatrix.php",
@@ -132,7 +412,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\LinearAlgebra\\FunctionMatrix.php",
@@ -147,7 +462,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\LinearAlgebra\\FunctionSquareMatrix.php",
@@ -162,7 +512,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\LinearAlgebra\\Matrix.php",
@@ -177,7 +562,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\LinearAlgebra\\MatrixFactory.php",
@@ -192,7 +612,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\LinearAlgebra\\RowVector.php",
@@ -207,7 +662,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\LinearAlgebra\\SquareMatrix.php",
@@ -222,7 +712,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\LinearAlgebra\\VandermondeMatrix.php",
@@ -237,7 +762,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\LinearAlgebra\\VandermondeSquareMatrix.php",
@@ -252,7 +812,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\LinearAlgebra\\Vector.php",
@@ -267,7 +862,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\NumericalAnalysis\\Interpolation\\Interpolation.php",
@@ -282,7 +912,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\NumericalAnalysis\\Interpolation\\LagrangePolynomial.php",
@@ -297,7 +962,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\NumericalAnalysis\\Interpolation\\NevillesMethod.php",
@@ -312,7 +1012,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\NumericalAnalysis\\Interpolation\\NewtonPolynomialForward.php",
@@ -327,7 +1062,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\NumericalAnalysis\\NumericalDifferentiation\\FivePointFormula.php",
@@ -342,7 +1112,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\NumericalAnalysis\\NumericalDifferentiation\\NumericalDifferentiation.php",
@@ -357,7 +1162,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\NumericalAnalysis\\NumericalDifferentiation\\SecondDerivativeMidpointFormula.php",
@@ -372,7 +1212,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\NumericalAnalysis\\NumericalDifferentiation\\ThreePointFormula.php",
@@ -387,7 +1262,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\NumericalAnalysis\\NumericalIntegration\\BoolesRule.php",
@@ -402,7 +1312,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\NumericalAnalysis\\NumericalIntegration\\MidpointRule.php",
@@ -417,7 +1362,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\NumericalAnalysis\\NumericalIntegration\\NumericalIntegration.php",
@@ -432,7 +1412,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\NumericalAnalysis\\NumericalIntegration\\RectangleMethod.php",
@@ -447,7 +1462,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\NumericalAnalysis\\NumericalIntegration\\SimpsonsRule.php",
@@ -462,7 +1512,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\NumericalAnalysis\\NumericalIntegration\\SimpsonsThreeEighthsRule.php",
@@ -477,7 +1562,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\NumericalAnalysis\\NumericalIntegration\\TrapezoidalRule.php",
@@ -492,7 +1612,54 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            },
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            },
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            },
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\NumericalAnalysis\\NumericalIntegration\\Validation.php",
@@ -507,7 +1674,42 @@
         "final": false,
         "trait": true,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\NumericalAnalysis\\RootFinding\\BisectionMethod.php",
@@ -522,7 +1724,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\NumericalAnalysis\\RootFinding\\FixedPointIteration.php",
@@ -537,7 +1774,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\NumericalAnalysis\\RootFinding\\NewtonsMethod.php",
@@ -552,7 +1824,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\NumericalAnalysis\\RootFinding\\SecantMethod.php",
@@ -567,7 +1874,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\NumericalAnalysis\\RootFinding\\Validation.php",
@@ -582,7 +1924,42 @@
         "final": false,
         "trait": true,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Combinatorics.php",
@@ -597,7 +1974,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Continuous\\Beta.php",
@@ -612,7 +2024,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Continuous\\Cauchy.php",
@@ -627,7 +2074,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Continuous\\ChiSquared.php",
@@ -642,7 +2124,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Continuous\\Continuous.php",
@@ -657,7 +2174,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Continuous\\DiracDelta.php",
@@ -672,7 +2224,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Continuous\\Exponential.php",
@@ -687,7 +2274,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Continuous\\F.php",
@@ -702,7 +2324,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Continuous\\Laplace.php",
@@ -717,7 +2374,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Continuous\\Logistic.php",
@@ -732,7 +2424,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Continuous\\LogLogistic.php",
@@ -747,7 +2474,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Continuous\\LogNormal.php",
@@ -762,7 +2524,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Continuous\\Normal.php",
@@ -777,7 +2574,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Continuous\\Pareto.php",
@@ -792,7 +2624,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Continuous\\StandardNormal.php",
@@ -807,7 +2674,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Continuous\\StudentT.php",
@@ -822,7 +2724,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Continuous\\Uniform.php",
@@ -837,7 +2774,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Continuous\\Weibull.php",
@@ -852,7 +2824,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Discrete\\Bernoulli.php",
@@ -867,7 +2874,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Discrete\\Binomial.php",
@@ -882,7 +2924,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Discrete\\Discrete.php",
@@ -897,7 +2974,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Discrete\\Geometric.php",
@@ -912,7 +3024,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Discrete\\Multinomial.php",
@@ -927,7 +3074,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Discrete\\NegativeBinomial.php",
@@ -942,7 +3124,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Discrete\\Pascal.php",
@@ -957,7 +3174,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Discrete\\Poisson.php",
@@ -972,7 +3224,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Discrete\\ShiftedGeometric.php",
@@ -987,7 +3274,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Distribution.php",
@@ -1002,7 +3324,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Table\\ChiSquared.php",
@@ -1017,7 +3374,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Table\\StandardNormal.php",
@@ -1032,7 +3424,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Probability\\Distribution\\Table\\TDistribution.php",
@@ -1047,7 +3474,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Sequence\\Advanced.php",
@@ -1062,7 +3524,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Sequence\\Basic.php",
@@ -1077,7 +3574,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Statistics\\ANOVA.php",
@@ -1092,7 +3624,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Statistics\\Average.php",
@@ -1107,7 +3674,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Statistics\\Correlation.php",
@@ -1122,7 +3724,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Statistics\\Descriptive.php",
@@ -1137,7 +3774,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Statistics\\Distribution.php",
@@ -1152,7 +3824,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Statistics\\Experiment.php",
@@ -1167,7 +3874,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Statistics\\RandomVariable.php",
@@ -1182,7 +3924,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Statistics\\Regression\\HanesWoolf.php",
@@ -1197,7 +3974,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Statistics\\Regression\\Linear.php",
@@ -1212,7 +4024,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Statistics\\Regression\\LinearThroughPoint.php",
@@ -1227,7 +4074,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Statistics\\Regression\\LineweaverBurk.php",
@@ -1242,7 +4124,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Statistics\\Regression\\LOESS.php",
@@ -1257,7 +4174,42 @@
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Statistics\\Regression\\Methods\\LeastSquares.php",
@@ -1272,7 +4224,42 @@
         "final": false,
         "trait": true,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Statistics\\Regression\\Methods\\WeightedLeastSquares.php",
@@ -1287,7 +4274,70 @@
         "final": false,
         "trait": true,
         "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     },
     {
         "file": "src\\Statistics\\Regression\\Models\\LinearModel.php",
@@ -1302,1521 +4352,69 @@
         "final": false,
         "trait": true,
         "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "src\\Statistics\\Regression\\Models\\MichaelisMenten.php",
-        "namespace": "Math\\Statistics\\Regression\\Models",
-        "name": "MichaelisMenten",
-        "extends": null,
-        "implements": null,
-        "no_lines": 48,
-        "no_attrs": 2,
-        "no_methods": 3,
-        "abstract": false,
-        "final": false,
-        "trait": true,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "src\\Statistics\\Regression\\Models\\PowerModel.php",
-        "namespace": "Math\\Statistics\\Regression\\Models",
-        "name": "PowerModel",
-        "extends": null,
-        "implements": null,
-        "no_lines": 44,
-        "no_attrs": 2,
-        "no_methods": 3,
-        "abstract": false,
-        "final": false,
-        "trait": true,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "src\\Statistics\\Regression\\NonParametricRegression.php",
-        "namespace": "Math\\Statistics\\Regression",
-        "name": "NonParametricRegression",
-        "extends": "Regression",
-        "implements": null,
-        "no_lines": 3,
-        "no_attrs": 0,
-        "no_methods": 0,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "src\\Statistics\\Regression\\ParametricRegression.php",
-        "namespace": "Math\\Statistics\\Regression",
-        "name": "ParametricRegression",
-        "extends": "Regression",
-        "implements": null,
-        "no_lines": 44,
-        "no_attrs": 1,
-        "no_methods": 4,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "src\\Statistics\\Regression\\PowerLaw.php",
-        "namespace": "Math\\Statistics\\Regression",
-        "name": "PowerLaw",
-        "extends": "ParametricRegression",
-        "implements": null,
-        "no_lines": 23,
-        "no_attrs": 0,
-        "no_methods": 1,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "src\\Statistics\\Regression\\Regression.php",
-        "namespace": "Math\\Statistics\\Regression",
-        "name": "Regression",
-        "extends": null,
-        "implements": null,
-        "no_lines": 110,
-        "no_attrs": 4,
-        "no_methods": 7,
-        "abstract": true,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "src\\Statistics\\Regression\\TheilSen.php",
-        "namespace": "Math\\Statistics\\Regression",
-        "name": "TheilSen",
-        "extends": "ParametricRegression",
-        "implements": null,
-        "no_lines": 30,
-        "no_attrs": 0,
-        "no_methods": 1,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "src\\Statistics\\Regression\\WeightedLinear.php",
-        "namespace": "Math\\Statistics\\Regression",
-        "name": "WeightedLinear",
-        "extends": "ParametricRegression",
-        "implements": null,
-        "no_lines": 27,
-        "no_attrs": 1,
-        "no_methods": 2,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "src\\Statistics\\Significance.php",
-        "namespace": "Math\\Statistics",
-        "name": "Significance",
-        "extends": null,
-        "implements": null,
-        "no_lines": 273,
-        "no_attrs": 0,
-        "no_methods": 7,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Algebra\\AlgebraTest.php",
-        "namespace": "Math",
-        "name": "AlgebraTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 85,
-        "no_attrs": 0,
-        "no_methods": 7,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Functions\\ArithmeticTest.php",
-        "namespace": "Math\\Functions",
-        "name": "ArithmeticTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 186,
-        "no_attrs": 0,
-        "no_methods": 5,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Functions\\Map\\MultiTest.php",
-        "namespace": "Math\\Functions\\Map",
-        "name": "MultiTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 347,
-        "no_attrs": 0,
-        "no_methods": 26,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Functions\\Map\\SingleTest.php",
-        "namespace": "Math\\Functions\\Map",
-        "name": "SingleTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 221,
-        "no_attrs": 0,
-        "no_methods": 22,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Functions\\PolynomialTest.php",
-        "namespace": "Math\\Functions",
-        "name": "PolynomialTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 303,
-        "no_attrs": 0,
-        "no_methods": 13,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Functions\\SpecialTest.php",
-        "namespace": "Math\\Functions",
-        "name": "SpecialTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 428,
-        "no_attrs": 0,
-        "no_methods": 36,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Functions\\SupportTest.php",
-        "namespace": "Math\\Functions",
-        "name": "SupportTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 252,
-        "no_attrs": 0,
-        "no_methods": 12,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\LinearAlgebra\\ColumnVectorTest.php",
-        "namespace": "Math\\LinearAlgebra",
-        "name": "ColumnVectorTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 70,
-        "no_attrs": 0,
-        "no_methods": 4,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\LinearAlgebra\\DiagonalMatrixTest.php",
-        "namespace": "Math\\LinearAlgebra",
-        "name": "DiagonalMatrixTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 72,
-        "no_attrs": 0,
-        "no_methods": 5,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\LinearAlgebra\\FunctionMatrixTest.php",
-        "namespace": "Math\\LinearAlgebra",
-        "name": "FunctionMatrixTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 27,
-        "no_attrs": 0,
-        "no_methods": 1,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\LinearAlgebra\\MatrixAxiomsTest.php",
-        "namespace": "Math\\LinearAlgebra",
-        "name": "MatrixAxiomsTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 954,
-        "no_attrs": 0,
-        "no_methods": 30,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\LinearAlgebra\\MatrixColumnOperationsTest.php",
-        "namespace": "Math\\LinearAlgebra",
-        "name": "MatrixColumnOperationsTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 288,
-        "no_attrs": 0,
-        "no_methods": 15,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\LinearAlgebra\\MatrixDecompositionsTest.php",
-        "namespace": "Math\\LinearAlgebra",
-        "name": "MatrixDecompositionsTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 372,
-        "no_attrs": 0,
-        "no_methods": 5,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\LinearAlgebra\\MatrixFactoryTest.php",
-        "namespace": "Math\\LinearAlgebra",
-        "name": "MatrixFactorTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 408,
-        "no_attrs": 0,
-        "no_methods": 25,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\LinearAlgebra\\MatrixNormsTest.php",
-        "namespace": "Math\\LinearAlgebra",
-        "name": "MatrixNormsTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 263,
-        "no_attrs": 0,
-        "no_methods": 8,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\LinearAlgebra\\MatrixOperationsTest.php",
-        "namespace": "Math\\LinearAlgebra",
-        "name": "MatrixOperationsTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 2120,
-        "no_attrs": 0,
-        "no_methods": 64,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\LinearAlgebra\\MatrixRowOperationsTest.php",
-        "namespace": "Math\\LinearAlgebra",
-        "name": "MatrixRowOperationsTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 481,
-        "no_attrs": 0,
-        "no_methods": 28,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\LinearAlgebra\\MatrixTest.php",
-        "namespace": "Math\\LinearAlgebra",
-        "name": "MatrixTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 475,
-        "no_attrs": 0,
-        "no_methods": 32,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\LinearAlgebra\\RowVectorTest.php",
-        "namespace": "Math\\LinearAlgebra",
-        "name": "RowVectorTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 64,
-        "no_attrs": 0,
-        "no_methods": 4,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\LinearAlgebra\\SquareMatrixTest.php",
-        "namespace": "Math\\LinearAlgebra",
-        "name": "SquareMatrixTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 62,
-        "no_attrs": 0,
-        "no_methods": 4,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\LinearAlgebra\\VandermondeMatrixTest.php",
-        "namespace": "Math\\LinearAlgebra",
-        "name": "VandermondeMatrixTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 45,
-        "no_attrs": 0,
-        "no_methods": 2,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\LinearAlgebra\\VectorAxiomsTest.php",
-        "namespace": "Math\\LinearAlgebra",
-        "name": "VectorAxiomsTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 246,
-        "no_attrs": 0,
-        "no_methods": 11,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\LinearAlgebra\\VectorTest.php",
-        "namespace": "Math\\LinearAlgebra",
-        "name": "VectorTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 348,
-        "no_attrs": 0,
-        "no_methods": 32,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\NumericalAnalysis\\Interpolation\\InterpolationTest.php",
-        "namespace": "Math\\NumericalAnalysis\\Interpolation",
-        "name": "InterpolationTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 38,
-        "no_attrs": 0,
-        "no_methods": 5,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\NumericalAnalysis\\Interpolation\\LagrangePolynomialTest.php",
-        "namespace": "Math\\NumericalAnalysis\\Interpolation",
-        "name": "LagrangePolynomialTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 170,
-        "no_attrs": 0,
-        "no_methods": 3,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\NumericalAnalysis\\Interpolation\\NevillesMethodTest.php",
-        "namespace": "Math\\NumericalAnalysis\\Interpolation",
-        "name": "NevillesMethodTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 178,
-        "no_attrs": 0,
-        "no_methods": 3,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\NumericalAnalysis\\Interpolation\\NewtonPolynomialForwardTest.php",
-        "namespace": "Math\\NumericalAnalysis\\Interpolation",
-        "name": "NewtonPolynomialForwardTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 166,
-        "no_attrs": 0,
-        "no_methods": 3,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\NumericalAnalysis\\NumericalDifferentiation\\FivePointFormulaTest.php",
-        "namespace": "Math\\NumericalAnalysis\\NumericalDifferentiation",
-        "name": "FivePointFormulaTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 167,
-        "no_attrs": 0,
-        "no_methods": 3,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\NumericalAnalysis\\NumericalDifferentiation\\NumericalDifferentiationTest.php",
-        "namespace": "Math\\NumericalAnalysis\\NumericalDifferentiation",
-        "name": "NumericalDifferentiationTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 52,
-        "no_attrs": 0,
-        "no_methods": 7,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\NumericalAnalysis\\NumericalDifferentiation\\SecondDerivativeMidpointFormulaTest.php",
-        "namespace": "Math\\NumericalAnalysis\\NumericalDifferentiation",
-        "name": "SecondDerivativeMidpointFormulaTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 109,
-        "no_attrs": 0,
-        "no_methods": 3,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\NumericalAnalysis\\NumericalDifferentiation\\ThreePointFormulaTest.php",
-        "namespace": "Math\\NumericalAnalysis\\NumericalDifferentiation",
-        "name": "ThreePointFormulaTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 163,
-        "no_attrs": 0,
-        "no_methods": 3,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\NumericalAnalysis\\NumericalIntegration\\BoolesRuleTest.php",
-        "namespace": "Math\\NumericalAnalysis\\NumericalIntegration",
-        "name": "BoolesRuleTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 58,
-        "no_attrs": 0,
-        "no_methods": 3,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\NumericalAnalysis\\NumericalIntegration\\MidpointRuleTest.php",
-        "namespace": "Math\\NumericalAnalysis\\NumericalIntegration",
-        "name": "MidpointRuleTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 55,
-        "no_attrs": 0,
-        "no_methods": 1,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\NumericalAnalysis\\NumericalIntegration\\NumericalIntegrationTest.php",
-        "namespace": "Math\\NumericalAnalysis\\NumericalIntegration",
-        "name": "NumbericalIntegrationTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 38,
-        "no_attrs": 0,
-        "no_methods": 5,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\NumericalAnalysis\\NumericalIntegration\\RectangleMethodTest.php",
-        "namespace": "Math\\NumericalAnalysis\\NumericalIntegration",
-        "name": "RectangleMethodTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 55,
-        "no_attrs": 0,
-        "no_methods": 1,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\NumericalAnalysis\\NumericalIntegration\\SimpsonsRuleTest.php",
-        "namespace": "Math\\NumericalAnalysis\\NumericalIntegration",
-        "name": "SimpsonsRuleTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 57,
-        "no_attrs": 0,
-        "no_methods": 3,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\NumericalAnalysis\\NumericalIntegration\\SimpsonsThreeEighthsRuleTest.php",
-        "namespace": "Math\\NumericalAnalysis\\NumericalIntegration",
-        "name": "SimpsonsRuleThreeEighthsTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 57,
-        "no_attrs": 0,
-        "no_methods": 3,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\NumericalAnalysis\\NumericalIntegration\\TrapezoidalRuleTest.php",
-        "namespace": "Math\\NumericalAnalysis\\NumericalIntegration",
-        "name": "TrapezoidalRuleTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 55,
-        "no_attrs": 0,
-        "no_methods": 1,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\NumericalAnalysis\\RootFinding\\BisectionMethodTest.php",
-        "namespace": "Math\\NumericalAnalysis\\RootFinding",
-        "name": "BisectionMethodTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 144,
-        "no_attrs": 0,
-        "no_methods": 5,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\NumericalAnalysis\\RootFinding\\FixedPointIterationTest.php",
-        "namespace": "Math\\NumericalAnalysis\\RootFinding",
-        "name": "FixedPointIterationTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 83,
-        "no_attrs": 0,
-        "no_methods": 4,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\NumericalAnalysis\\RootFinding\\NewtonsMethodTest.php",
-        "namespace": "Math\\NumericalAnalysis\\RootFinding",
-        "name": "NewtonsMethodTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 53,
-        "no_attrs": 0,
-        "no_methods": 2,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\NumericalAnalysis\\RootFinding\\SecantMethodTest.php",
-        "namespace": "Math\\NumericalAnalysis\\RootFinding",
-        "name": "SecantMethodTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 77,
-        "no_attrs": 0,
-        "no_methods": 3,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\CombinatoricsAxiomsTest.php",
-        "namespace": "Math\\Probability",
-        "name": "CombinatoricsAxiomsTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 150,
-        "no_attrs": 0,
-        "no_methods": 7,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\CombinatoricsTest.php",
-        "namespace": "Math\\Probability",
-        "name": "CombinatoricsTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 480,
-        "no_attrs": 0,
-        "no_methods": 42,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\Distribution\\Continuous\\BetaTest.php",
-        "namespace": "Math\\Probability\\Distribution\\Continuous",
-        "name": "BetaTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 114,
-        "no_attrs": 0,
-        "no_methods": 8,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\Distribution\\Continuous\\CauchyTest.php",
-        "namespace": "Math\\Probability\\Distribution\\Continuous",
-        "name": "CauchyTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 63,
-        "no_attrs": 0,
-        "no_methods": 7,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\Distribution\\Continuous\\ChiSquaredTest.php",
-        "namespace": "Math\\Probability\\Distribution\\Continuous",
-        "name": "ChiSquaredTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 54,
-        "no_attrs": 0,
-        "no_methods": 5,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\Distribution\\Continuous\\DiracDeltaTest.php",
-        "namespace": "Math\\Probability\\Distribution\\Continuous",
-        "name": "DiracDeltaTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 48,
-        "no_attrs": 0,
-        "no_methods": 6,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\Distribution\\Continuous\\ExponentialTest.php",
-        "namespace": "Math\\Probability\\Distribution\\Continuous",
-        "name": "ExponentialTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 58,
-        "no_attrs": 0,
-        "no_methods": 6,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\Distribution\\Continuous\\FTest.php",
-        "namespace": "Math\\Probability\\Distribution\\Continuous",
-        "name": "FTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 67,
-        "no_attrs": 0,
-        "no_methods": 6,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\Distribution\\Continuous\\LaplaceTest.php",
-        "namespace": "Math\\Probability\\Distribution\\Continuous",
-        "name": "LaplaceTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 50,
-        "no_attrs": 0,
-        "no_methods": 5,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\Distribution\\Continuous\\LimitsTest.php",
-        "namespace": "Math\\Probability\\Distribution\\Continuous",
-        "name": "LimitsTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 85,
-        "no_attrs": 0,
-        "no_methods": 15,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\Distribution\\Continuous\\LogisticTest.php",
-        "namespace": "Math\\Probability\\Distribution\\Continuous",
-        "name": "LogisticTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 71,
-        "no_attrs": 0,
-        "no_methods": 5,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\Distribution\\Continuous\\LogLogisticTest.php",
-        "namespace": "Math\\Probability\\Distribution\\Continuous",
-        "name": "LogLogisticTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 56,
-        "no_attrs": 0,
-        "no_methods": 6,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\Distribution\\Continuous\\LogNormalTest.php",
-        "namespace": "Math\\Probability\\Distribution\\Continuous",
-        "name": "LogNormalTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 59,
-        "no_attrs": 0,
-        "no_methods": 6,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\Distribution\\Continuous\\NormalTest.php",
-        "namespace": "Math\\Probability\\Distribution\\Continuous",
-        "name": "NormalTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 94,
-        "no_attrs": 0,
-        "no_methods": 11,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\Distribution\\Continuous\\ParetoTest.php",
-        "namespace": "Math\\Probability\\Distribution\\Continuous",
-        "name": "ParetoTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 62,
-        "no_attrs": 0,
-        "no_methods": 6,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\Distribution\\Continuous\\StandardNormalTest.php",
-        "namespace": "Math\\Probability\\Distribution\\Continuous",
-        "name": "StandardNormalTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 38,
-        "no_attrs": 0,
-        "no_methods": 4,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\Distribution\\Continuous\\StudentTTest.php",
-        "namespace": "Math\\Probability\\Distribution\\Continuous",
-        "name": "StudentTTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 94,
-        "no_attrs": 0,
-        "no_methods": 8,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\Distribution\\Continuous\\UniformTest.php",
-        "namespace": "Math\\Probability\\Distribution\\Continuous",
-        "name": "UniformTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 60,
-        "no_attrs": 0,
-        "no_methods": 6,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\Distribution\\Continuous\\WeibullTest.php",
-        "namespace": "Math\\Probability\\Distribution\\Continuous",
-        "name": "WeibullTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 71,
-        "no_attrs": 0,
-        "no_methods": 6,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\Distribution\\Discrete\\BernoulliTest.php",
-        "namespace": "Math\\Probability\\Distribution\\Discrete",
-        "name": "BernoulliTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 44,
-        "no_attrs": 0,
-        "no_methods": 5,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\Distribution\\Discrete\\BinomialTest.php",
-        "namespace": "Math\\Probability\\Distribution\\Discrete",
-        "name": "BinomialTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 53,
-        "no_attrs": 0,
-        "no_methods": 4,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\Distribution\\Discrete\\GeometricTest.php",
-        "namespace": "Math\\Probability\\Distribution\\Discrete",
-        "name": "GeometricTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 47,
-        "no_attrs": 0,
-        "no_methods": 4,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\Distribution\\Discrete\\LimitsTest.php",
-        "namespace": "Math\\Probability\\Distribution\\Discrete",
-        "name": "LimitsTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 45,
-        "no_attrs": 0,
-        "no_methods": 7,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\Distribution\\Discrete\\MultinomialTest.php",
-        "namespace": "Math\\Probability\\Distribution\\Discrete",
-        "name": "MultinomialTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 33,
-        "no_attrs": 0,
-        "no_methods": 4,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\Distribution\\Discrete\\NegativeBinomialTest.php",
-        "namespace": "Math\\Probability\\Distribution\\Discrete",
-        "name": "NegativeBinomialTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 29,
-        "no_attrs": 0,
-        "no_methods": 2,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\Distribution\\Discrete\\PascalTest.php",
-        "namespace": "Math\\Probability\\Distribution\\Discrete",
-        "name": "PascalTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 27,
-        "no_attrs": 0,
-        "no_methods": 2,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\Distribution\\Discrete\\PoissonTest.php",
-        "namespace": "Math\\Probability\\Distribution\\Discrete",
-        "name": "PoissonTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 47,
-        "no_attrs": 0,
-        "no_methods": 4,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\Distribution\\Discrete\\ShiftedGeometricTest.php",
-        "namespace": "Math\\Probability\\Distribution\\Discrete",
-        "name": "ShiftedGeometricTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 47,
-        "no_attrs": 0,
-        "no_methods": 4,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\Distribution\\Table\\ChiSquaredTableTest.php",
-        "namespace": "Math\\Probability\\Distribution\\Table",
-        "name": "ChiSquaredlTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 39,
-        "no_attrs": 0,
-        "no_methods": 4,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\Distribution\\Table\\StandardNormalTableTest.php",
-        "namespace": "Math\\Probability\\Distribution\\Table",
-        "name": "StandardNormalTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 53,
-        "no_attrs": 0,
-        "no_methods": 6,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Probability\\Distribution\\Table\\TDistributionTableTest.php",
-        "namespace": "Math\\Probability\\Distribution\\Table",
-        "name": "TDistributionTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 169,
-        "no_attrs": 0,
-        "no_methods": 16,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Sequence\\AdvancedTest.php",
-        "namespace": "Math\\Sequence",
-        "name": "AdvancedTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 162,
-        "no_attrs": 0,
-        "no_methods": 14,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Sequence\\BasicTest.php",
-        "namespace": "Math\\Sequence",
-        "name": "BasicTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 150,
-        "no_attrs": 0,
-        "no_methods": 15,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Statistics\\ANOVATest.php",
-        "namespace": "Math\\Statistics",
-        "name": "ANOVATest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 617,
-        "no_attrs": 0,
-        "no_methods": 17,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Statistics\\AverageTest.php",
-        "namespace": "Math\\Statistics",
-        "name": "AverageTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 733,
-        "no_attrs": 0,
-        "no_methods": 69,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Statistics\\CorrelationTest.php",
-        "namespace": "Math\\Statistics",
-        "name": "CorrelationTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 289,
-        "no_attrs": 0,
-        "no_methods": 24,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Statistics\\DescriptiveTest.php",
-        "namespace": "Math\\Statistics",
-        "name": "DescriptiveTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 595,
-        "no_attrs": 0,
-        "no_methods": 51,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Statistics\\DistributionTest.php",
-        "namespace": "Math\\Statistics",
-        "name": "DistributionTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 149,
-        "no_attrs": 0,
-        "no_methods": 11,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Statistics\\ExperimentTest.php",
-        "namespace": "Math\\Statistics",
-        "name": "ExperimentTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 99,
-        "no_attrs": 0,
-        "no_methods": 9,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Statistics\\RandomVariableTest.php",
-        "namespace": "Math\\Statistics",
-        "name": "RandomVariableTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 276,
-        "no_attrs": 0,
-        "no_methods": 33,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Statistics\\Regression\\HanesWoolfTest.php",
-        "namespace": "Math\\Statistics\\Regression",
-        "name": "HanesWoolfTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 22,
-        "no_attrs": 0,
-        "no_methods": 2,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Statistics\\Regression\\LinearTest.php",
-        "namespace": "Math\\Statistics\\Regression",
-        "name": "LinearTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 377,
-        "no_attrs": 0,
-        "no_methods": 30,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Statistics\\Regression\\LinearThroughPointTest.php",
-        "namespace": "Math\\Statistics\\Regression",
-        "name": "LinearThroughPointTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 234,
-        "no_attrs": 0,
-        "no_methods": 18,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Statistics\\Regression\\LineweaverBurkTest.php",
-        "namespace": "Math\\Statistics\\Regression",
-        "name": "LineweaverBurkTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 60,
-        "no_attrs": 0,
-        "no_methods": 6,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Statistics\\Regression\\LOESSTest.php",
-        "namespace": "Math\\Statistics\\Regression",
-        "name": "LOESSTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 53,
-        "no_attrs": 0,
-        "no_methods": 4,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Statistics\\Regression\\PowerLawTest.php",
-        "namespace": "Math\\Statistics\\Regression",
-        "name": "PowerLawTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 86,
-        "no_attrs": 0,
-        "no_methods": 7,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Statistics\\Regression\\RegressionTest.php",
-        "namespace": "Math\\Statistics\\Regression",
-        "name": "RegressionTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 181,
-        "no_attrs": 0,
-        "no_methods": 17,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Statistics\\Regression\\TheilSenTest.php",
-        "namespace": "Math\\Statistics\\Regression",
-        "name": "TheilSenTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 121,
-        "no_attrs": 0,
-        "no_methods": 12,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Statistics\\Regression\\WeightedLinearTest.php",
-        "namespace": "Math\\Statistics\\Regression",
-        "name": "WeightedLinearTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 28,
-        "no_attrs": 0,
-        "no_methods": 2,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "tests\\Statistics\\SignificanceTest.php",
-        "namespace": "Math\\Statistics",
-        "name": "SignificanceTest",
-        "extends": "PHPUnit_Framework_TestCase",
-        "implements": null,
-        "no_lines": 194,
-        "no_attrs": 0,
-        "no_methods": 17,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
+        "anonymous": false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
     }
 ]

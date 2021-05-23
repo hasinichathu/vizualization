@@ -58,3 +58,8 @@ export interface ExtendedMeshBasicMaterial extends THREE.MeshBasicMaterial {
   defaultColor: number;
   originalColor: number;
 }
+
+// export interface ExtendedMeshBasicMaterial extends THREE.MeshBasicMaterial {
+//   defaultColor: map;
+//   originalColor: number;
+// }
