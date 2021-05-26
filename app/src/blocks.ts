@@ -65,8 +65,7 @@ export class Building extends Block {
   }
 
   public render(scene: THREE.Scene, depth: number) {
-    var options: THREE.MeshBasicMaterialParameters = { color: 0x2f9dbd };
-
+    var options: THREE.MeshBasicMaterialParameters = { color: 0x3D550C };
     if (this.data.abstract) {
       options.color = 0x2fbdab;
       options.opacity = 0.5
@@ -74,25 +73,25 @@ export class Building extends Block {
     } else if (this.data.type === "interface") {
       options.color = 0x3c2fbd;
     }
-    var wood = new THREE.TextureLoader().load('textures/wood.jpg');
-    var grass = new THREE.TextureLoader().load('textures/grass.jpg');
+    // var wood = new THREE.TextureLoader().load('textures/wood.jpg');
+    // var grass = new THREE.TextureLoader().load('textures/grass.jpg');
 
     // var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    var materialWood = new THREE.MeshBasicMaterial({ map: wood });
-    var materialGrass = <ExtendedMeshBasicMaterial>new THREE.MeshBasicMaterial({ color: 0x3D550C });
+    // var materialWood = new THREE.MeshBasicMaterial({ map: wood });
+    // var materialGrass = <ExtendedMeshBasicMaterial>new THREE.MeshBasicMaterial({ color: 0x3D550C });
 
-    materialGrass.defaultColor = materialGrass.originalColor = 0x3D550C;
+    // materialGrass.defaultColor = materialGrass.originalColor = 0x3D550C;
 
 
     var geometry = new THREE.BoxGeometry(1, 1, 1);
     var material = <ExtendedMeshBasicMaterial>new THREE.MeshBasicMaterial(options);
 
-    // material.defaultColor = <number>options.color;
-    // material.originalColor = <number>options.color;
+    material.defaultColor = <number>options.color;
+    material.originalColor = <number>options.color;
 
     geometry.applyMatrix4(new THREE.Matrix4().makeTranslation(0.5, 0.5, 0.5));
 
-    var mesh: ExtendedMesh = <ExtendedMesh><unknown>new THREE.Mesh(geometry, materialGrass);
+    var mesh: ExtendedMesh = <ExtendedMesh><unknown>new THREE.Mesh(geometry, material);
     mesh.name = this.name ? this.name : '';
 
     mesh.position.set(this.getX() - 1 * this.parent.addWidth + 1, 0 + depth / 2 + depth * 0.05, this.getY() - 1 * this.parent.addWidth + 1);

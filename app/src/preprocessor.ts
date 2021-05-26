@@ -201,7 +201,6 @@ export class Preprocessor {
     const currentDistrict = this.buildDistricts(obj.namespace);
 
     const building = new Building(currentDistrict, 1, obj, this.heightLevels, this.widthLevels, this.heightAttr, this.widthAttr);
-    // console.log(building.data.name + " building");
 
     currentDistrict.addBuilding(building);
     this.city.buildings.push(building);
