@@ -1,0 +1,189 @@
+/* body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+} */
+
+/* Style the top navigation bar */
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    height: 50px;
+    margin:0;
+}
+
+/*Strip the ul of padding and list styling*/
+ul {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    position: absolute;
+}
+/*Create a horizontal list with spacing*/
+li {
+    display:inline-block;
+    float: left;
+    margin-right: 1px;
+}
+/*Style for menu links*/
+li a {
+    display:block;
+    min-width:140px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    background: #2f3036;
+    text-decoration: none;
+}
+/*Hover state for top level links*/
+li:hover a {
+    background: #19c589;
+}
+/*Style for dropdown links*/
+li:hover ul a {
+    background: #f3f3f3;
+    color: #2f3036;
+    height: 40px;
+    line-height: 40px;
+}
+/*Hover state for dropdown links*/
+li:hover ul a:hover {
+    background: #19c589;
+    color: #fff;
+}
+/*Hide dropdown links until they are needed*/
+li ul {
+    display: none;
+}
+/*Make dropdown links vertical*/
+li ul li {
+    display: block;
+    float: none;
+}
+/*Prevent text wrapping*/
+li ul li a {
+    width: auto;
+    min-width: 100px;
+    padding: 0 20px;
+}
+/*Display the dropdown on hover*/
+ul li a:hover + .hidden, .hidden:hover {
+    display: block;
+}
+/*Style 'show menu' label button and hide it by default*/
+.show-menu {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    color: #fff;
+    background: #19c589;
+    text-align: center;
+    padding: 10px 0;
+    display: none;
+}
+/*Hide checkbox*/
+input[type=checkbox]{
+    display: none;
+}
+/*Show menu when invisible checkbox is checked*/
+input[type=checkbox]:checked ~ #menu{
+    display: block;
+}
+/*Responsive Styles*/
+@media screen and (max-width : 760px){
+    /*Make dropdown links appear inline*/
+    ul {
+        position: static;
+        display: none;
+    }
+    /*Create vertical spacing*/
+    li {
+        margin-bottom: 1px;
+    }
+    /*Make all menu links full width*/
+    ul li, li a {
+        width: 100%;
+    }
+    /*Display 'show menu' link*/
+    .show-menu {
+        display:block;
+    }
+}
+
+/* Style the top navigation bar */
+.topnav2 {
+    overflow: hidden;
+    background-color: rgb(124, 123, 123);
+}
+
+/* Style the topnav links */
+.topnav2 a {
+    float: left;
+    display: block;
+    color: #fcf9f9;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.select-bar {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Style the content */
+/* #canvas {
+    background-color: #ddd;
+    border: 1px solid red;   
+    left: 0px;
+    width: 400px;
+
+} */
+#content{
+    height: auto;
+    padding: 20px;
+    /* margin-left: 230px; */
+    /* margin-right: 20px; */
+    /* padding-bottom: 30px; */
+    background-color: red;
+
+    overflow: auto;  /* code added */
+}
+
+/* Style the footer */
+.footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    position: absolute;
+    bottom:0;
+}
+
+#legend {
+    font-size: 12px;
+    min-height: 12px;
+    padding: 3px 10px;
+}
+
+.legend-color {
+    border: 1px solid #333;
+    display: inline-block;
+    height: 12px;
+    margin-bottom: -1px;
+    margin-left: 15px;
+    margin-right: 3px;
+    min-width: 12px;
+}
+
+#tracker {
+    background: #fff;
+    display: none;
+    padding: 10px;
+    position: fixed;
+    text-align: center;
+    width: 300px;
+    word-wrap: break-word;
+}

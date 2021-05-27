@@ -1,7 +1,7 @@
-import { Building, District, Block } from './blocks'
+import { ForestClass, District, Block } from './blocks'
 import * as THREE from 'three';
 
-export interface BuildingData {
+export interface ClassData {
   abstract: boolean;
   anonymous: boolean;
   extends: string;
@@ -16,19 +16,21 @@ export interface BuildingData {
   trait: boolean;
   type: string;
   // You are defining an index signature which enforces the return type for all properties to match the index signature return type.
-  [key: string]: string|number|boolean|Method[]|Variable[];
+  [key: string]: string|number|boolean|MethodData[]|Variable[];
   // methodData : MethodData;
-  methods: Method[];
+  methods: MethodData[];
   globle_variables :Variable[];
+  is_secure:boolean;
 
 }
 
-export interface Method {
+export interface MethodData {
   [key: string]: string|number|boolean|Variable[];
   name: string;
   no_attrs: number;
   no_lines: number;
   variables :Variable[];
+  is_secure : boolean;
 }
 
 export interface Variable {
@@ -39,10 +41,10 @@ export interface Variable {
 
 export interface City {
   districts: { [propName: string]: District };
-  buildings: Array<Building>;
+  buildings: Array<ForestClass>;
 }
 
-export interface InputObject extends BuildingData {
+export interface InputObject extends ClassData {
   namespace?: string;
 }
 

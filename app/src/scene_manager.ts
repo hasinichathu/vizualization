@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { Preprocessor } from './preprocessor';
 import { ExtendedMesh } from './interfaces';
-import { Building, District } from './blocks';
+import { ForestClass, District } from './blocks';
 import * as $ from 'jQuery';
 
 
@@ -82,9 +82,6 @@ export class SceneManager {
     static animate() {
         requestAnimationFrame(SceneManager.animate)
 
-        // SceneManager.cube.rotation.x += 0.01;
-        // SceneManager.cube.rotation.y += 0.01;
-
         SceneManager.controls.update();
         SceneManager.renderer.render(SceneManager.scene, SceneManager.camera);
 
@@ -96,7 +93,7 @@ export class SceneManager {
         SceneManager.init();
         SceneManager.animate();
     }
-    static determineVisibility(mesh: ExtendedMesh, building: Building, val: string) {
+    static determineVisibility(mesh: ExtendedMesh, building: ForestClass, val: string) {
         mesh.visible = true;
 
         // switch (val) {
@@ -111,9 +108,6 @@ export class SceneManager {
         //         break;
         //     case 'interface':
         //         mesh.visible = mesh.edges.visible = building.data.type === 'interface';
-        //         break;
-        //     case 'trait':
-        //         mesh.visible = mesh.edges.visible = building.data.trait;
         //         break;
         // }
     }

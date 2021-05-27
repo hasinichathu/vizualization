@@ -1,5 +1,5 @@
-import { City, InputObject, Method, Variable } from './interfaces';
-import { Building, District, Block, MethodTree,GVariable,LVariable } from './blocks';
+import { City, InputObject, MethodData, Variable } from './interfaces';
+import { ForestClass, District, Block, MethodTree,GVariable,LVariable } from './blocks';
 import { SceneManager } from './scene_manager';
 import * as _ from 'underscore';
 import * as $ from 'jQuery';
@@ -46,10 +46,10 @@ export class Preprocessor {
   public processJSON(fileName?: string) {
     SceneManager.cleanUp();
 
-    this.widthType = <string>$('input[name="width-type"]:checked').val();
-    this.heightType = <string>$('input[name="height-type"]:checked').val();
-    this.widthAttr = <string>$('#width-attribute').val();
-    this.heightAttr = <string>$('#height-attribute').val();
+    this.widthType = "proportionally";
+    this.heightType = "proportionally";
+    this.widthAttr = "no_attrs";
+    this.heightAttr = "no_attrs";
 
     if (fileName) {
       $('#project-name').text(fileName);
@@ -63,7 +63,7 @@ export class Preprocessor {
     };
 
     this.detectLevels();
-    this.buildCity();
+    this.buildIsland();
 
     var buildingCount = this.city.buildings.length;
     var districtsCount = _.size(this.city.districts);
@@ -76,7 +76,7 @@ export class Preprocessor {
     // set margin for each district by finding his nesting level
     _.each(this.city.districts, (e) => { e.addWidth = maxDepth.depth - e.depth });
 
-    var maxDepthBuilding = <Building>_.max(this.city.buildings, (e) => { return e.depth; });
+    var maxDepthBuilding = <ForestClass>_.max(this.city.buildings, (e) => { return e.depth; });
     _.each(this.city.buildings, (e) => { e.addWidth = maxDepthBuilding.depth - e.depth });
 
     // calculate minimal dimensions for blocks
@@ -115,7 +115,7 @@ export class Preprocessor {
     // let sorted: InputObject[] = _.sortBy(this.json, this.heightAttr);
     // let sorted_length = sorted.length;
     let json_length = this.json.length;
-    let methods: Method[]=[];
+    let methods: MethodData[]=[];
 
     var k = 0;
     for (let i = 0; i < this.json.length; i++) {
@@ -125,7 +125,7 @@ export class Preprocessor {
       }
     }
 
-    let sorted_methods: Method[] = _.sortBy(methods, this.heightAttr);
+    let sorted_methods: MethodData[] = _.sortBy(methods, this.heightAttr);
     let sorted_length = sorted_methods.length;
 
     if (this.heightType == "evenly") {
@@ -155,11 +155,7 @@ export class Preprocessor {
         break;
       }
     }
-    // console.log(this.heightLevels);
-
     sorted_methods = _.sortBy(methods, this.widthAttr);
-
-    // sorted = _.sortBy(this.json, this.widthAttr);
 
     if (this.widthType == "evenly") {
       this.widthLevels = [
@@ -190,7 +186,7 @@ export class Preprocessor {
     }
   }
 
-  private buildCity() {
+  private buildIsland() {
     for (let i = 0; i < this.jsonLength; i++) {
       this.createBlock(this.json[i]);
     }
@@ -200,7 +196,7 @@ export class Preprocessor {
   private createBlock(obj: InputObject) {
     const currentDistrict = this.buildDistricts(obj.namespace);
 
-    const building = new Building(currentDistrict, 1, obj, this.heightLevels, this.widthLevels, this.heightAttr, this.widthAttr);
+    const building = new ForestClass(currentDistrict, 1, obj, this.heightLevels, this.widthLevels, this.heightAttr, this.widthAttr);
 
     currentDistrict.addBuilding(building);
     this.city.buildings.push(building);
@@ -242,7 +238,7 @@ export class Preprocessor {
     return district;
   }
 
-  private addMethods(parent: Building, method: Method[]) {
+  private addMethods(parent: ForestClass, method: MethodData[]) {
     // console.log(method);
     for (let i = 0; i < method.length; i++) {
       var methodTree = new MethodTree(parent, method[i], this.heightLevels, this.widthLevels, this.heightAttr, this.widthAttr);
@@ -252,7 +248,7 @@ export class Preprocessor {
     }
   }
 
-  private addGlobleVar(parent: Building, variables: Variable[]) {
+  private addGlobleVar(parent: ForestClass, variables: Variable[]) {
     // console.log(method);
     for (let i = 0; i < variables.length; i++) {
       var gVariable = new GVariable(parent,1, variables[i]);

@@ -1,7 +1,7 @@
 import { SceneManager } from "./scene_manager";
 import { ExtendedMesh, ExtendedMeshBasicMaterial } from "./interfaces";
 import { processJSONInput, Preprocessor } from './preprocessor';
-import { Building } from './blocks';
+import { ForestClass } from './blocks';
 import * as $ from 'jQuery';
 
 window.onload = function() {
@@ -16,7 +16,7 @@ window.onload = function() {
     for (var i = 0; i < l; i++) {
       let block = SceneManager.objects[i].block;
 
-      if (block instanceof Building) {
+      if (block instanceof ForestClass) {
         SceneManager.determineVisibility(SceneManager.objects[i], block, <string>val);
       }
     }
@@ -32,7 +32,7 @@ window.onload = function() {
       let object = SceneManager.objects[i];
       let block = SceneManager.objects[i].block;
 
-      if (block instanceof Building) {
+      if (block instanceof ForestClass) {
         object.material.color.setHex(block.data.extends == val ? 0xeead12 : (object.material.defaultColor == 0xeead12 ? object.material.originalColor : object.material.defaultColor));
         object.material.defaultColor = block.data.extends == val ? 0xeead12 : object.material.originalColor;
       }
@@ -49,7 +49,7 @@ window.onload = function() {
       let object = SceneManager.objects[i];
       let block = SceneManager.objects[i].block;
 
-      if (block instanceof Building) {
+      if (block instanceof ForestClass) {
         object.material.color.setHex(block.data.implements == val ? 0xeead12 : (object.material.defaultColor == 0xeead12 ? object.material.originalColor : object.material.defaultColor));
         object.material.defaultColor = block.data.implements == val ? 0xeead12 : object.material.originalColor;
       }

@@ -1,5 +1,5 @@
 import { colorLuminance } from "./helpers";
-import { BuildingData, ExtendedMesh, ExtendedMeshBasicMaterial, Method, Variable } from "./interfaces";
+import { ClassData, ExtendedMesh, ExtendedMeshBasicMaterial, MethodData, Variable } from "./interfaces";
 import { SceneManager } from "./scene_manager";
 import * as THREE from 'three';
 import * as _ from 'underscore';
@@ -49,13 +49,13 @@ export abstract class Block {
   }
 }
 
-export class Building extends Block {
+export class ForestClass extends Block {
   public methods: MethodTree[] = [];
   public gVariables: GVariable[] = [];
   constructor(public parent: District,
     height: number,
     //data about building like attributes, extends , no.of lines of codes etc.
-    public data: BuildingData,
+    public data: ClassData,
     public heightLevels: number[],
     public widthLevels: number[],
     public heightAttr: string,
@@ -200,7 +200,7 @@ export class Building extends Block {
 
 export class District extends Block {
   protected children: District[] = [];
-  protected buildings: Building[] = [];
+  protected buildings: ForestClass[] = [];
 
   constructor(name: string, height: number, parent: Block) {
     super(name, parent);
@@ -246,8 +246,6 @@ export class District extends Block {
 
     }
     mesh.name = this.name ? this.name : '';
-
-    // mesh.scale.set(this.w - 2, this.d / 2, this.h - 2);
 
     var edges = new THREE.EdgesGeometry(geometry);
     var line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0xffffff }));
@@ -382,7 +380,7 @@ export class District extends Block {
         let block = sorted[i];
 
         for (let j = 0; j < this.buildings.length; j++) {
-          if (block instanceof Building && this.buildings[j].data.file === block.data.file) {
+          if (block instanceof ForestClass && this.buildings[j].data.file === block.data.file) {
             this.buildings[j].fit = block.fit;
           }
         }
@@ -415,7 +413,7 @@ export class District extends Block {
   }
 
 
-  public addBuilding(building: Building) {
+  public addBuilding(building: ForestClass) {
     this.buildings.push(building);
   }
 
@@ -454,10 +452,10 @@ export class District extends Block {
 
 export class MethodTree extends Block {
   lVariables: LVariable[] = [];
-  constructor(public parent: Building,
+  constructor(public parent: ForestClass,
 
     //data about building like attributes, extends , no.of lines of codes etc.
-    public data: Method,
+    public data: MethodData,
     public heightLevels: number[],
     public widthLevels: number[],
     public heightAttr: string,
@@ -524,6 +522,10 @@ export class MethodTree extends Block {
 
     scene.updateMatrixWorld(true);
     stemMesh.position.set(0.5, -heightBush / 2, 0.5);
+
+    // if(){
+
+    // }
     // bushMesh.block = this;
     ////////////
 
@@ -623,7 +625,7 @@ export class MethodTree extends Block {
 
 export class GVariable extends Block {
 
-  constructor(public parent: Building,
+  constructor(public parent: ForestClass,
     height: number,
     public data: Variable,
   ) {

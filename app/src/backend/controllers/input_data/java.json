@@ -14,11 +14,13 @@
         "trait": false,
         "type": "class",
         "anonymous": false,
+        "is_secure" :true,
         "methods":[
             {
                 "name": "method-one",
                 "no_lines": 66,
                 "no_attrs": 3,
+                "is_secure" :true,
                 "no_variables": 1,
                 "variables" : [
                     {
@@ -34,6 +36,7 @@
                 "no_lines": 66,
                 "no_attrs": 3,
                 "no_variables": 1,
+                "is_secure" :true,
                 "variables" : [
                     {
                         "name": "local_variable1",
@@ -60,6 +63,7 @@
                 "no_lines": 66,
                 "no_attrs": 3,
                 "no_variables": 0,
+                "is_secure" :true,
                 "variables" : [
                     {
                         "name": "local_variable",
@@ -91,12 +95,14 @@
         "trait": false,
         "type": "class",
         "anonymous": false,
+        "is_secure" :true,
         "methods":[
             {
                 "name": "method-one",
                 "no_lines": 66,
                 "no_attrs": 3,
                 "no_variables": 1,
+                "is_secure" :true,
                 "variables" : [
                     {
                         "name": "local_variable",
@@ -124,6 +130,7 @@
                 "no_lines": 66,
                 "no_attrs": 6,
                 "no_variables": 0,
+                "is_secure" :true,
                 "variables" : [
                     {
                         "name": "local_variable",
@@ -155,12 +162,14 @@
         "trait": false,
         "type": "class",
         "anonymous": false,
+        "is_secure" :true,
         "methods":[
             {
                 "name": "method-one",
                 "no_lines": 66,
                 "no_attrs": 3,
                 "no_variables": 1,
+                "is_secure" :true,
                 "variables" : [
                     {
                         "name": "local_variable",
@@ -188,6 +197,7 @@
                 "no_lines": 66,
                 "no_attrs": 10,
                 "no_variables": 0,
+                "is_secure" :true,
                 "variables" : [
                     {
                         "name": "local_variable",
@@ -219,12 +229,14 @@
         "trait": false,
         "type": "class",
         "anonymous": false,
+        "is_secure" :true,
         "methods":[
             {
                 "name": "method-one",
                 "no_lines": 66,
                 "no_attrs": 3,
                 "no_variables": 1,
+                "is_secure" :true,
                 "variables" : [
                     {
                         "name": "local_variable",
@@ -239,6 +251,7 @@
                 "no_lines": 66,
                 "no_attrs": 8,
                 "no_variables": 0,
+                "is_secure" :true,
                 "variables" : [
                     {
                         "name": "local_variable",
@@ -270,12 +283,14 @@
         "trait": false,
         "type": "class",
         "anonymous": false,
+        "is_secure" :true,
         "methods":[
             {
                 "name": "method-one",
                 "no_lines": 66,
                 "no_attrs": 3,
                 "no_variables": 1,
+                "is_secure" :true,
                 "variables" : [
                     {
                         "name": "local_variable",
@@ -290,6 +305,7 @@
                 "no_lines": 66,
                 "no_attrs": 6,
                 "no_variables": 0,
+                "is_secure" :true,
                 "variables" : [
                     {
                         "name": "local_variable",
@@ -334,12 +350,14 @@
         "trait": false,
         "type": "class",
         "anonymous": false,
+        "is_secure" :true,
         "methods":[
             {
                 "name": "method-one",
                 "no_lines": 66,
                 "no_attrs": 3,
                 "no_variables": 1,
+                "is_secure" :true,
                 "variables" : [
                     {
                         "name": "local_variable",
@@ -354,6 +372,7 @@
                 "no_lines": 66,
                 "no_attrs": 17,
                 "no_variables": 0,
+                "is_secure" :true,
                 "variables" : [
                     {
                         "name": "local_variable",
@@ -398,12 +417,14 @@
         "trait": false,
         "type": "class",
         "anonymous": false,
+        "is_secure" :true,
         "methods":[
             {
                 "name": "method-one",
                 "no_lines": 66,
                 "no_attrs": 10,
                 "no_variables": 1,
+                "is_secure" :true,
                 "variables" : [
                     {
                         "name": "local_variable",
@@ -418,6 +439,7 @@
                 "no_lines": 66,
                 "no_attrs": 4,
                 "no_variables": 0,
+                "is_secure" :true,
                 "variables" : [
                     {
                         "name": "local_variable",
@@ -449,12 +471,14 @@
         "trait": false,
         "type": "class",
         "anonymous": false,
+        "is_secure" :true,
         "methods":[
             {
                 "name": "method-one",
                 "no_lines": 66,
                 "no_attrs": 3,
                 "no_variables": 1,
+                "is_secure" :true,
                 "variables" : [
                     {
                         "name": "local_variable",
@@ -469,6 +493,7 @@
                 "no_lines": 66,
                 "no_attrs": 5,
                 "no_variables": 0,
+                "is_secure" :true,
                 "variables" : [
                     {
                         "name": "local_variable",
