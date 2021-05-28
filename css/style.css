@@ -135,25 +135,12 @@ input[type=checkbox]:checked ~ #menu{
     text-decoration: none;
 }
 
-/* Style the content */
-/* #canvas {
-    background-color: #ddd;
-    border: 1px solid red;   
-    left: 0px;
-    width: 400px;
 
-} */
-#content{
+#Canvas{
     height: auto;
-    padding: 20px;
-    /* margin-left: 230px; */
-    /* margin-right: 20px; */
-    /* padding-bottom: 30px; */
-    background-color: red;
-
-    overflow: auto;  /* code added */
-}
-
+    overflow: auto; 
+    right:0;
+  }
 /* Style the footer */
 .footer {
     background-color: #f1f1f1;

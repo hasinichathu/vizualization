@@ -1,5 +1,5 @@
 import { City, InputObject, MethodData, Variable } from './interfaces';
-import { ForestClass, District, Block, MethodTree,GVariable,LVariable } from './blocks';
+import { ForestClass, District, Block, MethodTree,GVariable,LVariable,Parameter } from './blocks';
 import { SceneManager } from './scene_manager';
 import * as _ from 'underscore';
 import * as $ from 'jQuery';
@@ -244,7 +244,8 @@ export class Preprocessor {
       var methodTree = new MethodTree(parent, method[i], this.heightLevels, this.widthLevels, this.heightAttr, this.widthAttr);
       parent.addMethod(methodTree);
       this.addLocalVar(methodTree, method[i].variables);
-      console.log(method[i].variables.length);
+      this.addParameter(methodTree, method[i].parameters);
+      console.log(method[i].parameters.length);
     }
   }
 
@@ -259,6 +260,12 @@ export class Preprocessor {
     for (let i = 0; i < variables.length; i++) {
       var lVariable = new LVariable(parent,1, variables[i]);
       parent.addLVariable(lVariable);
+    }
+  }
+  private addParameter(parent:MethodTree, parameters: Variable[]){
+    for (let i = 0; i < parameters.length; i++) {
+      var parameter = new Parameter(parent,1, parameters[i]);
+      parent.addParameters(parameter);
     }
   }
   

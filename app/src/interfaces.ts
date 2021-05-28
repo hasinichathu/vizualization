@@ -17,7 +17,6 @@ export interface ClassData {
   type: string;
   // You are defining an index signature which enforces the return type for all properties to match the index signature return type.
   [key: string]: string|number|boolean|MethodData[]|Variable[];
-  // methodData : MethodData;
   methods: MethodData[];
   globle_variables :Variable[];
   is_secure:boolean;
@@ -31,6 +30,7 @@ export interface MethodData {
   no_lines: number;
   variables :Variable[];
   is_secure : boolean;
+  parameters : Variable[];
 }
 
 export interface Variable {

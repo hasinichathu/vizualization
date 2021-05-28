@@ -4,6 +4,7 @@ import { Preprocessor } from './preprocessor';
 import { ExtendedMesh } from './interfaces';
 import { ForestClass, District } from './blocks';
 import * as $ from 'jQuery';
+import { Mesh } from '../libraries/three';
 
 
 
@@ -19,6 +20,8 @@ export class SceneManager {
     static cube: THREE.Mesh;
 
     static objects: ExtendedMesh[] = [];
+    static meshObjects: Mesh[] = [];
+
     static preprocessor: Preprocessor;
 
     static raycaster = new THREE.Raycaster();
@@ -32,6 +35,8 @@ export class SceneManager {
     static cleanUp() {
         for (let obj of this.objects) {
             SceneManager.scene.remove(obj);
+            SceneManager.scene.remove(obj);
+
             // SceneManager.scene.remove(obj.edges);
 
             // obj.edges.geometry.dispose();
@@ -42,6 +47,12 @@ export class SceneManager {
         }
 
         SceneManager.objects = [];
+        SceneManager.meshObjects = [];
+        for (let i = this.scene.children.length - 1; i >= 0; i--) {
+            let child = this.scene.children[i];
+            this.scene.remove(child);
+        }
+
     }
     static init() {
         // SceneManager.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
@@ -49,7 +60,7 @@ export class SceneManager {
 
         SceneManager.renderer.domElement.addEventListener('mousemove', SceneManager.onDocumentMouseMove, false);
         document.body.appendChild(SceneManager.renderer.domElement);
-        SceneManager.renderer.setSize(window.innerWidth, window.innerHeight);
+        SceneManager.renderer.setSize(window.innerWidth - 36, window.innerHeight - 110);
         document.body.appendChild(SceneManager.renderer.domElement);
         SceneManager.renderer.setClearColor(0xcccccc, 1);
         //light grey
@@ -73,9 +84,6 @@ export class SceneManager {
         // Add OrbitControls so that we can pan around with the mouse.
         SceneManager.controls = new OrbitControls(SceneManager.camera, SceneManager.renderer.domElement);
         this.controls.enablePan = true;
-
-
-
     }
 
     // Renders the scene and updates the render as needed.

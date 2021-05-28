@@ -10,106 +10,106 @@
 </head>
 
 <!-- <body> -->
-	<div>
+<div>
 
-		<label for="show-menu" class="show-menu">Show Menu</label>
-		<input type="checkbox" id="show-menu" role="button">
-		<ul id="menu">
-			<li><a href="#">JAVA CITY</a></li>
-			<li><a href="#">Home</a></li>
-			<li>
-				<a href="#">About ￬</a>
-				<ul class="hidden">
-					<li><a href="#">Who We Are</a></li>
-					<li><a href="#">What We Do</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="#">Portfolio ￬</a>
-				<ul class="hidden">
-					<li><a href="#">Photography</a></li>
-					<li><a href="#">Web & User Interface Design</a></li>
-					<li><a href="#">Illustration</a></li>
-				</ul>
-			</li>
-			<li><a href="#">News</a></li>
+	<label for="show-menu" class="show-menu">Show Menu</label>
+	<input type="checkbox" id="show-menu" role="button">
+	<ul id="menu">
+		<li><a href="#">JAVA CITY</a></li>
+		<li><a href="#">Home</a></li>
+		<li>
+			<a href="#">About ￬</a>
+			<ul class="hidden">
+				<li><a href="#">Who We Are</a></li>
+				<li><a href="#">What We Do</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">Portfolio ￬</a>
+			<ul class="hidden">
+				<li><a href="#">Photography</a></li>
+				<li><a href="#">Web & User Interface Design</a></li>
+				<li><a href="#">Illustration</a></li>
+			</ul>
+		</li>
+		<li><a href="#">News</a></li>
 
-			<li>
-				<div class="select-bar ">
-					Load
-					<select class="form-control input-sm" name="project-name" id="demo-project-select">
-						<option value="" disabled selected>a demo project</option>
-						<!-- <option value="" disabled>--- PHP frameworks ---</option> -->
-						<!-- <option value="laravel">laravel/framework</option> -->
-						<!-- <option value="slim">slimphp/Slim</option> -->
-						<!-- <option value="cakephp">cakephp/cakephp</option> -->
-						<!-- <option value="symfony">symfony/symfony (takes a long time to load)</option> -->
-						<!-- <option value="yii2">yiisoft/yii2-framework</option> -->
-						<!-- <option value="" disabled>--- Other ---</option> -->
-						<option value="faker">fzaninotto/Faker</option>
-						<!-- <option value="phabricator">phacility/phabricator</option> -->
-						<option value="math-php">markrogoyski/math-php</option>
-						<!-- <option value="design-patterns">domnikl/DesignPatternsPHP</option> -->
-						<!-- <option value="PHPExcel">PHPOffice/PHPExcel</option> -->
-						<option value="Java">Java</option>
+		<li>
+			<div class="select-bar ">
+				Load
+				<select class="form-control input-sm" name="project-name" id="demo-project-select">
+					<option value="" disabled selected>a demo project</option>
+					<!-- <option value="" disabled>--- PHP frameworks ---</option> -->
+					<!-- <option value="laravel">laravel/framework</option> -->
+					<!-- <option value="slim">slimphp/Slim</option> -->
+					<!-- <option value="cakephp">cakephp/cakephp</option> -->
+					<!-- <option value="symfony">symfony/symfony (takes a long time to load)</option> -->
+					<!-- <option value="yii2">yiisoft/yii2-framework</option> -->
+					<!-- <option value="" disabled>--- Other ---</option> -->
+					<option value="faker">fzaninotto/Faker</option>
+					<!-- <option value="phabricator">phacility/phabricator</option> -->
+					<option value="math-php">markrogoyski/math-php</option>
+					<!-- <option value="design-patterns">domnikl/DesignPatternsPHP</option> -->
+					<!-- <option value="PHPExcel">PHPOffice/PHPExcel</option> -->
+					<option value="Java">Java</option>
 
-					</select>
-					or upload your own
-					<input type="file" class="form-control input-sm">
-				</div>
-			</li>
-			<li> <button>gen</button></li>
-			<li>
-				<a href="#" data-toggle="modal" data-target="#help-modal"><i class="fa fa-question-circle"></i>Help</a>
-			</li>
-		</ul>
-	</div>
-	<div class="topnav">
-	</div>
+				</select>
+				or upload your own
+				<input type="file" class="form-control input-sm">
+			</div>
+		</li>
+		<li> <button>gen</button></li>
+		<li>
+			<a href="#" data-toggle="modal" data-target="#help-modal"><i class="fa fa-question-circle"></i>Help</a>
+		</li>
+	</ul>
+</div>
+<div class="topnav">
+</div>
 
-	<div class="topnav2">
+<div class="topnav2">
 
-		<div class="select-bar ">
-			<strong>Project</strong>:
-			<span id="project-name">-</span>,
-			<span id="project-objects">0</span> Classes
-		</div>
-
-		<div class="select-bar ">
-			<strong>Show</strong>&nbsp;
-			<label class="radio-inline"><input type="radio" name="filter-type" value="all" checked>all</label>
-			<label class="radio-inline"><input type="radio" name="filter-type" value="abstract">abstract classes</label>
-			<label class="radio-inline"><input type="radio" name="filter-type" value="final">final classes</label>
-			<label class="radio-inline"><input type="radio" name="filter-type" value="interface">interfaces</label>
-			<!-- <label class="radio-inline"><input type="radio" name="filter-type" value="trait">traits</label> -->
-		</div>
-		<div class="select-bar ">
-			<strong>Highlight</strong> classes that
-			extend <select id="class-extends" class="form-control short-select"></select>
-			or implement <select id="class-implements" class="form-control short-select"></select>
-		</div>
-
+	<div class="select-bar ">
+		<strong>Project</strong>:
+		<span id="project-name">-</span>,
+		<span id="project-objects">0</span> Classes
 	</div>
 
-	<!-- <div class="content">
+	<div class="select-bar ">
+		<strong>Show</strong>&nbsp;
+		<label class="radio-inline"><input type="radio" name="filter-type" value="all" checked>all</label>
+		<label class="radio-inline"><input type="radio" name="filter-type" value="abstract">abstract classes</label>
+		<label class="radio-inline"><input type="radio" name="filter-type" value="final">final classes</label>
+		<label class="radio-inline"><input type="radio" name="filter-type" value="interface">interfaces</label>
+		<!-- <label class="radio-inline"><input type="radio" name="filter-type" value="trait">traits</label> -->
+	</div>
+	<div class="select-bar ">
+		<strong>Highlight</strong> classes that
+		extend <select id="class-extends" class="form-control short-select"></select>
+		or implement <select id="class-implements" class="form-control short-select"></select>
+	</div>
+
+</div>
+
+<!-- <div class="content">
 		<div id="tracker"></div>
 		<canvas id="canvas">
 		</canvas>
 	</div> -->
-	<!-- <canvas id="canvas"> </canvas> -->
-	<div id="content">
-			<div id="tracker"></div>
-			<canvas id="canvas">
-			</canvas>
-	</div>
+<!-- <canvas id="canvas"> </canvas> -->
+<div id="content">
+	<div id="tracker"></div>
+	<canvas id="canvas" width="300px" style="width: 502.5px; height: 410.5px;">
+	</canvas>
+</div>
 
-	<div class="footer">
-		<strong>Legend</strong> <em>(Building's color)</em>:
-		<span class="legend-color" style="background-color: #2f9dbd;"></span> Class
-		<span class="legend-color" style="background-color: #2fbdab; opacity: 0.5"></span>Abstract class
-		<span class="legend-color" style="background-color: #3c2fbd;"></span>Interface
-		<span class="legend-color" style="background-color: #2f9dbd;"></span>Final class
-		<span class="legend-color" style="background-color: #2f9dbd;"></span>Trait
-	</div>
+<div class="footer">
+	<strong>Legend</strong> <em>(Building's color)</em>:
+	<span class="legend-color" style="background-color: #2f9dbd;"></span> Class
+	<span class="legend-color" style="background-color: #2fbdab; opacity: 0.5"></span>Abstract class
+	<span class="legend-color" style="background-color: #3c2fbd;"></span>Interface
+	<span class="legend-color" style="background-color: #2f9dbd;"></span>Final class
+	<span class="legend-color" style="background-color: #2f9dbd;"></span>Trait
+</div>
 
 <!-- </body> -->

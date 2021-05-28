@@ -452,6 +452,8 @@ export class District extends Block {
 
 export class MethodTree extends Block {
   lVariables: LVariable[] = [];
+  parameters: Parameter[] = [];
+
   constructor(public parent: ForestClass,
 
     //data about building like attributes, extends , no.of lines of codes etc.
@@ -515,6 +517,9 @@ export class MethodTree extends Block {
     let y = 0 + depth / 2 + depth * 0.05 + heightBush;
     bushMesh.position.set(x, y, z);
 
+    const axesHelper = new THREE.AxesHelper( 15 );
+    bushMesh.add( axesHelper );
+
     const stemGeometry = new THREE.CylinderGeometry(radiusStem, radiusStem, heightStem, 32);
     const stemMaterial = new THREE.MeshBasicMaterial({ color: 0x341a00 });
     const stemMesh = new THREE.Mesh(stemGeometry, stemMaterial);
@@ -536,49 +541,50 @@ export class MethodTree extends Block {
       angle_0[i] = i * deltaAngle;
     }
     var inclination = heightBush / (this.w -2) / 2;
-    var y_pos = heightBush * 0.1;
-    var x_pos = y_pos/inclination;
-    var x_pos = x_pos;
+    var y_pos: number ; 
+    var x_pos: number ; 
+    // var x_pos = x_pos;
+
+    var variableRows = Math.ceil (this.lVariables.length/4);
+    var allocatedBushHeight = heightBush/2 ;
+    var heightPerRow = allocatedBushHeight/variableRows;
+
+    // let n: number ;
+    let row: number;
 
     for (let i = 0; i < this.lVariables.length; i++) {
-      let n: number = angle_0[i % 4];
-      _.each(this.lVariables, (e) => e.render(bushMesh, x_pos * Math.sin(n)+0.5, y_pos, x_pos * Math.cos(n)+0.5, heightBush, this.w));
+
+      let n = angle_0[i % 4];
+      row = Math.floor (i / 4)+1;
+      y_pos =  - row * heightPerRow +row/2;
+      x_pos =  y_pos/inclination;
+      x_pos =x_pos/1.7;
+      console.log(x_pos + " =x_pos    ");
+
+      _.each(this.lVariables, (e) => e.render(bushMesh, x_pos * Math.sin(n)+0.5, y_pos+0.5, x_pos * Math.cos(n)+0.5, heightBush, this.w));
     }
-    ///////////////////////
 
+    var parameterRows = Math.ceil (this.parameters.length/4);
+    allocatedBushHeight = heightBush/4 ;
+    heightPerRow = allocatedBushHeight/parameterRows;
 
-    // const group = new THREE.Group()
-    // const level1 = new THREE.Mesh(
-    //   new THREE.ConeGeometry((this.w - 2) / 4, heightBush/3, 8),
-    //   new THREE.MeshLambertMaterial({ color: 0x00ff00 })
-    // )
-    // level1.position.y = 4
-    // group.add(level1)
-    // const level2 = new THREE.Mesh(
-    //   new THREE.ConeGeometry((this.w - 2)/3, heightBush/3, 8),
-    //   new THREE.MeshLambertMaterial({ color: 0x00ff00 })
-    // )
-    // level2.position.y = 3
-    // group.add(level2)
-    // const level3 = new THREE.Mesh(
-    //   new THREE.ConeGeometry((this.w - 2) / 2, heightBush/3, 8),
-    //   new THREE.MeshLambertMaterial({ color: 0x00ff00 })
-    // )
-    // level3.position.y = 2
-    // group.add(level3)
-    // const trunk = new THREE.Mesh(
-    //   new THREE.CylinderGeometry(0.5, 0.5, 2),
-    //   new THREE.MeshLambertMaterial({ color: 0xbb6600 })
-    // )
-    // trunk.position.y = 0
-    // group.add(trunk)
-    // scene.add(group);
-    // group.position.set(0, heightBush, 0);
-
+    for (let i = 0; i < this.parameters.length; i++) {
+      let n = angle_0[i % 4];
+      row = Math.floor (i / 4)+1;
+      y_pos = row * heightPerRow - row/2;
+      x_pos = y_pos/inclination;
+      x_pos =x_pos/2;
+      _.each(this.parameters, (e) => e.render(bushMesh, x_pos * Math.sin(n)+0.5, y_pos+0.5
+      , x_pos * Math.cos(n)+0.5, heightBush, this.w));
+    }
   }
 
   public addLVariable(lVariable: LVariable) {
     this.lVariables.push(lVariable);
+  }
+
+  public addParameters (parameter: Parameter) {
+    this.parameters.push(parameter);
   }
 
   public getTrackerText() {
@@ -618,6 +624,37 @@ export class MethodTree extends Block {
 
       }
     );
+  }
+
+  addTree (scene:Scene, heightBush:number){
+
+    const group = new THREE.Group()
+    const level1 = new THREE.Mesh(
+      new THREE.ConeGeometry((this.w - 2) / 4, heightBush/3, 8),
+      new THREE.MeshLambertMaterial({ color: 0x00ff00 })
+    )
+    level1.position.y = 4
+    group.add(level1)
+    const level2 = new THREE.Mesh(
+      new THREE.ConeGeometry((this.w - 2)/3, heightBush/3, 8),
+      new THREE.MeshLambertMaterial({ color: 0x00ff00 })
+    )
+    level2.position.y = 3
+    group.add(level2)
+    const level3 = new THREE.Mesh(
+      new THREE.ConeGeometry((this.w - 2) / 2, heightBush/3, 8),
+      new THREE.MeshLambertMaterial({ color: 0x00ff00 })
+    )
+    level3.position.y = 2
+    group.add(level3)
+    const trunk = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.5, 0.5, 2),
+      new THREE.MeshLambertMaterial({ color: 0xbb6600 })
+    )
+    trunk.position.y = 0
+    group.add(trunk)
+    scene.add(group);
+    group.position.set(0, heightBush, 0);
   }
 
 }
@@ -697,6 +734,49 @@ export class GVariable extends Block {
 }
 export class LVariable {
 
+  constructor(public parent: MethodTree,height: number,public data: Variable) {
+  }
+
+  public render(scene: THREE.Mesh, x_pos: number, y_pos: number, z_pos: number, heightBush: number, w: number) {
+    var options: THREE.MeshBasicMaterialParameters = { color: 0x87697e };
+    const geometry = new THREE.SphereGeometry(w * 0.05, 5, 10);
+    const material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+    const sphere = new THREE.Mesh(geometry, material);
+    scene.add(sphere);
+    sphere.position.set(x_pos,y_pos, z_pos);
+    // console.log(x_pos + " inside l " +y_pos + " "+z_pos );
+  }
+
+  public getTrackerText() {
+    // var text = `<em>&lt;&lt; ${this.data.type} &gt;&gt;</em><br><strong>${this.name}</strong><br>`;
+
+    // if (this.data.extends !== null) {
+    //   text += ` extends <em>${this.data.extends}</em><br>`;
+    // }
+
+    // if (this.data.implements !== null) {
+    //   text += ` implements <em>${this.data.implements}</em><br>`;
+    // }
+
+    // return text + `<br><br>Methods: ${this.data.no_methods}<br>Attributes: ${this.data.no_attrs}<br>LOC: ${this.data.no_lines}<br><br>File: ${this.data.file}`;
+  }
+
+  // public getQualifiedName(): string {
+    // if (this.parent === null) {
+    //   return '';
+    // }
+
+    // if (this.name == 'none') {
+    //   return '<em>No package</em>';
+    // }
+
+    // return `${(<District>this.parent).getQualifiedName()}\\${this.name}`;
+  // }
+
+}
+
+export class Parameter {
+
   constructor(public parent: MethodTree,
     height: number,
     public data: Variable,
@@ -707,12 +787,10 @@ export class LVariable {
   public render(scene: THREE.Mesh, x_pos: number, y_pos: number, z_pos: number, heightBush: number, w: number) {
     var options: THREE.MeshBasicMaterialParameters = { color: 0x87697e };
     const geometry = new THREE.SphereGeometry(w * 0.05, 5, 10);
-    const material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+    const material = new THREE.MeshBasicMaterial({ color: 0x800080 });
     const sphere = new THREE.Mesh(geometry, material);
     scene.add(sphere);
-
-    // sphere.position.set(x_pos, ((heightBush / 2 - y_pos)), z_pos);
-    sphere.position.set(x_pos,  y_pos+0.5, z_pos);
+    sphere.position.set(x_pos, y_pos, z_pos);
 
   }
 
