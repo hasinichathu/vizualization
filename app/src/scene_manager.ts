@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { Preprocessor } from './preprocessor';
 import { ExtendedMesh } from './interfaces';
-import { ForestClass, District } from './blocks';
+import { ForestClass, Island } from './blocks';
 import * as $ from 'jQuery';
 import { Mesh } from '../libraries/three';
 

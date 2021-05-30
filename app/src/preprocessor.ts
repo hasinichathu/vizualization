@@ -1,9 +1,8 @@
 import { City, InputObject, MethodData, Variable } from './interfaces';
-import { ForestClass, District, Block, MethodTree,GVariable,LVariable,Parameter } from './blocks';
+import { ForestClass, Island, Block, MethodTree,GVariable,LVariable,Parameter } from './blocks';
 import { SceneManager } from './scene_manager';
 import * as _ from 'underscore';
 import * as $ from 'jQuery';
-import { TreeMesh } from './Tree';
 
 export function processJSONInput(input: HTMLInputElement) {
   var reader = new FileReader();
@@ -58,7 +57,7 @@ export class Preprocessor {
     $('#project-objects').text(this.json.length);
 
     this.city = {
-      districts: { base: new District('base', 1, null) },
+      districts: { base: new Island('base', 1, null) },
       buildings: []
     };
 
@@ -71,7 +70,7 @@ export class Preprocessor {
     this.city.districts['base'].setColor(0xf25a07);
 
     // find out max depth of a district
-    var maxDepth = <District>_.max(this.city.districts, (e) => { return e.depth; });
+    var maxDepth = <Island>_.max(this.city.districts, (e) => { return e.depth; });
 
     // set margin for each district by finding his nesting level
     _.each(this.city.districts, (e) => { e.addWidth = maxDepth.depth - e.depth });
@@ -81,11 +80,8 @@ export class Preprocessor {
 
     // calculate minimal dimensions for blocks
     base.getWidth();
-    // base.viewCityStructure();
-
     base.render(SceneManager.scene, 0);
-    // var treeMesh = new TreeMesh();
-    // treeMesh.createTree(SceneManager.scene);
+
 
     // fill selects
     let _extends = _.countBy(this.city.buildings, (e) => e.data.extends);
@@ -111,9 +107,6 @@ export class Preprocessor {
   }
 
   private detectLevels() {
-    // console.log("inside detect levels");
-    // let sorted: InputObject[] = _.sortBy(this.json, this.heightAttr);
-    // let sorted_length = sorted.length;
     let json_length = this.json.length;
     let methods: MethodData[]=[];
 
@@ -224,18 +217,18 @@ export class Preprocessor {
     return district;
   }
 
-  private findOrCreateDistrict(name: string, height: number, parent: District) {
+  private findOrCreateDistrict(name: string, height: number, parent: Island) {
     if (this.city.districts[name] !== undefined) {
       return this.city.districts[name];
     }
 
-    //when district  is undefined
-    var district = new District(name, height, parent);
-    this.city.districts[name] = district;
+    //when island  is undefined
+    var island = new Island(name, height, parent);
+    this.city.districts[name] = island;
 
-    parent.addChildDistrict(district);
+    parent.addChildDistrict(island);
 
-    return district;
+    return island;
   }
 
   private addMethods(parent: ForestClass, method: MethodData[]) {

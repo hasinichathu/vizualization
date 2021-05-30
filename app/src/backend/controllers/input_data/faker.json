@@ -1,113 +1,26 @@
 [
     {
-        "file": "src\\Faker\\Calculator\\Iban.php",
+        "file": "src\\Faker\\Calculator\\Iban.java",
         "namespace": "Faker\\Calculator",
         "name": "Iban",
+        "quality" : "low",
         "extends": null,
         "implements": null,
         "no_lines": 66,
-        "no_attrs": 0,
+        "no_attrs": 10,
         "no_methods": 5,
         "abstract": false,
         "final": false,
         "trait": false,
         "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "src\\Faker\\Calculator\\Luhn.php",
-        "namespace": "Faker\\Calculator",
-        "name": "Luhn",
-        "extends": null,
-        "implements": null,
-        "no_lines": 45,
-        "no_attrs": 0,
-        "no_methods": 3,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "src\\Faker\\DefaultGenerator.php",
-        "namespace": "Faker",
-        "name": "DefaultGenerator",
-        "extends": null,
-        "implements": null,
-        "no_lines": 25,
-        "no_attrs": 1,
-        "no_methods": 3,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "src\\Faker\\Documentor.php",
-        "namespace": "Faker",
-        "name": "Documentor",
-        "extends": null,
-        "implements": null,
-        "no_lines": 61,
-        "no_attrs": 1,
-        "no_methods": 2,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "src\\Faker\\Factory.php",
-        "namespace": "Faker",
-        "name": "Factory",
-        "extends": null,
-        "implements": null,
-        "no_lines": 56,
-        "no_attrs": 1,
-        "no_methods": 3,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "src\\Faker\\Generator.php",
-        "namespace": "Faker",
-        "name": "Generator",
-        "extends": null,
-        "implements": null,
-        "no_lines": 79,
-        "no_attrs": 2,
-        "no_methods": 9,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false
-    },
-    {
-        "file": "src\\Faker\\Guesser\\Name.php",
-        "namespace": "Faker\\Guesser",
-        "name": "Name",
-        "extends": null,
-        "implements": null,
-        "no_lines": 149,
-        "no_attrs": 1,
-        "no_methods": 2,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
         "anonymous": false,
+        "is_secure" :true,
         "methods":[
             {
                 "name": "method-one",
                 "no_lines": 66,
                 "no_attrs": 3,
+                "is_secure" :true,
                 "no_variables": 1,
                 "variables" : [
                     {
@@ -115,20 +28,67 @@
                         "type" : "int"
                     }
 
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
+                ]
+
+
+            },
+            {
+                "name": "method-three",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "is_secure" :true,
+                "variables" : [
+                    {
+                        "name": "local_variable1",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable2",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable3",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable4",
+                        "type" : "int"
+                    }
+
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
                 ]
 
             },
             {
                 "name": "method-two",
                 "no_lines": 66,
-                "no_attrs": 8,
+                "no_attrs": 3,
                 "no_variables": 0,
+                "is_secure" :true,
                 "variables" : [
                     {
                         "name": "local_variable",
                         "type" : "int"
                     }
 
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
                 ]
             }
         ],
@@ -140,9 +100,458 @@
         ]
     },
     {
-        "file": "src\\Faker\\ORM\\CakePHP\\ColumnTypeGuesser.php",
+        "file": "src\\Fake\\Calculator\\Luhn.java",
+        "namespace": "Faker\\Calculator",
+        "name": "Luhn",
+        "quality" : "low",
+        "extends": null,
+        "implements": null,
+        "no_lines": 45,
+        "no_attrs": 6,
+        "no_methods": 3,
+        "abstract": false,
+        "final": false,
+        "trait": false,
+        "type": "class",
+        "anonymous": false,
+        "is_secure" :true,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "is_secure" :true,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable2",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable3",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable4",
+                        "type" : "int"
+                    }
+
+
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 6,
+                "no_variables": 0,
+                "is_secure" :true,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
+    },
+    {
+        "file": "src\\Fake\\DefaultGenerator.java",
+        "namespace": "Faker",
+        "name": "DefaultGenerator",
+        "quality" : "low",
+        "extends": null,
+        "implements": null,
+        "no_lines": 25,
+        "no_attrs": 1,
+        "no_methods": 3,
+        "abstract": false,
+        "final": false,
+        "trait": false,
+        "type": "class",
+        "anonymous": false,
+        "is_secure" :true,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "is_secure" :true,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable2",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable3",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable4",
+                        "type" : "int"
+                    }
+
+
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 10,
+                "no_variables": 0,
+                "is_secure" :false,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
+    },
+    {
+        "file": "src\\Faker\\Documentor.java",
+        "namespace": "Faker",
+        "name": "Documentor",
+        "quality" : "low",
+        "extends": null,
+        "implements": null,
+        "no_lines": 61,
+        "no_attrs": 1,
+        "no_methods": 2,
+        "abstract": false,
+        "final": false,
+        "trait": false,
+        "type": "class",
+        "anonymous": false,
+        "is_secure" :false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "is_secure" :true,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "is_secure" :true,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
+    },
+    {
+        "file": "src\\Faker\\Factory.java",
+        "namespace": "Faker",
+        "name": "Factory",
+        "quality" : "low",
+        "extends": null,
+        "implements": null,
+        "no_lines": 56,
+        "no_attrs": 1,
+        "no_methods": 3,
+        "abstract": false,
+        "final": false,
+        "trait": false,
+        "type": "class",
+        "anonymous": false,
+        "is_secure" :false,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "is_secure" :true,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 6,
+                "no_variables": 0,
+                "is_secure" :true,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable2",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable3",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable4",
+                        "type" : "int"
+                    }
+
+
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
+    },
+    {
+        "file": "src\\Faker\\Generator.java",
+        "namespace": "Faker",
+        "name": "Generator",
+        "quality" : "low",
+        "extends": null,
+        "implements": null,
+        "no_lines": 79,
+        "no_attrs": 2,
+        "no_methods": 9,
+        "abstract": true,
+        "final": false,
+        "trait": false,
+        "type": "class",
+        "anonymous": false,
+        "is_secure" :true,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "is_secure" :true,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 17,
+                "no_variables": 0,
+                "is_secure" :true,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable2",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable3",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable4",
+                        "type" : "int"
+                    }
+
+
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
+    },
+    {
+        "file": "src\\Faker\\Guesser\\Name.java",
+        "namespace": "Faker\\Guesser",
+        "name": "Name",
+        "quality" : "low",
+        "extends": null,
+        "implements": null,
+        "no_lines": 149,
+        "no_attrs": 1,
+        "no_methods": 2,
+        "abstract": false,
+        "final": true,
+        "trait": false,
+        "type": "class",
+        "anonymous": false,
+        "is_secure" :true,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 10,
+                "no_variables": 1,
+                "is_secure" :true,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 4,
+                "no_variables": 0,
+                "is_secure" :true,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
+    },
+    {
+        "file": "src\\Faker\\ORM\\CakePHP\\ColumnTypeGuesser.java",
         "namespace": "Faker\\ORM\\CakePHP",
         "name": "ColumnTypeGuesser",
+        "quality" : "low",
         "extends": null,
         "implements": null,
         "no_lines": 62,
@@ -153,32 +562,47 @@
         "trait": false,
         "type": "class",
         "anonymous": false,
+        "is_secure" :true,
         "methods":[
             {
                 "name": "method-one",
                 "no_lines": 66,
                 "no_attrs": 3,
                 "no_variables": 1,
+                "is_secure" :true,
                 "variables" : [
                     {
                         "name": "local_variable",
                         "type" : "int"
                     }
 
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
                 ]
 
             },
             {
                 "name": "method-two",
                 "no_lines": 66,
-                "no_attrs": 8,
+                "no_attrs": 5,
                 "no_variables": 0,
+                "is_secure" :true,
                 "variables" : [
                     {
                         "name": "local_variable",
                         "type" : "int"
                     }
 
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
                 ]
             }
         ],
@@ -190,24 +614,27 @@
         ]
     },
     {
-        "file": "src\\Faker\\ORM\\CakePHP\\EntityPopulator.php",
-        "namespace": "Faker\\ORM\\CakePHP",
-        "name": "EntityPopulator",
+        "file": "src\\Second\\Calculator\\Iban.java",
+        "namespace": "Second\\Calculator",
+        "name": "Iban",
+        "quality" : "low",
         "extends": null,
         "implements": null,
-        "no_lines": 159,
-        "no_attrs": 4,
-        "no_methods": 10,
+        "no_lines": 66,
+        "no_attrs": 10,
+        "no_methods": 5,
         "abstract": false,
         "final": false,
         "trait": false,
         "type": "class",
         "anonymous": false,
+        "is_secure" :true,
         "methods":[
             {
                 "name": "method-one",
                 "no_lines": 66,
                 "no_attrs": 3,
+                "is_secure" :true,
                 "no_variables": 1,
                 "variables" : [
                     {
@@ -215,20 +642,67 @@
                         "type" : "int"
                     }
 
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
+                ]
+
+
+            },
+            {
+                "name": "method-three",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "is_secure" :true,
+                "variables" : [
+                    {
+                        "name": "local_variable1",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable2",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable3",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable4",
+                        "type" : "int"
+                    }
+
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
                 ]
 
             },
             {
                 "name": "method-two",
                 "no_lines": 66,
-                "no_attrs": 8,
+                "no_attrs": 3,
                 "no_variables": 0,
+                "is_secure" :true,
                 "variables" : [
                     {
                         "name": "local_variable",
                         "type" : "int"
                     }
 
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
                 ]
             }
         ],
@@ -240,45 +714,74 @@
         ]
     },
     {
-        "file": "src\\Faker\\ORM\\CakePHP\\Populator.php",
-        "namespace": "Faker\\ORM\\CakePHP",
-        "name": "Populator",
+        "file": "src\\Second\\Calculator\\Luhn.java",
+        "namespace": "Second\\Calculator",
+        "name": "Luhn",
+        "quality" : "low",
         "extends": null,
         "implements": null,
-        "no_lines": 104,
-        "no_attrs": 4,
-        "no_methods": 7,
+        "no_lines": 45,
+        "no_attrs": 6,
+        "no_methods": 3,
         "abstract": false,
         "final": false,
         "trait": false,
         "type": "class",
         "anonymous": false,
+        "is_secure" :true,
         "methods":[
             {
                 "name": "method-one",
                 "no_lines": 66,
                 "no_attrs": 3,
                 "no_variables": 1,
+                "is_secure" :true,
                 "variables" : [
                     {
                         "name": "local_variable",
                         "type" : "int"
+                    },
+                    {
+                        "name": "local_variable2",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable3",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable4",
+                        "type" : "int"
                     }
 
+
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
                 ]
 
             },
             {
                 "name": "method-two",
                 "no_lines": 66,
-                "no_attrs": 8,
+                "no_attrs": 6,
                 "no_variables": 0,
+                "is_secure" :true,
                 "variables" : [
                     {
                         "name": "local_variable",
                         "type" : "int"
                     }
 
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
                 ]
             }
         ],
@@ -290,12 +793,92 @@
         ]
     },
     {
-        "file": "src\\Faker\\ORM\\Doctrine\\ColumnTypeGuesser.php",
-        "namespace": "Faker\\ORM\\Doctrine",
-        "name": "ColumnTypeGuesser",
+        "file": "src\\Second\\DefaultGenerator.java",
+        "namespace": "Second",
+        "name": "DefaultGenerator",
+        "quality" : "low",
         "extends": null,
         "implements": null,
-        "no_lines": 68,
+        "no_lines": 25,
+        "no_attrs": 1,
+        "no_methods": 3,
+        "abstract": false,
+        "final": false,
+        "trait": false,
+        "type": "class",
+        "anonymous": false,
+        "is_secure" :true,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "is_secure" :true,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable2",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable3",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable4",
+                        "type" : "int"
+                    }
+
+
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 10,
+                "no_variables": 0,
+                "is_secure" :false,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
+    },
+    {
+        "file": "src\\Second\\Documentor.java",
+        "namespace": "Second",
+        "name": "Documentor",
+        "quality" : "low",
+        "extends": null,
+        "implements": null,
+        "no_lines": 61,
         "no_attrs": 1,
         "no_methods": 2,
         "abstract": false,
@@ -303,18 +886,26 @@
         "trait": false,
         "type": "class",
         "anonymous": false,
+        "is_secure" :false,
         "methods":[
             {
                 "name": "method-one",
                 "no_lines": 66,
                 "no_attrs": 3,
                 "no_variables": 1,
+                "is_secure" :true,
                 "variables" : [
                     {
                         "name": "local_variable",
                         "type" : "int"
                     }
 
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
                 ]
 
             },
@@ -323,12 +914,19 @@
                 "no_lines": 66,
                 "no_attrs": 8,
                 "no_variables": 0,
+                "is_secure" :true,
                 "variables" : [
                     {
                         "name": "local_variable",
                         "type" : "int"
                     }
 
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
                 ]
             }
         ],
@@ -340,95 +938,285 @@
         ]
     },
     {
-        "file": "src\\Faker\\ORM\\Doctrine\\EntityPopulator.php",
-        "namespace": "Faker\\ORM\\Doctrine",
-        "name": "EntityPopulator",
+        "file": "src\\Second\\Factory.java",
+        "namespace": "Second",
+        "name": "Factory",
+        "quality" : "low",
         "extends": null,
         "implements": null,
-        "no_lines": 240,
-        "no_attrs": 3,
-        "no_methods": 13,
-        "abstract": false,
-        "final": false,
-        "trait": false,
-        "type": "class",
-        "anonymous": false,
-        "methods":[
-            {
-                "name": "method-one",
-                "no_lines": 66,
-                "no_attrs": 3,
-                "no_variables": 1,
-                "variables" : [
-                    {
-                        "name": "local_variable",
-                        "type" : "int"
-                    }
-
-                ]
-
-            },
-            {
-                "name": "method-two",
-                "no_lines": 66,
-                "no_attrs": 8,
-                "no_variables": 0,
-                "variables" : [
-                    {
-                        "name": "local_variable",
-                        "type" : "int"
-                    }
-
-                ]
-            }
-        ],
-        "globle_variables" :[
-            {
-                "name": "globle_variable",
-                "type" : "int"
-            }
-        ]
-    },
-    {
-        "file": "src\\Faker\\ORM\\Doctrine\\Populator.php",
-        "namespace": "Faker\\ORM\\Doctrine",
-        "name": "Populator",
-        "extends": null,
-        "implements": null,
-        "no_lines": 71,
-        "no_attrs": 5,
+        "no_lines": 56,
+        "no_attrs": 1,
         "no_methods": 3,
         "abstract": false,
         "final": false,
         "trait": false,
         "type": "class",
         "anonymous": false,
+        "is_secure" :false,
         "methods":[
             {
                 "name": "method-one",
                 "no_lines": 66,
                 "no_attrs": 3,
                 "no_variables": 1,
+                "is_secure" :true,
                 "variables" : [
                     {
                         "name": "local_variable",
                         "type" : "int"
                     }
 
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
                 ]
 
             },
             {
                 "name": "method-two",
                 "no_lines": 66,
-                "no_attrs": 8,
+                "no_attrs": 6,
                 "no_variables": 0,
+                "is_secure" :true,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable2",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable3",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable4",
+                        "type" : "int"
+                    }
+
+
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
+    },
+    {
+        "file": "src\\Second\\Generator.java",
+        "namespace": "Second",
+        "name": "Generator",
+        "quality" : "low",
+        "extends": null,
+        "implements": null,
+        "no_lines": 79,
+        "no_attrs": 2,
+        "no_methods": 9,
+        "abstract": true,
+        "final": false,
+        "trait": false,
+        "type": "class",
+        "anonymous": false,
+        "is_secure" :true,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "is_secure" :true,
                 "variables" : [
                     {
                         "name": "local_variable",
                         "type" : "int"
                     }
 
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 17,
+                "no_variables": 0,
+                "is_secure" :true,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable2",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable3",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable4",
+                        "type" : "int"
+                    }
+
+
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
+    },
+    {
+        "file": "src\\Second\\Guesser\\Name.java",
+        "namespace": "Second\\Guesser",
+        "name": "Name",
+        "quality" : "low",
+        "extends": null,
+        "implements": null,
+        "no_lines": 149,
+        "no_attrs": 1,
+        "no_methods": 2,
+        "abstract": false,
+        "final": true,
+        "trait": false,
+        "type": "class",
+        "anonymous": false,
+        "is_secure" :true,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 10,
+                "no_variables": 1,
+                "is_secure" :true,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 4,
+                "no_variables": 0,
+                "is_secure" :true,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
+    },
+    {
+        "file": "src\\Second\\ORM\\CakePHP\\ColumnTypeGuesser.java",
+        "namespace": "Second\\ORM\\CakePHP",
+        "name": "ColumnTypeGuesser",
+        "quality" : "low",
+        "extends": null,
+        "implements": null,
+        "no_lines": 62,
+        "no_attrs": 1,
+        "no_methods": 2,
+        "abstract": false,
+        "final": false,
+        "trait": false,
+        "type": "class",
+        "anonymous": false,
+        "is_secure" :true,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "is_secure" :true,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 5,
+                "no_variables": 0,
+                "is_secure" :true,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
                 ]
             }
         ],
@@ -439,5 +1227,4 @@
             }
         ]
     }
-  
 ]

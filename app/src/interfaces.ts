@@ -1,4 +1,4 @@
-import { ForestClass, District, Block } from './blocks'
+import { ForestClass, Island, Block } from './blocks'
 import * as THREE from 'three';
 
 export interface ClassData {
@@ -40,7 +40,7 @@ export interface Variable {
 }
 
 export interface City {
-  districts: { [propName: string]: District };
+  districts: { [propName: string]: Island };
   buildings: Array<ForestClass>;
 }
 

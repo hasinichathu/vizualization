@@ -5,8 +5,14 @@ import * as THREE from 'three';
 import * as _ from 'underscore';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { Scene } from "three";
+import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
 
+export class Position {
+  x: number;
+  y: number;
+  z: number;
 
+}
 export abstract class Block {
   protected color: THREE.Color;
   public fit: { x: number, y: number };
@@ -52,7 +58,7 @@ export abstract class Block {
 export class ForestClass extends Block {
   public methods: MethodTree[] = [];
   public gVariables: GVariable[] = [];
-  constructor(public parent: District,
+  constructor(public parent: Island,
     height: number,
     //data about building like attributes, extends , no.of lines of codes etc.
     public data: ClassData,
@@ -94,6 +100,9 @@ export class ForestClass extends Block {
     var mesh: ExtendedMesh = <ExtendedMesh><unknown>new THREE.Mesh(geometry, material);
     mesh.name = this.name ? this.name : '';
 
+    var mesh2: ExtendedMesh = <ExtendedMesh><unknown>new THREE.Mesh(geometry, material);
+
+
     mesh.position.set(this.getX() - 1 * this.parent.addWidth + 1, 0 + depth / 2 + depth * 0.05, this.getY() - 1 * this.parent.addWidth + 1);
     mesh.scale.set(this.w - 2, this.d / 2, this.h - 2);
 
@@ -106,11 +115,124 @@ export class ForestClass extends Block {
 
     mesh.add(line);
 
+    if (!this.data.is_secure) {
+      // this.loadGLTF(this.getX() - 1 * this.parent.addWidth + 1, 0 + depth / 2 + depth * 0.05, this.getY() - 1 * this.parent.addWidth + 1, scene);
+      // this.loadObj(this.getX() - 1 * this.parent.addWidth + 1, 0 + depth / 2 + depth * 0.05, this.getY() - 1 * this.parent.addWidth + 1, scene);
+      this.loadObj(this.getX() - 1 * this.parent.addWidth + 1, 0 + depth / 2 + depth * 0.05, this.getY() - 1 * this.parent.addWidth + 1, scene, this.w - 2, this.h - 2);
+
+    }
+
+    if (this.data.quality === "low") {
+
+      this.addFog(this.getX() - 1 * this.parent.addWidth + 1, 0 + depth / 2 + depth * 0.05, this.getY() - 1 * this.parent.addWidth + 1, scene, this.w - 2, this.h - 2);
+      // this.loadObj(this.getX() - 1 * this.parent.addWidth + 1, 0 + depth / 2 + depth * 0.05, this.getY() - 1 * this.parent.addWidth + 1, scene);
+
+    }
+
     mesh.block = this;
     _.each(this.methods, (e) => e.render(scene, depth + 1));
     _.each(this.gVariables, (e) => e.render(scene, depth + 1));
 
 
+  }
+
+
+  public addFog(x: number, y: number, z: number, scene: Scene, w: number, l: number) {
+    var positions: Position[] = [];
+    var center = { x: x + w / 2, y: y, z: z + l / 2 };
+    var spread;
+    if (center.x > center.z) {
+      spread = center.z;
+    } else {
+      spread = center.x;
+    }
+
+    for (var i = 0; i < 10; i++) {
+      x = center.x + this.randFloat(-spread, spread);
+      y = this.randFloat(5, spread * 0.5);
+      z = center.z + this.randFloat(-spread, spread);
+      positions.push({ x: x, y: y, z: z });
+
+      var options: THREE.MeshBasicMaterialParameters = { color: 0x87697e };
+      const geometry = new THREE.SphereGeometry(0.11, 5, 10);
+      const material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+      const sphere = new THREE.Mesh(geometry, material);
+      scene.add(sphere);
+
+      sphere.position.set(x, y, z);
+    }
+  }
+
+  public loadObj(x: number, y: number, z: number, scene: Scene, w: number, l: number) {
+    console.log(" inside obj loader");
+    var center = { x: x + w / 2, y: y, z: z + l / 2 };
+    var options: THREE.MeshBasicMaterialParameters = { color: 0x800000 };
+      options.color = 0x800000;
+      options.opacity = 0.5
+      options.transparent = true;
+
+    
+    // instantiate a loader
+    const loader = new OBJLoader();
+
+    // load a resource
+    loader.load(
+      'app/src/models/21448_Flame_v1.obj',
+      function (object) {
+        object.rotation.y = Math.PI;
+        object.rotation.x = Math.PI / 2;
+
+        object.scale.set(w * 0.05, w * 0.05, w * 0.05);
+        scene.add(object);
+        object.position.set(center.x, center.y, center.z);
+        const axesHelper = new THREE.AxesHelper( 5 );
+        object.add( axesHelper );
+        const ambientLight = new THREE.AmbientLight(0x800000 , 0.6);
+        object.add(ambientLight);
+      },
+      function (xhr) {
+        console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+      },
+      function (error) {
+        console.log('An error happened');
+      }
+    );
+  }
+  public randFloat(min: number, max: number) {
+    return Math.random() * (max - min) + min;
+  }
+
+  loadGLTF(x: number, y: number, z: number, scene: Scene) {
+    var loader = new GLTFLoader();
+    console.log(" inside loader");
+    loader.load(
+      'app/src/models/fireplace/model2.gltf',
+
+      function (gltf) {
+        var mesh = gltf.scene;
+        mesh.position.set(x, y + 1, z);
+        scene.add(mesh);
+
+        gltf.animations; // Array<THREE.AnimationClip>
+        gltf.scene; // THREE.Group
+        gltf.scenes; // Array<THREE.Group>
+        gltf.cameras; // Array<THREE.Camera>
+        gltf.asset; // Object
+
+      },
+      // called while loading is progressing
+      function (xhr) {
+
+        console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+
+      },
+      // called when loading has errors
+      function (error) {
+
+        console.log('An error happened');
+
+      }
+    );
   }
 
   public getTrackerText() {
@@ -182,7 +304,7 @@ export class ForestClass extends Block {
       return '<em>No package</em>';
     }
 
-    return `${(<District>this.parent).getQualifiedName()}\\${this.name}`;
+    return `${(<Island>this.parent).getQualifiedName()}\\${this.name}`;
   }
 
   public addMethod(method: MethodTree) {
@@ -198,8 +320,8 @@ export class ForestClass extends Block {
   }
 }
 
-export class District extends Block {
-  protected children: District[] = [];
+export class Island extends Block {
+  protected children: Island[] = [];
   protected buildings: ForestClass[] = [];
 
   constructor(name: string, height: number, parent: Block) {
@@ -290,9 +412,6 @@ export class District extends Block {
     //in first iteration check for base district
     let packer = new GrowingPacker();
 
-    // let packer = new GrowingPacker(this);
-    // console.log(this.buildings.length + "building count");
-
     // if the district is of a top level
     if (this.children.length === 0) {
 
@@ -302,33 +421,21 @@ export class District extends Block {
 
       for (let i = 0; i < l; i++) {
         this.buildings[i].getWidth();
-        // this.getBuildingWidth(this.buildings[i]);
       }
 
-      // for (let i = 0; i < l; i++) {
-      //   console.log (this.buildings[i].methods[i].w+"building data");
-      //   // this.getBuildingWidth(this.buildings[i]);
-      // }
       //rearrange the building based on its width
       let sorted = _.sortBy(this.buildings, (e) => e.w).reverse();
 
       //send all the building data to fit method
-      // console.log("building sorting started ");
-
       packer.fit(sorted);
-      // console.log("building sorting ended ");
-      // for (let j = 0; j < this.buildings.length; j++) {
-      //   console.log(this.buildings[j]);
-      // }
+
       //assign values to fit variables in block class
       this.w = packer.root.w + 2;
       this.h = packer.root.h + 2;
       this.fit = packer.root;
-      // console.log("district dim "+this.w+", "+this.h+", "+this.fit.x+", "+this.fit.y);
 
       for (let i = 0; i < sorted.length; i++) {
         let block = sorted[i];
-
         //check the building array of respective District and add x,y coordinates
         for (let j = 0; j < l; j++) {
           if (this.buildings[j].data.file === block.data.file) {
@@ -343,7 +450,6 @@ export class District extends Block {
       // console.log("no of distrcits "+l);
 
       // first calculate w/h on children
-      // for (let i = 0; i < l; i++) {
       // during creation of district width is not defined.
       //but in building creation width is defined.
       //by adding loop distrivts and building will be double printed
@@ -354,26 +460,14 @@ export class District extends Block {
         // this.getBuildingWidth(this.buildings[i]);
       }
 
-      // for (let i = 0; i < l; i++) {
-      //   console.log (this.buildings[i].methods[i].w+"building data");
-      //   // this.getBuildingWidth(this.buildings[i]);
-      // }
       let sorted = _.sortBy(((<Block[]>this.children).concat(<Block[]>this.buildings)), (e) => e.w).reverse();
-      // console.log("children sorting started " + this.name);
-      // for (let j = 0; j < sorted.length; j++) {
-      //   console.log(sorted[j]);
-      // }
 
       packer.fit(sorted);
-      // console.log("children sorting ended ");
 
       this.w = packer.root.w + 2;
-      // console.log("inside else " + this.w+" this.w");
 
       this.h = packer.root.h + 2;
       this.fit = packer.root;
-      // console.log(this.fit.x + " this.fit");
-      // console.log("district dim "+this.w+", "+this.h+", "+this.fit.x+", "+this.fit.y);
 
       // insert x,y values into building array
       for (let i = 0; i < sorted.length; i++) {
@@ -385,10 +479,8 @@ export class District extends Block {
           }
         }
         for (let j = 0; j < this.children.length; j++) {
-          if (block instanceof District && this.children[j].name === block.name) {
+          if (block instanceof Island && this.children[j].name === block.name) {
             this.children[j].fit = block.fit;
-            // console.log(this.children[j].name + " district " + this.children[j].fit.x + ", " + this.children[j].fit.y);
-
           }
         }
       }
@@ -399,13 +491,8 @@ export class District extends Block {
   public childrenWidth() {
     let l = this.children.length;
     let width = 0;
-    // console.log("chidrenwidth method "+ this.name);
 
     for (let i = 0; i < l; i++) {
-      // console.log("chidrenwidth method "+ this.name + " " + i);
-
-      // console.log("chidrenwidth method calling "+ this.children[i].name);
-
       width += this.children[i].getWidth();
     }
 
@@ -418,7 +505,7 @@ export class District extends Block {
   }
 
 
-  public addChildDistrict(district: District) {
+  public addChildDistrict(district: Island) {
     this.children.push(district);
   }
 
@@ -431,11 +518,11 @@ export class District extends Block {
       return '<em>No package</em>';
     }
 
-    return `${(<District>this.parent).getQualifiedName()}\\${this.name}`;
+    return `${(<Island>this.parent).getQualifiedName()}\\${this.name}`;
   }
 
   public getChildBuildingsCount(): number {
-    var sum = _.reduce(this.children, (memo: number, e: District): number => memo + e.getChildBuildingsCount(), 0);
+    var sum = _.reduce(this.children, (memo: number, e: Island): number => memo + e.getChildBuildingsCount(), 0);
 
     return sum + this.buildings.length;
     // return 5;
@@ -500,8 +587,9 @@ export class MethodTree extends Block {
     var heightStem = height * 0.5;
     var heightBush = height * 0.5;
     var radiusStem = this.w * 0.04;
+    var radius = (this.w) / 3;
 
-    const bushGeometry = new THREE.ConeGeometry((this.w - 2) / 2, heightBush, 32);
+    const bushGeometry = new THREE.ConeGeometry(radius, heightBush, 32);
     bushGeometry.applyMatrix4(new THREE.Matrix4().makeTranslation(0.5, 0.5, 0.5));
 
     const bushMaterial = new THREE.MeshBasicMaterial({ color: 0x006700 });
@@ -512,13 +600,13 @@ export class MethodTree extends Block {
 
     bushMesh.name = this.name ? this.name : '';
 
-    let x = this.getX() - 1 * this.parent.addWidth + 1 + (this.w - 2) / 2;
-    let z = this.getY() - 1 * this.parent.addWidth + 1 + (this.w - 2) / 2;
+    let x = this.getX() - 1 * this.parent.addWidth + 1 + radius;
+    let z = this.getY() - 1 * this.parent.addWidth + 1 + radius;
     let y = 0 + depth / 2 + depth * 0.05 + heightBush;
     bushMesh.position.set(x, y, z);
 
-    const axesHelper = new THREE.AxesHelper( 15 );
-    bushMesh.add( axesHelper );
+    // const axesHelper = new THREE.AxesHelper(15);
+    // bushMesh.add(axesHelper);
 
     const stemGeometry = new THREE.CylinderGeometry(radiusStem, radiusStem, heightStem, 32);
     const stemMaterial = new THREE.MeshBasicMaterial({ color: 0x341a00 });
@@ -540,14 +628,14 @@ export class MethodTree extends Block {
     for (var i = 0; i < segments; i++) {
       angle_0[i] = i * deltaAngle;
     }
-    var inclination = heightBush / (this.w -2) / 2;
-    var y_pos: number ; 
-    var x_pos: number ; 
+    var inclination = heightBush / radius;
+    var y_pos: number;
+    var x_pos: number;
     // var x_pos = x_pos;
 
-    var variableRows = Math.ceil (this.lVariables.length/4);
-    var allocatedBushHeight = heightBush/2 ;
-    var heightPerRow = allocatedBushHeight/variableRows;
+    var variableRows = Math.ceil(this.lVariables.length / 4);
+    var allocatedBushHeight = heightBush / 2;
+    var heightPerRow = allocatedBushHeight / variableRows;
 
     // let n: number ;
     let row: number;
@@ -555,35 +643,32 @@ export class MethodTree extends Block {
     for (let i = 0; i < this.lVariables.length; i++) {
 
       let n = angle_0[i % 4];
-      row = Math.floor (i / 4)+1;
-      y_pos =  - row * heightPerRow +row/2;
-      x_pos =  y_pos/inclination;
-      x_pos =x_pos/1.7;
-      console.log(x_pos + " =x_pos    ");
-
-      _.each(this.lVariables, (e) => e.render(bushMesh, x_pos * Math.sin(n)+0.5, y_pos+0.5, x_pos * Math.cos(n)+0.5, heightBush, this.w));
+      row = Math.floor(i / 4) + 1;
+      y_pos = - row * heightPerRow + row / 2;
+      x_pos = (allocatedBushHeight + -1 * y_pos) / inclination;
+      _.each(this.lVariables, (e) => e.render(bushMesh, x_pos * Math.sin(n) + 0.5, y_pos + 0.5, x_pos * Math.cos(n) + 0.5, heightBush, this.w));
     }
 
-    var parameterRows = Math.ceil (this.parameters.length/4);
-    allocatedBushHeight = heightBush/4 ;
-    heightPerRow = allocatedBushHeight/parameterRows;
+    var parameterRows = Math.ceil(this.parameters.length / 4);
+    allocatedBushHeight = heightBush / 4;
+    heightPerRow = allocatedBushHeight / parameterRows;
 
     for (let i = 0; i < this.parameters.length; i++) {
       let n = angle_0[i % 4];
-      row = Math.floor (i / 4)+1;
-      y_pos = row * heightPerRow - row/2;
-      x_pos = y_pos/inclination;
-      x_pos =x_pos/2;
-      _.each(this.parameters, (e) => e.render(bushMesh, x_pos * Math.sin(n)+0.5, y_pos+0.5
-      , x_pos * Math.cos(n)+0.5, heightBush, this.w));
+      row = Math.floor(i / 4) + 1;
+      y_pos = row * heightPerRow - row / 2;
+      x_pos = (allocatedBushHeight * 2 - y_pos) / inclination;
+      _.each(this.parameters, (e) => e.render(bushMesh, x_pos * Math.sin(n) + 0.5, y_pos + 0.5
+        , x_pos * Math.cos(n) + 0.5, heightBush, this.w));
     }
   }
+
 
   public addLVariable(lVariable: LVariable) {
     this.lVariables.push(lVariable);
   }
 
-  public addParameters (parameter: Parameter) {
+  public addParameters(parameter: Parameter) {
     this.parameters.push(parameter);
   }
 
@@ -593,56 +678,23 @@ export class MethodTree extends Block {
     return text + `<br>Package: ${this.parent.getQualifiedName()}<br>Attributes: ${this.data.no_attrs}<br>LOC: ${this.data.no_lines}<br><br>File: ${this.data.file}`;
   }
 
-  loadGLTF(x: number, y: number, z: number, scene: Scene) {
-    var loader = new GLTFLoader();
-
-    loader.load(
-      'app/src/models/fireplace/model2.gltf',
-
-      function (gltf) {
-        var mesh = gltf.scene;
-        mesh.position.set(x, y, z);
-        scene.add(mesh);
-
-        gltf.animations; // Array<THREE.AnimationClip>
-        gltf.scene; // THREE.Group
-        gltf.scenes; // Array<THREE.Group>
-        gltf.cameras; // Array<THREE.Camera>
-        gltf.asset; // Object
-
-      },
-      // called while loading is progressing
-      function (xhr) {
-
-        console.log((xhr.loaded / xhr.total * 100) + '% loaded');
-
-      },
-      // called when loading has errors
-      function (error) {
-
-        console.log('An error happened');
-
-      }
-    );
-  }
-
-  addTree (scene:Scene, heightBush:number){
+  addTree(scene: Scene, heightBush: number) {
 
     const group = new THREE.Group()
     const level1 = new THREE.Mesh(
-      new THREE.ConeGeometry((this.w - 2) / 4, heightBush/3, 8),
+      new THREE.ConeGeometry((this.w - 2) / 4, heightBush / 3, 8),
       new THREE.MeshLambertMaterial({ color: 0x00ff00 })
     )
     level1.position.y = 4
     group.add(level1)
     const level2 = new THREE.Mesh(
-      new THREE.ConeGeometry((this.w - 2)/3, heightBush/3, 8),
+      new THREE.ConeGeometry((this.w - 2) / 3, heightBush / 3, 8),
       new THREE.MeshLambertMaterial({ color: 0x00ff00 })
     )
     level2.position.y = 3
     group.add(level2)
     const level3 = new THREE.Mesh(
-      new THREE.ConeGeometry((this.w - 2) / 2, heightBush/3, 8),
+      new THREE.ConeGeometry((this.w - 2) / 2, heightBush / 3, 8),
       new THREE.MeshLambertMaterial({ color: 0x00ff00 })
     )
     level3.position.y = 2
@@ -678,8 +730,8 @@ export class GVariable extends Block {
     var geometry = new THREE.BoxGeometry(1, 1, 1);
     var material = <ExtendedMeshBasicMaterial>new THREE.MeshBasicMaterial(options);
 
-    // material.defaultColor = <number>options.color;
-    // material.originalColor = <number>options.color;
+    material.defaultColor = <number>options.color;
+    material.originalColor = <number>options.color;
 
     geometry.applyMatrix4(new THREE.Matrix4().makeTranslation(0.5, 0.5, 0.5));
 
@@ -699,9 +751,6 @@ export class GVariable extends Block {
     mesh.add(line);
 
     mesh.block = this;
-    // _.each(this.methods, (e) => e.render(scene, depth + 1));
-
-
   }
 
   public getTrackerText() {
@@ -734,7 +783,7 @@ export class GVariable extends Block {
 }
 export class LVariable {
 
-  constructor(public parent: MethodTree,height: number,public data: Variable) {
+  constructor(public parent: MethodTree, height: number, public data: Variable) {
   }
 
   public render(scene: THREE.Mesh, x_pos: number, y_pos: number, z_pos: number, heightBush: number, w: number) {
@@ -743,7 +792,7 @@ export class LVariable {
     const material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
     const sphere = new THREE.Mesh(geometry, material);
     scene.add(sphere);
-    sphere.position.set(x_pos,y_pos, z_pos);
+    sphere.position.set(x_pos, y_pos, z_pos);
     // console.log(x_pos + " inside l " +y_pos + " "+z_pos );
   }
 
@@ -762,15 +811,15 @@ export class LVariable {
   }
 
   // public getQualifiedName(): string {
-    // if (this.parent === null) {
-    //   return '';
-    // }
+  // if (this.parent === null) {
+  //   return '';
+  // }
 
-    // if (this.name == 'none') {
-    //   return '<em>No package</em>';
-    // }
+  // if (this.name == 'none') {
+  //   return '<em>No package</em>';
+  // }
 
-    // return `${(<District>this.parent).getQualifiedName()}\\${this.name}`;
+  // return `${(<District>this.parent).getQualifiedName()}\\${this.name}`;
   // }
 
 }
@@ -786,12 +835,87 @@ export class Parameter {
 
   public render(scene: THREE.Mesh, x_pos: number, y_pos: number, z_pos: number, heightBush: number, w: number) {
     var options: THREE.MeshBasicMaterialParameters = { color: 0x87697e };
-    const geometry = new THREE.SphereGeometry(w * 0.05, 5, 10);
-    const material = new THREE.MeshBasicMaterial({ color: 0x800080 });
-    const sphere = new THREE.Mesh(geometry, material);
-    scene.add(sphere);
-    sphere.position.set(x_pos, y_pos, z_pos);
+    // const geometry = new THREE.SphereGeometry(w * 0.05, 5, 10);
+    // const material = new THREE.MeshBasicMaterial({ color: 0x800080 });
+    // const sphere = new THREE.Mesh(geometry, material);
+    // scene.add(sphere);
+    // sphere.position.set(x_pos, y_pos, z_pos);
 
+    const geometry = new THREE.TorusKnotGeometry(w * 0.05, 0.3, 5, 2);
+    const material = new THREE.MeshBasicMaterial({ color: 0x800080 });
+    const torusKnot = new THREE.Mesh(geometry, material);
+    scene.add(torusKnot);
+    torusKnot.position.set(x_pos, y_pos, z_pos);
+
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+    scene.add(ambientLight);
+    // instantiate a loader
+    // const loader = new OBJLoader();
+
+    // load a resource
+    // loader.load(
+    //   // resource URL
+    //   'app/src/models/flowerpurple.obj',
+    //   // called when resource is loaded
+    //   function (object) {
+    //     const quaternion = new THREE.Quaternion();
+    //     quaternion.setFromAxisAngle( new THREE.Vector3(x_pos, y_pos, z_pos ), Math.PI / 2 );
+
+    //     const vector = new THREE.Vector3( x_pos, y_pos, z_pos);
+    //     vector.applyQuaternion( quaternion );
+    //     object.lookAt(vector);
+    //     object.scale.set(w * 0.05,w * 0.05,w * 0.05); 
+    //     scene.add(object);
+
+    //   },
+    //   // called when loading is in progresses
+    //   function (xhr) {
+
+    //     console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+
+    //   },
+    //   // called when loading has errors
+    //   function (error) {
+
+    //     console.log('An error happened');
+
+    //   }
+    // );
+
+
+  }
+
+  loadObj(x: number, y: number, z: number, scene: Scene) {
+    console.log(" inside obj loader");
+    // Set up lights
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+    scene.add(ambientLight);
+    // instantiate a loader
+    const loader = new OBJLoader();
+
+    // load a resource
+    loader.load(
+      // resource URL
+      'app/src/models/flowerpurple.obj',
+      // called when resource is loaded
+      function (object) {
+
+        scene.add(object);
+
+      },
+      // called when loading is in progresses
+      function (xhr) {
+
+        console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+
+      },
+      // called when loading has errors
+      function (error) {
+
+        console.log('An error happened');
+
+      }
+    );
   }
 
   public getTrackerText() {
