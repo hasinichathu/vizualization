@@ -83,7 +83,7 @@
         "namespace": "Faker",
         "name": "Documentor",
         "quality" : "low",
-        "extends": null,
+        "extends": "Luhn",
         "implements": null,
         "no_lines": 61,
         "no_attrs": 1,
@@ -145,8 +145,8 @@
         ]
     },
     {
-        "file": "src\\Faker\\ORM\\CakePHP\\ColumnTypeGuesser.java",
-        "namespace": "Faker\\ORM\\CakePHP",
+        "file": "src\\Faker\\ORK\\Cake\\ColumnTypeGuesser.java",
+        "namespace": "Faker\\ORK\\Cake",
         "name": "ColumnTypeGuesser",
         "quality" : "high",
         "extends": null,
@@ -399,7 +399,7 @@
         "no_lines": 149,
         "no_attrs": 1,
         "no_methods": 2,
-        "abstract": false,
+        "abstract": true,
         "final": true,
         "trait": false,
         "type": "class",
@@ -456,8 +456,8 @@
         ]
     },
     {
-        "file": "src\\Second\\ORM\\CakePHP\\ColumnTypeGuesser.java",
-        "namespace": "Second\\ORM\\CakePHP",
+        "file": "src\\Second\\ORC\\Cake\\ColumnTypeGuesser.java",
+        "namespace": "Second\\ORC\\Cake",
         "name": "ColumnTypeGuesser",
         "quality" : "medium",
         "extends": null,
@@ -522,11 +522,11 @@
         ]
     },
     {
-        "file": "src\\Third\\Guesser\\Name.java",
-        "namespace": "Third\\Guesser",
+        "file": "src\\Third\\Guessewr\\Name.java",
+        "namespace": "Third\\Guessewr",
         "name": "Name",
         "quality" : "low",
-        "extends": null,
+        "extends": "ColumnTypeGuesser",
         "implements": null,
         "no_lines": 149,
         "no_attrs": 1,
@@ -583,22 +583,22 @@
         "globle_variables" :[
             {
                 "name": "globle_variable",
-                "type" : "int"
+                "type" : "int" 
             }
         ]
     },
     {
-        "file": "src\\Third\\ORM\\CakePHP\\ColumnTypeGuesser.java",
-        "namespace": "Third\\ORM\\CakePHP",
-        "name": "ColumnTypeGuesser",
-        "quality" : "high",
+        "file": "src\\Third\\Guessewr\\NameImplement.java",
+        "namespace": "Third\\Guessewr",
+        "name": "NameImplement",
+        "quality" : "low",
         "extends": null,
-        "implements": null,
-        "no_lines": 62,
+        "implements": "NameInterface",
+        "no_lines": 149,
         "no_attrs": 1,
         "no_methods": 2,
         "abstract": false,
-        "final": false,
+        "final": true,
         "trait": false,
         "type": "class",
         "anonymous": false,
@@ -607,7 +607,7 @@
             {
                 "name": "method-one",
                 "no_lines": 66,
-                "no_attrs": 3,
+                "no_attrs": 10,
                 "no_variables": 1,
                 "is_secure" :true,
                 "variables" : [
@@ -628,7 +628,7 @@
             {
                 "name": "method-two",
                 "no_lines": 66,
-                "no_attrs": 5,
+                "no_attrs": 4,
                 "no_variables": 0,
                 "is_secure" :true,
                 "variables" : [
@@ -649,8 +649,76 @@
         "globle_variables" :[
             {
                 "name": "globle_variable",
-                "type" : "int"
+                "type" : "int" 
+            }
+        ]
+    },
+    
+    {
+        "file": "src\\Third\\Guessewr\\NameInterface.java",
+        "namespace": "Third\\Guessewr",
+        "name": "NameInterface",
+        "quality" : "low",
+        "extends":null,
+        "implements": null,
+        "no_lines": 149,
+        "no_attrs": 1,
+        "no_methods": 2,
+        "abstract": false,
+        "final": true,
+        "trait": false,
+        "type": "interface",
+        "anonymous": false,
+        "is_secure" :true,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 10,
+                "no_variables": 1,
+                "is_secure" :true,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 4,
+                "no_variables": 0,
+                "is_secure" :true,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int" 
             }
         ]
     }
+    
 ]

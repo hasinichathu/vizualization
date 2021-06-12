@@ -28,7 +28,7 @@ export abstract class Block {
     // console.log(this.depth + " " + this.name);
   }
 
-  abstract render(scene: THREE.Scene, depth: number): void;
+  abstract render(scene: THREE.Scene, depth: number, isInterface?: boolean): void;
 
   public getColor(): THREE.Color {
     if (!this.color) {
@@ -77,7 +77,7 @@ export class ForestClass extends Block {
       options.opacity = 0.5
       options.transparent = true;
     } else if (this.data.type === "interface") {
-      options.color = 0x3c2fbd;
+      options.color = 0xDAA520;
     }
     // var wood = new THREE.TextureLoader().load('textures/wood.jpg');
     // var grass = new THREE.TextureLoader().load('textures/grass.jpg');
@@ -130,13 +130,16 @@ export class ForestClass extends Block {
     }
 
     mesh.block = this;
-    _.each(this.methods, (e) => e.render(scene, depth + 1));
+    if (this.data.type === "interface") {
+      _.each(this.methods, (e) => e.render(scene, depth + 1, true));
+    }
+    else {
+      _.each(this.methods, (e) => e.render(scene, depth + 1, false));
+    }
     _.each(this.gVariables, (e) => e.render(scene, depth + 1));
 
 
   }
-
-
   public addFog(x: number, y: number, z: number, scene: Scene, w: number, l: number) {
     var positions: Position[] = [];
     var center = { x: x + w / 2, y: y, z: z + l / 2 };
@@ -155,7 +158,7 @@ export class ForestClass extends Block {
 
       var options: THREE.MeshBasicMaterialParameters = { color: 0x87697e };
       const geometry = new THREE.SphereGeometry(0.11, 5, 10);
-      const material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+      const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
       const sphere = new THREE.Mesh(geometry, material);
       scene.add(sphere);
 
@@ -167,11 +170,11 @@ export class ForestClass extends Block {
     console.log(" inside obj loader");
     var center = { x: x + w / 2, y: y, z: z + l / 2 };
     var options: THREE.MeshBasicMaterialParameters = { color: 0x800000 };
-      options.color = 0x800000;
-      options.opacity = 0.5
-      options.transparent = true;
+    options.color = 0x800000;
+    options.opacity = 0.5
+    options.transparent = true;
 
-    
+
     // instantiate a loader
     const loader = new OBJLoader();
 
@@ -185,9 +188,9 @@ export class ForestClass extends Block {
         object.scale.set(w * 0.05, w * 0.05, w * 0.05);
         scene.add(object);
         object.position.set(center.x, center.y, center.z);
-        const axesHelper = new THREE.AxesHelper( 5 );
-        object.add( axesHelper );
-        const ambientLight = new THREE.AmbientLight(0x800000 , 0.6);
+        const axesHelper = new THREE.AxesHelper(5);
+        object.add(axesHelper);
+        const ambientLight = new THREE.AmbientLight(0x800000, 0.6);
         object.add(ambientLight);
       },
       function (xhr) {
@@ -582,84 +585,100 @@ export class MethodTree extends Block {
   }
 
 
-  public render(scene: THREE.Scene, depth: number) {
+  public render(scene: THREE.Scene, depth: number, isInterface: boolean) {
     var height = this.d;
     var heightStem = height * 0.5;
     var heightBush = height * 0.5;
     var radiusStem = this.w * 0.04;
     var radius = (this.w) / 3;
 
-    const bushGeometry = new THREE.ConeGeometry(radius, heightBush, 32);
-    bushGeometry.applyMatrix4(new THREE.Matrix4().makeTranslation(0.5, 0.5, 0.5));
-
-    const bushMaterial = new THREE.MeshBasicMaterial({ color: 0x006700 });
-    const bushMesh = new THREE.Mesh(bushGeometry, bushMaterial);
-    bushMesh.castShadow = true;
-
-    scene.add(bushMesh);
-
-    bushMesh.name = this.name ? this.name : '';
-
+    
     let x = this.getX() - 1 * this.parent.addWidth + 1 + radius;
     let z = this.getY() - 1 * this.parent.addWidth + 1 + radius;
     let y = 0 + depth / 2 + depth * 0.05 + heightBush;
-    bushMesh.position.set(x, y, z);
 
-    // const axesHelper = new THREE.AxesHelper(15);
-    // bushMesh.add(axesHelper);
+    if (isInterface) {
+      console.log("inside interface");
+      const stemGeometry = new THREE.CylinderGeometry(radiusStem , radiusStem+0.2, height, 5);
+      stemGeometry.applyMatrix4(new THREE.Matrix4().makeTranslation(0.5, 0.5, 0.5));
 
-    const stemGeometry = new THREE.CylinderGeometry(radiusStem, radiusStem, heightStem, 32);
-    const stemMaterial = new THREE.MeshBasicMaterial({ color: 0x341a00 });
-    const stemMesh = new THREE.Mesh(stemGeometry, stemMaterial);
-    bushMesh.add(stemMesh);
+      const stemMaterial = new THREE.MeshBasicMaterial({ color: 0x341a00 });
+      const stemMesh = new THREE.Mesh(stemGeometry, stemMaterial);
+      scene.add(stemMesh);
+      stemMesh.position.set(x, y-1, z);
 
-    scene.updateMatrixWorld(true);
-    stemMesh.position.set(0.5, -heightBush / 2, 0.5);
+    } 
+    else {
 
-    // if(){
+      const bushGeometry = new THREE.ConeGeometry(radius, heightBush, 32);
+      bushGeometry.applyMatrix4(new THREE.Matrix4().makeTranslation(0.5, 0.5, 0.5));
 
-    // }
-    // bushMesh.block = this;
-    ////////////
+      const bushMaterial = new THREE.MeshBasicMaterial({ color: 0x006700 });
+      const bushMesh = new THREE.Mesh(bushGeometry, bushMaterial);
+      bushMesh.castShadow = true;
 
-    var segments = 4;
-    var deltaAngle = 2.0 * Math.PI / segments;
-    var angle_0 = [];
-    for (var i = 0; i < segments; i++) {
-      angle_0[i] = i * deltaAngle;
-    }
-    var inclination = heightBush / radius;
-    var y_pos: number;
-    var x_pos: number;
-    // var x_pos = x_pos;
+      scene.add(bushMesh);
 
-    var variableRows = Math.ceil(this.lVariables.length / 4);
-    var allocatedBushHeight = heightBush / 2;
-    var heightPerRow = allocatedBushHeight / variableRows;
+      bushMesh.name = this.name ? this.name : '';
 
-    // let n: number ;
-    let row: number;
+      bushMesh.position.set(x, y, z);
 
-    for (let i = 0; i < this.lVariables.length; i++) {
+      // const axesHelper = new THREE.AxesHelper(15);
+      // bushMesh.add(axesHelper);
 
-      let n = angle_0[i % 4];
-      row = Math.floor(i / 4) + 1;
-      y_pos = - row * heightPerRow + row / 2;
-      x_pos = (allocatedBushHeight + -1 * y_pos) / inclination;
-      _.each(this.lVariables, (e) => e.render(bushMesh, x_pos * Math.sin(n) + 0.5, y_pos + 0.5, x_pos * Math.cos(n) + 0.5, heightBush, this.w));
-    }
+      const stemGeometry = new THREE.CylinderGeometry(radiusStem, radiusStem, heightStem, 32);
+      const stemMaterial = new THREE.MeshBasicMaterial({ color: 0x341a00 });
+      const stemMesh = new THREE.Mesh(stemGeometry, stemMaterial);
+      bushMesh.add(stemMesh);
 
-    var parameterRows = Math.ceil(this.parameters.length / 4);
-    allocatedBushHeight = heightBush / 4;
-    heightPerRow = allocatedBushHeight / parameterRows;
+      scene.updateMatrixWorld(true);
+      stemMesh.position.set(0.5, -heightBush / 2, 0.5);
 
-    for (let i = 0; i < this.parameters.length; i++) {
-      let n = angle_0[i % 4];
-      row = Math.floor(i / 4) + 1;
-      y_pos = row * heightPerRow - row / 2;
-      x_pos = (allocatedBushHeight * 2 - y_pos) / inclination;
-      _.each(this.parameters, (e) => e.render(bushMesh, x_pos * Math.sin(n) + 0.5, y_pos + 0.5
-        , x_pos * Math.cos(n) + 0.5, heightBush, this.w));
+      // if(){
+
+      // }
+      // bushMesh.block = this;
+      ////////////
+
+      var segments = 4;
+      var deltaAngle = 2.0 * Math.PI / segments;
+      var angle_0 = [];
+      for (var i = 0; i < segments; i++) {
+        angle_0[i] = i * deltaAngle;
+      }
+      var inclination = heightBush / radius;
+      var y_pos: number;
+      var x_pos: number;
+      // var x_pos = x_pos;
+
+      var variableRows = Math.ceil(this.lVariables.length / 4);
+      var allocatedBushHeight = heightBush / 2;
+      var heightPerRow = allocatedBushHeight / variableRows;
+
+      // let n: number ;
+      let row: number;
+
+      for (let i = 0; i < this.lVariables.length; i++) {
+
+        let n = angle_0[i % 4];
+        row = Math.floor(i / 4) + 1;
+        y_pos = - row * heightPerRow + row / 2;
+        x_pos = (allocatedBushHeight + -1 * y_pos) / inclination;
+        _.each(this.lVariables, (e) => e.render(bushMesh, x_pos * Math.sin(n) + 0.5, y_pos + 0.5, x_pos * Math.cos(n) + 0.5, heightBush, this.w));
+      }
+
+      var parameterRows = Math.ceil(this.parameters.length / 4);
+      allocatedBushHeight = heightBush / 4;
+      heightPerRow = allocatedBushHeight / parameterRows;
+
+      for (let i = 0; i < this.parameters.length; i++) {
+        let n = angle_0[i % 4];
+        row = Math.floor(i / 4) + 1;
+        y_pos = row * heightPerRow - row / 2;
+        x_pos = (allocatedBushHeight * 2 - y_pos) / inclination;
+        _.each(this.parameters, (e) => e.render(bushMesh, x_pos * Math.sin(n) + 0.5, y_pos + 0.5
+          , x_pos * Math.cos(n) + 0.5, heightBush, this.w));
+      }
     }
   }
 
@@ -728,7 +747,13 @@ export class GVariable extends Block {
     var options: THREE.MeshBasicMaterialParameters = { color: 0x87697e };
 
     var geometry = new THREE.BoxGeometry(1, 1, 1);
+    // const geometry = new THREE.SphereGeometry(0.5, 1, 1);
     var material = <ExtendedMeshBasicMaterial>new THREE.MeshBasicMaterial(options);
+    var options: THREE.MeshBasicMaterialParameters = { color: 0x87697e };
+
+    // const geometry = new THREE.SphereGeometry(1 * 0.05, 5, 10);
+    // const material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+    const sphere = new THREE.Mesh(geometry, material);
 
     material.defaultColor = <number>options.color;
     material.originalColor = <number>options.color;

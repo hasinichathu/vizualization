@@ -33,8 +33,8 @@ window.onload = function() {
       let block = SceneManager.objects[i].block;
 
       if (block instanceof ForestClass) {
-        object.material.color.setHex(block.data.extends == val ? 0xeead12 : (object.material.defaultColor == 0xeead12 ? object.material.originalColor : object.material.defaultColor));
-        object.material.defaultColor = block.data.extends == val ? 0xeead12 : object.material.originalColor;
+        object.material.color.setHex(block.data.extends == val ? 0xDC143C : (object.material.defaultColor == 0xeead12 ? object.material.originalColor : object.material.defaultColor));
+        object.material.defaultColor = block.data.extends == val ? 0xDC143C : object.material.originalColor;
       }
     }
   });
@@ -50,8 +50,8 @@ window.onload = function() {
       let block = SceneManager.objects[i].block;
 
       if (block instanceof ForestClass) {
-        object.material.color.setHex(block.data.implements == val ? 0xeead12 : (object.material.defaultColor == 0xeead12 ? object.material.originalColor : object.material.defaultColor));
-        object.material.defaultColor = block.data.implements == val ? 0xeead12 : object.material.originalColor;
+        object.material.color.setHex(block.data.implements == val ? 0xDC143C : (object.material.defaultColor == 0xDC143C ? object.material.originalColor : object.material.defaultColor));
+        object.material.defaultColor = block.data.implements == val ? 0xDC143C : object.material.originalColor;
       }
     }
   });
