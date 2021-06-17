@@ -1,0 +1,89 @@
+[
+    {
+        "file": "src\\Fake\\Calculator\\Luhn.java",
+        "namespace": "Faker\\Calculator",
+        "name": "Luhn",
+        "quality" : "high",
+        "extends": null,
+        "implements": null,
+        "no_lines": 45,
+        "no_attrs": 6,
+        "no_methods": 3,
+        "abstract": false,
+        "final": false,
+        "trait": false,
+        "type": "class",
+        "anonymous": false,
+        "is_secure" :true,
+        "methods":[
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "is_secure" :true,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable2",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable3",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable4",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable5",
+                        "type" : "int"
+                    },
+                    {
+                        "name": "local_variable6",
+                        "type" : "int"
+                    }
+
+
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
+                ]
+
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 6,
+                "no_variables": 0,
+                "is_secure" :true,
+                "variables" : [
+                    {
+                        "name": "local_variable",
+                        "type" : "int"
+                    }
+
+                ],
+                "parameters" : [
+                    {
+                        "name": "parameter",
+                        "type" : "int"
+                    }
+                ]
+            }
+        ],
+        "globle_variables" :[
+            {
+                "name": "globle_variable",
+                "type" : "int"
+            }
+        ]
+    }
+]

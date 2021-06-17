@@ -1,0 +1,60 @@
+{
+    "file": "src\\Third\\Guessewr\\NameInterface.java",
+    "namespace": "Third\\Guessewr",
+    "name": "NameInterface",
+    "quality": "high",
+    "extends": null,
+    "implements": null,
+    "no_lines": 149,
+    "no_methods": 2,
+    "abstract": false,
+    "final": true,
+    "type": "interface",
+    "is_secure": true,
+    "methods": [
+        {
+            "name": "method-one",
+            "no_lines": 10,
+            "no_attrs": 10,
+            "no_variables": 1,
+            "is_secure": true,
+            "variables": [
+                {
+                    "name": "local_variable",
+                    "type": "int"
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "parameter",
+                    "type": "int"
+                }
+            ]
+        },
+        {
+            "name": "method-two",
+            "no_lines": 10,
+            "no_attrs": 4,
+            "no_variables": 0,
+            "is_secure": true,
+            "variables": [
+                {
+                    "name": "local_variable",
+                    "type": "int"
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "parameter",
+                    "type": "int"
+                }
+            ]
+        }
+    ],
+    "globle_variables": [
+        {
+            "name": "globle_variable",
+            "type": "int"
+        }
+    ]
+}

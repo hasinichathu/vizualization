@@ -153,6 +153,8 @@ export class SceneManager {
             tracker.css('display', 'none');
 
             document.body.style.cursor = 'auto';
+        } else {
+            
         }
     }
 

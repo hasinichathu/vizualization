@@ -1,0 +1,90 @@
+[
+    {
+        "file": "jmonkey\\Hello3D\\src\\hello3D\\test\\test.java ",
+        "namespace": "hello3D\\test",
+        "name": "Test {",
+        "quality": " high",
+        "exetends": null,
+        "implements": null,
+        "no_lines": 50,
+        "no_attrs": 50,
+        "no_methods": 50,
+        "abstract": false,
+        "final": false,
+        "trait": false,
+        "type": "class",
+        "anonymous": false,
+        "is_secure": true,
+        "global_variables": [
+            {
+                "name": "s",
+                "type": "String"
+            }
+        ],
+        "methods": [
+            {
+                "name": " static void main",
+                "no_lines": 50,
+                "no_attrs": 50,
+                "no_variables": 50,
+                "is_secure": true,
+                "parameters": [
+                    {
+                        "name": "args",
+                        "type": "(String[]"
+                    }
+                ],
+                "local_variables": [
+                    {
+                        "name": "y",
+                        "type": "nt"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "file": "jmonkey\\Hello3D\\src\\hello3D\\test\\test.java ",
+        "namespace": "hello3D\\test",
+        "name": " Test2 extends Test implements testInterface {",
+        "quality": " high",
+        "exetends": "extends Test implements testInterface {",
+        "implements": "implements testInterface {",
+        "no_lines": 50,
+        "no_attrs": 50,
+        "no_methods": 50,
+        "abstract": false,
+        "final": false,
+        "trait": false,
+        "type": "class",
+        "anonymous": false,
+        "is_secure": true,
+        "global_variables": [
+            {
+                "name": "s",
+                "type": ":int"
+            }
+        ],
+        "methods": [
+            {
+                "name": " mainIntTest2",
+                "no_lines": 50,
+                "no_attrs": 50,
+                "no_variables": 50,
+                "is_secure": true,
+                "parameters": [
+                    {
+                        "name": "k",
+                        "type": "(int"
+                    }
+                ],
+                "local_variables": [
+                    {
+                        "name": "y",
+                        "type": "int"
+                    }
+                ]
+            }
+        ]
+    }
+]

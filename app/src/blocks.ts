@@ -6,6 +6,7 @@ import * as _ from 'underscore';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { Scene } from "three";
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
+import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader.js';
 
 export class Position {
   x: number;
@@ -121,10 +122,17 @@ export class ForestClass extends Block {
       this.loadObj(this.getX() - 1 * this.parent.addWidth + 1, 0 + depth / 2 + depth * 0.05, this.getY() - 1 * this.parent.addWidth + 1, scene, this.w - 2, this.h - 2);
 
     }
-
+    // console.log(this.data.quality + this.data.name);
     if (this.data.quality === "low") {
+      console.log(this.data.quality + this.data.name);
 
-      this.addFog(this.getX() - 1 * this.parent.addWidth + 1, 0 + depth / 2 + depth * 0.05, this.getY() - 1 * this.parent.addWidth + 1, scene, this.w - 2, this.h - 2);
+      this.addFog(this.getX() - 1 * this.parent.addWidth + 1, 0 + depth / 2 + depth * 0.05, this.getY() - 1 * this.parent.addWidth + 1, scene, this.w - 2, this.h - 2, this.data.quality);
+      // this.loadObj(this.getX() - 1 * this.parent.addWidth + 1, 0 + depth / 2 + depth * 0.05, this.getY() - 1 * this.parent.addWidth + 1, scene);
+
+    } else if (this.data.quality === "medium") {
+      console.log(this.data.quality + this.data.name);
+
+      this.addFog(this.getX() - 1 * this.parent.addWidth + 1, 0 + depth / 2 + depth * 0.05, this.getY() - 1 * this.parent.addWidth + 1, scene, this.w - 2, this.h - 2, this.data.quality);
       // this.loadObj(this.getX() - 1 * this.parent.addWidth + 1, 0 + depth / 2 + depth * 0.05, this.getY() - 1 * this.parent.addWidth + 1, scene);
 
     }
@@ -140,29 +148,39 @@ export class ForestClass extends Block {
 
 
   }
-  public addFog(x: number, y: number, z: number, scene: Scene, w: number, l: number) {
+  public addFog(x: number, y: number, z: number, scene: Scene, w: number, l: number, quality: string) {
     var positions: Position[] = [];
     var center = { x: x + w / 2, y: y, z: z + l / 2 };
     var spread;
-    if (center.x > center.z) {
-      spread = center.z;
+    var options: THREE.MeshBasicMaterialParameters;
+
+    if (w > l) {
+      spread = l / 2;
     } else {
-      spread = center.x;
+      spread = w / 2;
     }
 
-    for (var i = 0; i < 10; i++) {
+    const geometry = new THREE.SphereGeometry(0.11, 5, 10);
+
+    if (quality == "low") {
+      options = { color: 0xff0000 };
+
+    } else if (quality == "medium") {
+      options = { color: 0xffffff };
+    }
+
+    for (var i = 0; i < 20; i++) {
       x = center.x + this.randFloat(-spread, spread);
       y = this.randFloat(5, spread * 0.5);
       z = center.z + this.randFloat(-spread, spread);
       positions.push({ x: x, y: y, z: z });
-
-      var options: THREE.MeshBasicMaterialParameters = { color: 0x87697e };
-      const geometry = new THREE.SphereGeometry(0.11, 5, 10);
-      const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
       const sphere = new THREE.Mesh(geometry, material);
+      var material = new THREE.MeshBasicMaterial(options);
       scene.add(sphere);
 
       sphere.position.set(x, y, z);
+
+
     }
   }
 
@@ -173,33 +191,32 @@ export class ForestClass extends Block {
     options.color = 0x800000;
     options.opacity = 0.5
     options.transparent = true;
-
-
-    // instantiate a loader
     const loader = new OBJLoader();
 
-    // load a resource
-    loader.load(
-      'app/src/models/21448_Flame_v1.obj',
-      function (object) {
-        object.rotation.y = Math.PI;
-        object.rotation.x = Math.PI / 2;
+    const mtlLoader = new MTLLoader();
+    mtlLoader.load('app/src/models/flamered2.mtl', (mtl) => {
+      mtl.preload();
+      loader.setMaterials(mtl);
+
+      loader.load('app/src/models/flamered2.obj', function (object) {
 
         object.scale.set(w * 0.05, w * 0.05, w * 0.05);
         scene.add(object);
         object.position.set(center.x, center.y, center.z);
         const axesHelper = new THREE.AxesHelper(5);
         object.add(axesHelper);
-        const ambientLight = new THREE.AmbientLight(0x800000, 0.6);
+        const ambientLight = new THREE.AmbientLight("red", 10);
         object.add(ambientLight);
       },
-      function (xhr) {
-        console.log((xhr.loaded / xhr.total * 100) + '% loaded');
-      },
-      function (error) {
-        console.log('An error happened');
-      }
-    );
+        function (xhr) {
+          console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+        },
+        function (error) {
+          console.log('An error happened');
+        }
+      );
+    });
+
   }
   public randFloat(min: number, max: number) {
     return Math.random() * (max - min) + min;
@@ -266,8 +283,13 @@ export class ForestClass extends Block {
 
     //rearrange the building based on its width
     // let sorted = _.sortBy(this.methods, (e) => e.w).reverse();
-    let sorted = _.sortBy(((<Block[]>this.methods).concat(<Block[]>this.gVariables)), (e) => e.w).reverse();
+    let sorted;
+    if (this.gVariables.length > 0) {
+      sorted = _.sortBy(((<Block[]>this.methods).concat(<Block[]>this.gVariables)), (e) => e.w).reverse();
+    } else {
+      sorted = _.sortBy((<Block[]>this.methods), (e) => e.w).reverse();
 
+    }
     //send all the building data to fit method
     // console.log("building sorting started ");
 
@@ -325,7 +347,7 @@ export class ForestClass extends Block {
 
 export class Island extends Block {
   protected children: Island[] = [];
-  protected buildings: ForestClass[] = [];
+  protected forestClass: ForestClass[] = [];
 
   constructor(name: string, height: number, parent: Block) {
     super(name, parent);
@@ -384,7 +406,7 @@ export class Island extends Block {
     mesh.block = this;
 
     _.each(this.children, (e) => e.render(scene, depth + 1));
-    _.each(this.buildings, (e) => {
+    _.each(this.forestClass, (e) => {
       e.render(scene, depth + 1);
 
     });
@@ -392,8 +414,8 @@ export class Island extends Block {
 
   viewCityStructure() {
     if (this.children.length === 0) {
-      for (let j = 0; j < this.buildings.length; j++) {
-        console.log(this.buildings[j]);
+      for (let j = 0; j < this.forestClass.length; j++) {
+        console.log(this.forestClass[j]);
       }
     } else if (this.children.length != 0) {
       // console.log("no of distrcits "+l);
@@ -406,8 +428,8 @@ export class Island extends Block {
   }
 
   viewBuildingNames() {
-    for (let j = 0; j < this.buildings.length; j++) {
-      console.log(this.buildings[j]);
+    for (let j = 0; j < this.forestClass.length; j++) {
+      console.log(this.forestClass[j]);
     }
   }
 
@@ -419,15 +441,15 @@ export class Island extends Block {
     if (this.children.length === 0) {
 
       //length of building array
-      let l = this.buildings.length;
+      let l = this.forestClass.length;
       // console.log("no of buildings "+l);
 
       for (let i = 0; i < l; i++) {
-        this.buildings[i].getWidth();
+        this.forestClass[i].getWidth();
       }
 
       //rearrange the building based on its width
-      let sorted = _.sortBy(this.buildings, (e) => e.w).reverse();
+      let sorted = _.sortBy(this.forestClass, (e) => e.w).reverse();
 
       //send all the building data to fit method
       packer.fit(sorted);
@@ -441,15 +463,15 @@ export class Island extends Block {
         let block = sorted[i];
         //check the building array of respective District and add x,y coordinates
         for (let j = 0; j < l; j++) {
-          if (this.buildings[j].data.file === block.data.file) {
-            this.buildings[j].fit = block.fit;
+          if (this.forestClass[j].data.file === block.data.file) {
+            this.forestClass[j].fit = block.fit;
           }
         }
       }
       // if has child districts
     } else if (this.children.length != 0) {
       //children means districts
-      let l = this.buildings.length;
+      let l = this.forestClass.length;
       // console.log("no of distrcits "+l);
 
       // first calculate w/h on children
@@ -459,11 +481,11 @@ export class Island extends Block {
       this.childrenWidth();
       // }
       for (let i = 0; i < l; i++) {
-        this.buildings[i].getWidth();
+        this.forestClass[i].getWidth();
         // this.getBuildingWidth(this.buildings[i]);
       }
 
-      let sorted = _.sortBy(((<Block[]>this.children).concat(<Block[]>this.buildings)), (e) => e.w).reverse();
+      let sorted = _.sortBy(((<Block[]>this.children).concat(<Block[]>this.forestClass)), (e) => e.w).reverse();
 
       packer.fit(sorted);
 
@@ -476,9 +498,9 @@ export class Island extends Block {
       for (let i = 0; i < sorted.length; i++) {
         let block = sorted[i];
 
-        for (let j = 0; j < this.buildings.length; j++) {
-          if (block instanceof ForestClass && this.buildings[j].data.file === block.data.file) {
-            this.buildings[j].fit = block.fit;
+        for (let j = 0; j < this.forestClass.length; j++) {
+          if (block instanceof ForestClass && this.forestClass[j].data.file === block.data.file) {
+            this.forestClass[j].fit = block.fit;
           }
         }
         for (let j = 0; j < this.children.length; j++) {
@@ -504,7 +526,7 @@ export class Island extends Block {
 
 
   public addBuilding(building: ForestClass) {
-    this.buildings.push(building);
+    this.forestClass.push(building);
   }
 
 
@@ -527,16 +549,16 @@ export class Island extends Block {
   public getChildBuildingsCount(): number {
     var sum = _.reduce(this.children, (memo: number, e: Island): number => memo + e.getChildBuildingsCount(), 0);
 
-    return sum + this.buildings.length;
+    return sum + this.forestClass.length;
     // return 5;
   }
 
   public getTrackerText() {
     if (this.depth == 0) {
-      return `<em>City base</em><br><em>Buildings:</em>${this.getChildBuildingsCount()}`
+      return `<em>Ocean</em><br><em>Islands:</em>${this.getChildBuildingsCount()}`
     }
 
-    return `<em>Package:</em><strong>${this.getQualifiedName()}</strong><br><em>Buildings:</em>${this.getChildBuildingsCount()}`;
+    return `<em>Package:</em><strong>${this.getQualifiedName()}</strong><br><em>Islands:</em>${this.getChildBuildingsCount()}`;
   }
 }
 
@@ -592,22 +614,22 @@ export class MethodTree extends Block {
     var radiusStem = this.w * 0.04;
     var radius = (this.w) / 3;
 
-    
+
     let x = this.getX() - 1 * this.parent.addWidth + 1 + radius;
     let z = this.getY() - 1 * this.parent.addWidth + 1 + radius;
     let y = 0 + depth / 2 + depth * 0.05 + heightBush;
 
     if (isInterface) {
       console.log("inside interface");
-      const stemGeometry = new THREE.CylinderGeometry(radiusStem , radiusStem+0.2, height, 5);
+      const stemGeometry = new THREE.CylinderGeometry(radiusStem, radiusStem + 0.2, height, 5);
       stemGeometry.applyMatrix4(new THREE.Matrix4().makeTranslation(0.5, 0.5, 0.5));
 
       const stemMaterial = new THREE.MeshBasicMaterial({ color: 0x341a00 });
       const stemMesh = new THREE.Mesh(stemGeometry, stemMaterial);
       scene.add(stemMesh);
-      stemMesh.position.set(x, y-1, z);
+      stemMesh.position.set(x, y - 1, z);
 
-    } 
+    }
     else {
 
       const bushGeometry = new THREE.ConeGeometry(radius, heightBush, 32);
@@ -692,9 +714,9 @@ export class MethodTree extends Block {
   }
 
   public getTrackerText() {
-    var text = `<em>&lt;&lt; ${this.data.type} &gt;&gt;</em><br><strong>${this.name}</strong><br>`;
+    var text = `<em>&lt;&lt; Method &gt;&gt;</em><br><strong>${this.name}</strong><br>`;
 
-    return text + `<br>Package: ${this.parent.getQualifiedName()}<br>Attributes: ${this.data.no_attrs}<br>LOC: ${this.data.no_lines}<br><br>File: ${this.data.file}`;
+    return text + `<br>Package: ${this.parent.getQualifiedName()}<br>LOC: ${this.data.no_lines}<br><br>File: ${this.data.file}`;
   }
 
   addTree(scene: Scene, heightBush: number) {
@@ -744,12 +766,12 @@ export class GVariable extends Block {
   }
 
   public render(scene: THREE.Scene, depth: number) {
-    var options: THREE.MeshBasicMaterialParameters = { color: 0x87697e };
+    var options: THREE.MeshBasicMaterialParameters = { color: 0xffbf00 };
 
-    var geometry = new THREE.BoxGeometry(1, 1, 1);
-    // const geometry = new THREE.SphereGeometry(0.5, 1, 1);
+    // var geometry = new THREE.BoxGeometry(1, 1, 1);
+    const geometry = new THREE.SphereGeometry(0.5, 1, 1);
     var material = <ExtendedMeshBasicMaterial>new THREE.MeshBasicMaterial(options);
-    var options: THREE.MeshBasicMaterialParameters = { color: 0x87697e };
+    var options: THREE.MeshBasicMaterialParameters = { color: 0xffbf00 };
 
     // const geometry = new THREE.SphereGeometry(1 * 0.05, 5, 10);
     // const material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
@@ -860,11 +882,7 @@ export class Parameter {
 
   public render(scene: THREE.Mesh, x_pos: number, y_pos: number, z_pos: number, heightBush: number, w: number) {
     var options: THREE.MeshBasicMaterialParameters = { color: 0x87697e };
-    // const geometry = new THREE.SphereGeometry(w * 0.05, 5, 10);
-    // const material = new THREE.MeshBasicMaterial({ color: 0x800080 });
-    // const sphere = new THREE.Mesh(geometry, material);
-    // scene.add(sphere);
-    // sphere.position.set(x_pos, y_pos, z_pos);
+
 
     const geometry = new THREE.TorusKnotGeometry(w * 0.05, 0.3, 5, 2);
     const material = new THREE.MeshBasicMaterial({ color: 0x800080 });

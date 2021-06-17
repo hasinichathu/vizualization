@@ -1,0 +1,191 @@
+[
+    {
+        "file": "src\\Faker\\Documentor.java",
+        "namespace": "Faker",
+        "name": "Documentor",
+        "quality": "low",
+        "extends": null,
+        "implements": null,
+        "no_lines": 61,
+        "no_attrs": 1,
+        "no_methods": 2,
+        "abstract": false,
+        "final": false,
+        "trait": false,
+        "type": "class",
+        "anonymous": false,
+        "is_secure": true,
+        "methods": [
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "is_secure": true,
+                "variables": [
+                    {
+                        "name": "local_variable",
+                        "type": "int"
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "parameter",
+                        "type": "int"
+                    }
+                ]
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "is_secure": true,
+                "variables": [
+                    {
+                        "name": "local_variable",
+                        "type": "int"
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "parameter",
+                        "type": "int"
+                    }
+                ]
+            }
+        ],
+        "globle_variables": [
+            {
+                "name": "globle_variable",
+                "type": "int"
+            }
+        ]
+    },
+    {
+        "file": "src\\Faker2\\Documentor2.java",
+        "namespace": "Faker2",
+        "name": "Documentor2",
+        "quality": "medium",
+        "extends": null,
+        "implements": null,
+        "no_lines": 61,
+        "no_attrs": 1,
+        "no_methods": 2,
+        "abstract": false,
+        "final": false,
+        "trait": false,
+        "type": "class",
+        "anonymous": false,
+        "is_secure": true,
+        "globle_variables": [
+            {
+                "name": "globle_variable",
+                "type": "int"
+            }
+        ],
+        "methods": [
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "is_secure": true,
+                "variables": [
+                    {
+                        "name": "local_variable",
+                        "type": "int"
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "parameter",
+                        "type": "int"
+                    }
+                ]
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 8,
+                "no_variables": 0,
+                "is_secure": true,
+                "variables": [
+                    {
+                        "name": "local_variable",
+                        "type": "int"
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "parameter",
+                        "type": "int"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "file": "src\\Faker\\ORK\\Cake\\ColumnTypeGuesser.java",
+        "namespace": "Faker\\ORK\\Cake",
+        "name": "ColumnTypeGuesser",
+        "quality": "high",
+        "extends": null,
+        "implements": null,
+        "no_lines": 62,
+        "no_attrs": 1,
+        "no_methods": 2,
+        "abstract": false,
+        "final": false,
+        "trait": false,
+        "type": "class",
+        "anonymous": false,
+        "is_secure": true,
+        "methods": [
+            {
+                "name": "method-one",
+                "no_lines": 66,
+                "no_attrs": 3,
+                "no_variables": 1,
+                "is_secure": true,
+                "variables": [
+                    {
+                        "name": "local_variable",
+                        "type": "int"
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "parameter",
+                        "type": "int"
+                    }
+                ]
+            },
+            {
+                "name": "method-two",
+                "no_lines": 66,
+                "no_attrs": 5,
+                "no_variables": 0,
+                "is_secure": true,
+                "variables": [
+                    {
+                        "name": "local_variable",
+                        "type": "int"
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "parameter",
+                        "type": "int"
+                    }
+                ]
+            }
+        ],
+        "globle_variables": [
+            {
+                "name": "globle_variable",
+                "type": "int"
+            }
+        ]
+    }
+]
